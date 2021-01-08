@@ -120,7 +120,10 @@
                                     <option value="3">3: Cancelled</option>
                                     <option value="4">4: Attending</option>
                                     <option value="5">5: Attended</option>
-                                </select><br><br>
+                                </select><br>
+                                @if($list->remarks != 'EMAIL SENT!' && $list->status > 1)
+                                    <a href="/admin/sendemail/{{ $list->id }}">Send Notif Email</a>
+                                @endif
                             </td>
                         @endif
                     </tr>

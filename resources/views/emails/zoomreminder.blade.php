@@ -13,7 +13,7 @@ This email is just a friendly reminder about our upcoming webinar **{{$data["eve
 
 Make sure to attend on time and don't forget to use the virtual background for participants, which you can download on https://tinyurl.com/VBPeserta.
 
-On {{$data["event_time"]}}, you will be able to obtain the Zoom meeting link via our website at https://computerun.id. Sign in to your account (or go into the "Profile" tab if logged in), then click on the **Join Event** button next to the chosen webinar.
+On {{$data["event_time"]}}, you will be able to obtain the Zoom meeting link via our website at https://computerun.id/home. Sign in to your account (or go into the "Profile" tab if logged in), then click on the **Join Event** button next to the chosen webinar.
 
 If you haven't installed Zoom yet, please install them first from https://zoom.us/download (under "Zoom Client for Meetings").
 

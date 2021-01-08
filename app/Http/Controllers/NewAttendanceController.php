@@ -149,6 +149,7 @@ class NewAttendanceController extends Controller
                 'nim'=>$request->nim,
                 'major'=>$request->major
             ]);
+            return back()->with('status','Success update profile data');
         }elseif ($request->type == 2) {
             $attendance = DB::table('attendance')
                 ->join('registration','attendance.registration_id','=','registration.id')
@@ -191,7 +192,7 @@ class NewAttendanceController extends Controller
                     'status'=>5
                 ]);
         }
-        return back();
+        return back()->with('status','Success record attendance to system');
     }
 
 }
