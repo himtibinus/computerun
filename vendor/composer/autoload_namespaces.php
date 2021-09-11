@@ -7,4 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'LSS' => array($vendorDir . '/openlss/lib-array2xml'),
+    'JsonMapper' => array($vendorDir . '/netresearch/jsonmapper/src'),
 );

@@ -27,16 +27,34 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => '6f1134f6401a692d9dcebab781690728fd54ca21',
+    'reference' => 'a1a334d5ab6d724812bab726480b2d4a16c28ee5',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'amphp/amp' => 
+    array (
+      'pretty_version' => 'v2.6.0',
+      'version' => '2.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'caa95edeb1ca1bf7532e9118ede4a3c3126408cc',
+    ),
+    'amphp/byte-stream' => 
+    array (
+      'pretty_version' => 'v1.8.1',
+      'version' => '1.8.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'acbd8002b3536485c997c4e019206b3f10ca15bd',
+    ),
     'asm89/stack-cors' => 
     array (
       'pretty_version' => 'v2.0.3',
@@ -54,6 +72,33 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
+    ),
+    'composer/package-versions-deprecated' => 
+    array (
+      'pretty_version' => '1.11.99.3',
+      'version' => '1.11.99.3',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'fff576ac850c045158a250e7e27666e146e78d18',
+    ),
+    'composer/semver' => 
+    array (
+      'pretty_version' => '3.2.5',
+      'version' => '3.2.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '31f3ea725711245195f62e54ffa402d8ef2fdba9',
+    ),
+    'composer/xdebug-handler' => 
+    array (
+      'pretty_version' => '2.0.2',
+      'version' => '2.0.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '84674dd3a7575ba617f5a76d7e9e29a7d3891339',
     ),
     'cordoval/hamcrest-php' => 
     array (
@@ -77,6 +122,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '0992cc19268b259a39e86f296da5f0677841f42c',
+    ),
+    'dnoegel/php-xdg-base-dir' => 
+    array (
+      'pretty_version' => 'v0.1.1',
+      'version' => '0.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8f8a6e48c5ecb0f991c2fdcf5f154a47d85f9ffd',
     ),
     'doctrine/cache' => 
     array (
@@ -185,6 +239,24 @@ private static $installed = array (
       array (
       ),
       'reference' => '3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
+    ),
+    'felixfbecker/advanced-json-rpc' => 
+    array (
+      'pretty_version' => 'v3.2.1',
+      'version' => '3.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b5f37dbff9a8ad360ca341f3240dc1c168b45447',
+    ),
+    'felixfbecker/language-server-protocol' => 
+    array (
+      'pretty_version' => '1.5.1',
+      'version' => '1.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9d846d1f5cf101deee7a61c8ba7caa0a975cd730',
     ),
     'fideloper/proxy' => 
     array (
@@ -502,12 +574,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '6f1134f6401a692d9dcebab781690728fd54ca21',
+      'reference' => 'a1a334d5ab6d724812bab726480b2d4a16c28ee5',
     ),
     'laravel/tinker' => 
     array (
@@ -619,6 +691,15 @@ private static $installed = array (
       ),
       'reference' => 'f4655858a784988f880c1b8c7feabbf02dfdf045',
     ),
+    'netresearch/jsonmapper' => 
+    array (
+      'pretty_version' => 'v4.0.0',
+      'version' => '4.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '8bbc021a8edb2e4a7ea2f8ad4fa9ec9dce2fcb8d',
+    ),
     'nette/schema' => 
     array (
       'pretty_version' => 'v1.2.1',
@@ -654,6 +735,22 @@ private static $installed = array (
       array (
       ),
       'reference' => '63456f5c3e8c4bc52bd573e5c85674d64d84fd43',
+    ),
+    'ocramius/package-versions' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '1.11.99',
+      ),
+    ),
+    'openlss/lib-array2xml' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a91f18a8dfc69ffabe5f9b068bc39bb202c81d90',
     ),
     'opis/closure' => 
     array (
@@ -789,6 +886,13 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ea8c2dfb1065eb35a79b3681eee6e6fb0a6f273b',
+    ),
+    'psalm/psalm' => 
+    array (
+      'provided' => 
+      array (
+        0 => '4.10.0',
+      ),
     ),
     'psr/container' => 
     array (
@@ -1385,6 +1489,15 @@ private static $installed = array (
       ),
       'reference' => 'b43b05cf43c1b6d849478965062b6ef73e223bb5',
     ),
+    'vimeo/psalm' => 
+    array (
+      'pretty_version' => '4.10.0',
+      'version' => '4.10.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '916b098b008f6de4543892b1e0651c1c3b92cbfa',
+    ),
     'vlucas/phpdotenv' => 
     array (
       'pretty_version' => 'v5.3.0',
@@ -1411,6 +1524,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
+    ),
+    'webmozart/path-util' => 
+    array (
+      'pretty_version' => '2.3.0',
+      'version' => '2.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd939f7edc24c9a1bb9c0dee5cb05d8e859490725',
     ),
   ),
 );
