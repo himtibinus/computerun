@@ -19,8 +19,8 @@
                 <div class="post-tagline">
                     <h4 class="subtagline">Interconnecting Business-IT Through Technology</h4>
                     <div class="himsisfo-himti-container">
-                        <img src="/img/icons/HIMSISFO Logo.png">
-                        <img src="/img/icons/HIMTI Logo.png">
+                        @component ('components.imagecompat', ['src' => '/img/icons/common/mainlogo/himsisfo.png'])@endcomponent
+                        @component ('components.imagecompat', ['src' => '/img/icons/common/mainlogo/himti.png'])@endcomponent
                     </div>
                 </div>
                 <div class="notice">
