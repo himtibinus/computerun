@@ -21,7 +21,7 @@ Route::get('/', function () {
 //     return view('static.uses');
 // });
 Route::get('/sponsor-us', function () {
-    return view('static.sponsor-us');
+    return (new App\Http\Controllers\PagesController())->show('sponsor-us');
 });
 Route::get('/event-template', function () {
     return view('static.event-template');
@@ -78,6 +78,7 @@ Route::get('/twibbon', function () {
 // Route::get('/regist-competition', function () {
 //     return view('regist-competition');
 // });
+Route::resource('info', 'PagesController');
 Route::view('userview', "registration");
 Route::post('postcontroller', 'PostController@formSubmit');
 
