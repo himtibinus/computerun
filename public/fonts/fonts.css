@@ -1,6 +1,14 @@
 /* @font-face declaration for Barlow */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/* @font-face declaration for Airstrike */
+@font-face {
+    font-family: 'Airstrike';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Airstrike'), local('Airstrike Regular'), local('Airstrike-Regular'), url(/fonts/airstrike/airstrike.ttf) format('truetype');
+}
+
 /* @font-face declaration for Qanelas */
 @font-face {
     font-family: 'Qanelas';

@@ -578,6 +578,13 @@ class ComposerStaticInita0477881f31f5743bd8bef1f88225ab3
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Parsedown' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown',
+            ),
+        ),
         'M' => 
         array (
             'Mockery' => 
@@ -616,6 +623,7 @@ class ComposerStaticInita0477881f31f5743bd8bef1f88225ab3
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\NewAttendanceController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewAttendanceController.php',
+        'App\\Http\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PagesController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
         'App\\Http\\Controllers\\TicketStatusController' => __DIR__ . '/../..' . '/app/Http/Controllers/TicketStatusController.php',
         'App\\Http\\Controllers\\UserSettingsController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserSettingsController.php',
@@ -4203,6 +4211,7 @@ class ComposerStaticInita0477881f31f5743bd8bef1f88225ab3
         'PHPUnit\\Util\\Xml\\SuccessfulSchemaDetectionResult' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/SuccessfulSchemaDetectionResult.php',
         'PHPUnit\\Util\\Xml\\ValidationResult' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/ValidationResult.php',
         'PHPUnit\\Util\\Xml\\Validator' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml/Validator.php',
+        'Parsedown' => __DIR__ . '/..' . '/erusev/parsedown/Parsedown.php',
         'Phan\\AST\\ASTHasher' => __DIR__ . '/..' . '/phan/phan/src/Phan/AST/ASTHasher.php',
         'Phan\\AST\\ASTReverter' => __DIR__ . '/..' . '/phan/phan/src/Phan/AST/ASTReverter.php',
         'Phan\\AST\\ASTSimplifier' => __DIR__ . '/..' . '/phan/phan/src/Phan/AST/ASTSimplifier.php',

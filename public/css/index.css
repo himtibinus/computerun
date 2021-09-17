@@ -2,6 +2,10 @@ body {
     font-family: Barlow, sans-serif;
     margin: 0;
 }
+.font-airstrike {
+    font-family: Airstrike, Barlow, sans-serif;
+    font-weight: 400 !important;
+}
 /* Responsive Typography, based on Bootstrap 5 */
 h1, .h1 {
     font-size: calc(1.375rem + 1.5vw);
@@ -69,19 +73,20 @@ a.discreet, a.discreet:hover {
 /* TOP-LEVEL COMPONENTS */
 /* CONTAINER */
 /* Top-level container */
+.container-0, .container-1, .container-2 {
+
+    padding: 8vh 0;
+}
 .container-2 {
     width: 100%;
     background: rgb(50,70,133);
-    color: #3362da;
+    color: #000000;
     background: linear-gradient(172.39deg, rgba(255, 192, 39, 0.2) 10%, rgba(173, 23, 130, 0.05) 75%, rgba(255, 255, 255, 0) 100%);
-    padding-top: 20px;
-    padding-bottom: 8vh;
 }
 .container-1 {
     width: 100%;
     background: linear-gradient(172.39deg, rgba(255, 192, 39, 0.2) 10%, #FFB800 75%, #FFD044 100%);
     color: #000000;
-    padding-top: 10px;
 }
 .container-0 {
     width: 100%;
@@ -331,11 +336,10 @@ body.is-bootstrap .navbar-right img {
     width: 70%;
 }
 @media (max-width: 991px){
-    .about-container div:nth-child(odd), .about-container div:nth-child(even) {
+    .about-container > div:nth-child(odd), .about-container > div:nth-child(even) {
         width: 100%;
     }
 }
-
 
 /* TAGLINE: #BeyondInsight */
 .tagline {
@@ -347,7 +351,7 @@ body.is-bootstrap .navbar-right img {
 .tagline p {
     margin: 0;
     color: transparent;
-    background: -webkit-linear-gradient(#3BF0B1, #2090FD);
+    background: -webkit-linear-gradient(#3381ff, #ac1782);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -451,7 +455,7 @@ body.is-bootstrap .navbar-right img {
 .with-computerun-background {
     display: table-cell;
     text-align: center;
-    background-image: url('/img/backgrounds/HomeBG-2a.png');
+/*     background-image: url('/img/backgrounds/HomeBG-2a.png'); */
     width: 100vw;
     height: 29vw;
     background-size: 60%;
@@ -541,7 +545,14 @@ body:not(.is-bootstrap) .card-container .card img {
         width: 100%;
     }
 }
-
+.card {
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+.card-img-top {
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+}
 /* Image Cards */
 .image-card {
     display: flex;
@@ -913,7 +924,7 @@ code {
 }
 .gradient-text {
     color: transparent;
-    background: -webkit-linear-gradient(#3BF0B1, #2090FD);
+    background: -webkit-linear-gradient(#3381ff, #ac1782);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
