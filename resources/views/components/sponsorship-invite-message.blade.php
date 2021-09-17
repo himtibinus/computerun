@@ -43,7 +43,7 @@
                 Hello, webmaster's here,<br><br>
                 We are currently experiencing an internal issue where there are no sponsors available at this moment.<br><br>
                 While our <a href="/sponsor-us">Sponsorship Proposal</a> is ready to be shared, here's a picture of a cat.<br><br>
-                <img src="/img/icons/loan-7AIDE8PrvA0-unsplash.jpg">
+                <img src="/img/icons/2020/loan-7AIDE8PrvA0-unsplash.jpg">
             </span>
             @break
         @case(7)
