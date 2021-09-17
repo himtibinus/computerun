@@ -30,7 +30,7 @@
             </span>
             @break
         @case(5)
-            <img src="/img/icons/missingno.png" alt="MissingNo."><br>
+            <img src="/img/icons/2020/missingno.png" alt="MissingNo."><br>
             <span class="h4 font-800">
                 A wild MissingNo. appeared!
             </span><br>

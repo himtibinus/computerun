@@ -1,0 +1,187 @@
+"@manifest":
+  version: 1.0
+type: "page"
+kicker: "COMPUTERUN 2.0: EXECUTE"
+title: "Sponsorship Proposal"
+children:
+  - type: "container"
+    level: 2
+    children:
+      - type: "section-heading"
+        kicker: "COMPUTERUN 2.0: EXECUTE"
+        title: "Sponsorship Proposal"
+      - type: "about-container"
+        children:
+          - title: "Pendahuluan"
+            children:
+              - type: "markdown"
+                text: "Visi **BINUS University** adalah ***A World Class University in continuous pursuit of innovation and enterprise***, artinya Universitas Bina Nusantara menerapkan prinsip kepada mahasiswanya untuk dapat mengembangkan diri dalam membuat terobosan baru maupun pengembangan ilmu pengetahuan yang akan menghasilkan contoh-contoh terbaik yang kualitasnya dapat diterima di lingkungan internasional baik dalam proses pembelajaran, penelitian, dan pengabdian masyarakat. Selain itu, inovasi-inovasi tersebut diharapkan dapat menghasilkan perubahan positif dan mendukung seorang individu maupun organisasi agar dapat berkontribusi pada lingkup internasional."
+              - type: "markdown"
+                text: "Melalui kolaborasi antara **Himpunan Mahasiswa Sistem Informasi (HIMSISFO)** dan **Himpunan Mahasiswa Teknik Informatika (HIMTI)** sebagai salah satu upaya untuk mendukung visi **BINUS University**, maka kami akan mengadakan event **COMPUTERUN 2.0**. Dengan tujuan untuk menjadi wadah bagi para peserta termasuk mahasiswa **BINUS University** untuk mengembangkan diri dan kemampuannya dalam bidang bisnis dan teknologi yang akan bermanfaat dalam kemajuan teknologi informasi."
+              - type: "markdown"
+                text: "Tahun ini, **COMPUTERUN 2.0**. mengambil tema **\"EXECUTE\"** yaitu **Experience Business Creativity Through Technology** yang akan diselenggarakan dalam skala internasional. Setelah di tahun pertama **COMPUTERUN** memfokuskan dalam pengembangan wawasan terkait teknologi informasi, maka pada tahun kedua ini kami fokus menjadi wadah bagi para peserta, baik nasional maupun internasional untuk mereka mendapatkan pengalaman dalam proses pengembangan sebuah inovasi dengan wawasan dan kreativitas mengenai teknologi informasi yang dimiliki sebagai faktor pendukung utama dalam proses menciptakan inovasi tersebut."
+          - title: "Tujuan Acara"
+            children:
+              - type: "card-container"
+                items_per_row: 2
+                children:
+                - type: "card"
+                  cover_image:
+                    type: "imagecompat"
+                    src: "https://binus.ac.id/wp-content/uploads/2019/04/logo-binus.svg"
+                    has_alternative_formats: false
+                  body:
+                    type: "markdown"
+                    text: "Memperkenalkan **BINUS University** dan organisasi Himpunan Mahasiswa Jurusan yaitu **HIMSISFO** dan **HIMTI** kepada masyarakat luas baik nasional maupun internasional."
+                - type: "card"
+                  cover_image:
+                    type: "imagecompat"
+                    src: "/img/icons/2020/Events%20-%20Webinar.png"
+                  body:
+                    type: "markdown"
+                    text: "**Memberikan wawasan dan pengalaman** kepada para peserta dalam bidang bisnis dan teknologi informasi."
+                - type: "card"
+                  cover_image:
+                    type: "imagecompat"
+                    src: "/img/icons/2020/Events%20-%20Business-IT%20Case.png"
+                  body:
+                    type: "markdown"
+                    text: "**Menyediakan wadah** untuk para peserta agar dapat **mengembangkan kemampuan diri** melalui inovasi-inovasi yang dimiliki."
+                - type: "card"
+                  cover_image:
+                    type: "imagecompat"
+                    src: "/img/icons/2020/Events%20-%20Mobile%20Apps.png"
+                  body:
+                    type: "markdown"
+                    text: "**Mendukung perkembangan minat generasi muda** pada bidang bisnis dan teknologi informasi."
+          - title: "Manfaat Acara"
+            children:
+              - type: "markdown"
+                file: "/public/docs/2021/pages/sponsor-us/benefits.md"
+          - title: "Bentuk Kegiatan"
+            children:
+              - type: "markdown"
+                file: "/public/docs/2021/pages/sponsor-us/events.md"
+  - type: "container"
+    level: 1
+    children:
+      - type: "section-heading"
+        title: "Paket Sponsorship"
+        show_down_arrow: true
+      - type: "markdown"
+        text: "<p class=\"text-center\"><b>Catatan:</b> Pihak sponsor berhak mendapatkan dokumentasi acara setelah semua kegiatan acara telah selesai dilaksanakan.</p>"
+      - type: "card-container"
+        items_per_row: 1
+        class_container: "margin-1"
+        class: "col-md-6 col-xl-4"
+        children:
+        - type: "card"
+          banner:
+            text: "CHAIRMAN"
+            background: "-webkit-linear-gradient(60deg, #3381FF 0%, #AC1782 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            file: "/public/docs/2021/pages/sponsor-us/package-chairman.md"
+        - type: "card"
+          banner:
+            text: "CEO"
+            background: "-webkit-linear-gradient(60deg, #AC1782 0%, #FFB500 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            file: "/public/docs/2021/pages/sponsor-us/package-ceo.md"
+        - type: "card"
+          banner:
+            text: "GM"
+            background: "#AC1782"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            file: "/public/docs/2021/pages/sponsor-us/package-gm.md"
+        - type: "card"
+          banner:
+            text: "STAFF"
+            background: "#3381FF"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            file: "/public/docs/2021/pages/sponsor-us/package-staff.md"
+        - type: "card"
+          banner:
+            text: "SPONSOR LEPAS"
+            background: "#6d3eb0"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            text: "Sponsor lepas adalah pihak sponsor yang melakukan perjanjian kerjasama dengan panitia tanpa mengambil bentuk-bentuk yang telah ditentukan oleh pihak panitia sama seperti paket-paket promosi yang tertera dengan ketentuan hanya mengubah sedikit paket yang sudah tersedia dengan keputusan bersama antara pihak 1 dan pihak 2."
+        - type: "card"
+          banner:
+            text: "KERJASAMA LAIN"
+            background: "#ffe678"
+            foreground: "#000000"
+          body:
+            type: "markdown"
+            text: "Bentuk kerjasama lainnya dapat ditentukan sesuai dengan kesepakatan bersama dari perwakilan panitia dengan pihak sponsor. Hal ini dapat termasuk:\n+ Publikasi media (*Media Partner*)\n+ Pengadaan pembicara pada kegiatan Seminar maupun Workshop"
+  - type: "container"
+    level: 2
+    children:
+      - type: "section-heading"
+        title: "Ketentuan Kerjasama"
+        show_down_arrow: true
+      - type: "card-container"
+        items_per_row: 1
+        class_container: "margin-2"
+        children:
+        - type: "card"
+          banner:
+            text: "KETENTUAN WAJIB"
+            background: "-webkit-linear-gradient(60deg, #3381FF 0%, #AC1782 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            file: "/public/docs/2021/pages/sponsor-us/terms-sponsor.md"
+      - type: "about-container"
+        children:
+          - title: "Pembatalan oleh Pihak 1 (Sponsor)"
+            children:
+            - type: "markdown"
+              text: "Apabila karena satu dan lain hal sponsor **melakukan pembatalan kerjasama yang telah ditandatangani,** baik dalam pembayaran uang muka/barang ataupun pelunasan yang telah dilakukan, maka panitia **tidak berkewajiban mengembalikan dana sponsor** yang telah diterimanya."
+            - type: "markdown"
+              text: "Apabila pembayaran **tidak dapat dilunasi** oleh pihak sponsor maka panitia berhak untuk melaksanakan pembuatan dan pemasangan media promosi seperti ukuran, jumlah, dan jenis **sesuai pembayaran yang telah diterima** oleh pihak panitia."
+          - title: "Pembatalan oleh Pihak 2 (Panitia)"
+            children:
+            - type: "markdown"
+              text: "Apabila karena satu dan lain hal seperti bencana alam (banjir, pandemic, kerusuhan, dsb) ataupun peraturan pemerintah sehingga acara tidak dapat dilaksanakan, maka pihak panitia dan pihak sponsor menanggung kerugiannya masing-masing secara eksklusif."
+      - type: "section-heading"
+        title: "Contact Person"
+        show_down_arrow: true
+      - type: "card-container"
+        items_per_row: 1
+        class_container: "margin-1"
+        class: "col-md-6 col-xl-4"
+        children:
+        - type: "card"
+          banner:
+            text: "Christophe Pratihata"
+            background: "-webkit-linear-gradient(60deg, #3381FF 0%, #6D3EB0 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            text: "+ **Email:** <a h\u0072ef=\"ma\u0069lto:chri\u0073prat\u0069hata\u0040gmai\u006c.com\" rel=\"_b\u006cank\">chr<i class=\"fst-norm\u0061l\">isprat</i>iha<b class=\"fw-normal\">ta&co\u006dmat;\u0067ma</b>il.com</a>\n+ **Whatsapp:** <a href=\"ht\u0074ps://\u0077a.me\u002f62\u0038381\u0031336\u003888\" rel=\"_blank\">083<\u0062 class=\"fw-normal\">8113</b\u003e36888</a>\n+ **LINE:** C<b class=\"fw-n\u006frmal\">hri\u0073di</b>epie"
+        - type: "card"
+          banner:
+            text: "Edria Tansyvania"
+            background: "-webkit-linear-gradient(60deg, #6D3EB0 0%, #AC1782 50%, #D87F65 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            text: "+ **Email:** <a hre\u0066=\"mai\u006cto:ed\u0072ia\u002etans\u0079vanias\u0040g\u006dail.\u0063om\" rel=\"_bla\u006ek\">edria&pe\u0072iod\u003btan<i class=\"fst-\u006eormal\">syva<\u0063 cla\u0073s=\"fw-normal\">nias@gm<\u002fb>ai\u006c&perio\u0064;</i>com</a>\n+ **Whatsapp:** <a href=\"ht\u0074ps://w\u0061.me\u002f628\u00396\u00377552\u003258\" rel=\"_\u0062lank\">08967<i class=\"fst\u002dnormal\">7552</\u0069>258</a>\n+ **LINE:** Tan<b class=\"fw-n\u006frmal\">syva\u006eias</b\u003e"
+        - type: "card"
+          banner:
+            text: "OFFICIAL ACCOUNTS"
+            background: "-webkit-linear-gradient(60deg, #D87F65 0%, #FFB500 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            text: "+ **Email:** <a hr\u0065f=\"mail\u0074o:c\u006fmputerun2.0\u0040gma\u0069l.com\" rel=\"_bla\u006ek\">c<cpan>omp</span>uter\u0075n<b class=\"fw-normal\">2.0@gm</b>ai<i class=\"fst-normal\">l.c</i>om</\u0061>\n+ **Instagram:** [@computerun](https://www.instagram.com/computerun/)\n+ **Twitter:** [@Computerun2021](https://twitter.com/Computerun2021)\n+ **LinkedIn:** https://www.linkedin.com/company/computerun-id/"

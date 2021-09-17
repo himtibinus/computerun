@@ -1,16 +1,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no viewport-fit=cover, shrink-to-fit=no">
 
+<?php $MAIN_TITLE = 'Computerun 2.0: EXECUTE' ?>
+
 @if (isset($title))
-  <title>{{$title}} - Computerun 2020: INSIGHT</title>
-  <meta name="title" content="{{$title}} - Computerun 2020: INSIGHT">
-  <meta property="og:title" content="{{$title}} - Computerun 2020: INSIGHT">
-  <meta property="twitter:title" content="{{$title}} - Computerun 2020: INSIGHT">
+  <title>{{$title}} - {{$MAIN_TITLE}}</title>
+  <meta name="title" content="{{$title}} - {{$MAIN_TITLE}}">
+  <meta property="og:title" content="{{$title}} - {{$MAIN_TITLE}}">
+  <meta property="twitter:title" content="{{$title}} - {{$MAIN_TITLE}}">
 @else
-  <title>Computerun 2020: INSIGHT</title>
-  <meta name="title" content="Computerun 2020: INSIGHT">
-  <meta property="og:title" content="Computerun 2020: INSIGHT">
-  <meta property="twitter:title" content="Computerun 2020: INSIGHT">
+  <title>{{$MAIN_TITLE}}</title>
+  <meta name="title" content="{{$MAIN_TITLE}}">
+  <meta property="og:title" content="{{$MAIN_TITLE}}">
+  <meta property="twitter:title" content="{{$MAIN_TITLE}}">
 @endif
 
 <!-- Primary Meta Tags -->
@@ -29,8 +31,7 @@
 <meta property="twitter:image" content="">
 
 <!-- CSS -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <link href="/css/index.css" type="text/css" rel="stylesheet"/>
 <link href="/fonts/fonts.css" type="text/css" rel="stylesheet"/>
 

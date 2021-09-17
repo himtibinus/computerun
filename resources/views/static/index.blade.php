@@ -20,8 +20,8 @@
                 <div class="post-tagline">
                     <h4 class="subtagline">Interconnecting Business-IT Through Technology</h4>
                     <div class="himsisfo-himti-container">
-                        <img src="/img/icons/HIMSISFO Logo.png">
-                        <img src="/img/icons/HIMTI Logo.png">
+                        @component ('components.imagecompat', ['src' => '/img/icons/common/mainlogo/himsisfo.png'])@endcomponent
+                        @component ('components.imagecompat', ['src' => '/img/icons/common/mainlogo/himti.png'])@endcomponent
                     </div>
                 </div>
             </div>
@@ -50,11 +50,11 @@
             <img class="container-clip" src="/img/backgrounds/5.png">
             <div class="icons-container items-2 after-container-clip">
                 <div>
-                    <img src="/img/icons/Compute with intelligent.png"><br>
+                    <img src="/img/icons/2020/Compute with intelligent.png"><br>
                     <span class="h3">Compute with intelligence</span>
                 </div>
                 <div>
-                    <img src="/img/icons/Run with innovation.png"><br>
+                    <img src="/img/icons/2020/Run with innovation.png"><br>
                     <span class="h3">Run with innovation</span>
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="card-container margin-1 content-divider">
                 <div class="card image-card">
                     <div>
-                        <img src="/img/icons/Events - Webinar.png">
+                        <img src="/img/icons/2020/Events - Webinar.png">
                     </div>
                     <div>
                         <span class="h4 font-800">Webinar</span>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="card image-card">
                     <div>
-                        <img src="/img/icons/Events - Business-IT Case.png">
+                        <img src="/img/icons/2020/Events - Business-IT Case.png">
                     </div>
                     <div>
                         <span class="h4 font-800">Business-IT Case</span>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="card image-card">
                     <div>
-                        <img src="/img/icons/Events - Mobile Apps.png">
+                        <img src="/img/icons/2020/Events - Mobile Apps.png">
                     </div>
                     <div>
                         <span class="h4 font-800">Mobile Apps</span>
@@ -99,7 +99,7 @@
             <div class="about-container margin-2 content-divider">
                 <div>
                     <h2 class="partial-underline custom">
-                        <img src="/img/icons/Events - Business-IT Case.png" class="about-image"><br>
+                        <img src="/img/icons/2020/Events - Business-IT Case.png" class="about-image"><br>
                         Business-IT Competitions.</span>
                         <div class="guide"><span>BusinessIT&#45;</span></div>
                     </h2>
@@ -108,7 +108,7 @@
                     <div class="card-container items-2">
                         <div class="card image-card">
                             <div>
-                                <img src="/img/icons/Events - Business-IT Case.png">
+                                <img src="/img/icons/2020/Events - Business-IT Case.png">
                             </div>
                             <div>
                                 <span class="h4 font-800">Business-IT Case</span>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="card image-card">
                             <div>
-                                <img src="/img/icons/Events - Mobile Apps.png">
+                                <img src="/img/icons/2020/Events - Mobile Apps.png">
                             </div>
                             <div>
                                 <span class="h4 font-800">Mobile Application Development</span>
@@ -134,7 +134,7 @@
                 </div>
                 <div>
                     <h2 class="partial-underline custom">
-                        <img src="/img/icons/Events - E-Sport.png" class="about-image"><br>
+                        <img src="/img/icons/2020/Events - E-Sport.png" class="about-image"><br>
                         Mini E-Sports Competitions.</span>
                         <div class="guide"><span>MiniESports-&nbsp;</span></div>
                     </h2>
@@ -143,7 +143,7 @@
                     <div class="card-container">
                         <div class="card image-card">
                             <div>
-                                <img src="/img/icons/Mobile Legends Logo.png">
+                                <img src="/img/icons/2020/Mobile Legends Logo.png">
                             </div>
                             <div>
                                 <span class="h4 font-800">Mobile Legends: Bang Bang</span>
@@ -153,7 +153,7 @@
                         </div>
                         <div class="card image-card">
                             <div>
-                                <img src="/img/icons/PUBG Mobile Logo.png">
+                                <img src="/img/icons/2020/PUBG Mobile Logo.png">
                             </div>
                             <div>
                                 <span class="h4 font-800">PUBG Mobile</span>
@@ -165,7 +165,7 @@
                         </div>
                         <div class="card image-card">
                             <div>
-                                <img src="/img/icons/Valorant Logo.png">
+                                <img src="/img/icons/2020/Valorant Logo.png">
                             </div>
                             <div>
                                 <span class="h4 font-800">Valorant</span>
@@ -177,7 +177,7 @@
                 </div>
                 <div>
                     <h2 class="partial-underline custom">
-                        <img src="/img/icons/Events - Webinar.png" class="about-image"><br>
+                        <img src="/img/icons/2020/Events - Webinar.png" class="about-image"><br>
                         Webinars.</span>
                         <div class="guide"><span>Webinars</span></div>
                     </h2>
@@ -186,7 +186,7 @@
                     <div class="card-container">
                         <div class="card image-card">
                             <div>
-                                <img src="/img/icons/Events - Webinar.png">
+                                <img src="/img/icons/2020/Events - Webinar.png">
                             </div>
                             <div>
                                 <span class="h5 font-800">How business can survive the Covid 19 Pandemic?</span><br>
@@ -195,7 +195,7 @@
                         </div>
                         <div class="card image-card">
                             <div>
-                                <img src="/img/icons/Events - Webinar.png">
+                                <img src="/img/icons/2020/Events - Webinar.png">
                             </div>
                             <div>
                                 <span class="h5 font-800">Preparing to be a Professional Workforce in Industry 4.0</span><br>
@@ -204,7 +204,7 @@
                         </div>
                         <div class="card image-card">
                             <div>
-                                <img src="/img/icons/Events - Webinar.png">
+                                <img src="/img/icons/2020/Events - Webinar.png">
                             </div>
                             <div>
                                 <span class="h5 font-800">How mobile apps can meet and even exceed user's expectation</span><br>
@@ -213,7 +213,7 @@
                         </div>
                         {{-- <div class="card image-card">
                             <div>
-                                <img src="/img/icons/Events - Webinar.png">
+                                <img src="/img/icons/2020/Events - Webinar.png">
                             </div>
                             <div>
                                 <span class="h5 font-800">Blockchain: The Next Digital Revolution in Every Industry</span>
