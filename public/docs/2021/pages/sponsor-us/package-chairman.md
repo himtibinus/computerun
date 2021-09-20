@@ -10,7 +10,7 @@
    + **Unggahan gambar/video promosi** di [akun-akun sosial media resmi **COMPUTERUN 2.0**]
    + **Penayangan video promosi** maks. 1,5 menit sepanjang acara berlangsung
    + **Company Presentation** maks. 10 menit sepanjang acara berlangsung
-3. **Ad Libs** nama produk atau perusahaan selama acara berlangsung
+3. ***Ad Libs*** nama produk atau perusahaan selama acara berlangsung
 4. Pihak panitia akan memastikan **tidak adanya pihak sponsor sejenis** yang ikut berpartisipasi dalam acara **COMPUTERUN 2.0**.
 
 [akun-akun sosial media resmi **COMPUTERUN 2.0**]: https://linktr.ee/computerun

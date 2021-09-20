@@ -122,7 +122,7 @@ children:
             foreground: "#000000"
           body:
             type: "markdown"
-            text: "Bentuk kerjasama lainnya dapat ditentukan sesuai dengan kesepakatan bersama dari perwakilan panitia dengan pihak sponsor. Hal ini dapat termasuk:\n+ Publikasi media (*Media Partner*)\n+ Pengadaan pembicara pada kegiatan Seminar maupun Workshop"
+            text: "Bentuk kerjasama lainnya dapat ditentukan sesuai dengan kesepakatan bersama dari perwakilan panitia dengan pihak sponsor. Hal ini dapat termasuk:\n+ Publikasi media (Media Partner)\n+ Pengadaan pembicara pada kegiatan Seminar maupun *Workshop*"
   - type: "container"
     level: 2
     children:
