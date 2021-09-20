@@ -19,7 +19,7 @@ children:
               - type: "markdown"
                 text: "Melalui kolaborasi antara **Himpunan Mahasiswa Sistem Informasi (HIMSISFO)** dan **Himpunan Mahasiswa Teknik Informatika (HIMTI)** sebagai salah satu upaya untuk mendukung visi **BINUS University**, maka kami akan mengadakan event **COMPUTERUN 2.0**. Dengan tujuan untuk menjadi wadah bagi para peserta termasuk mahasiswa **BINUS University** untuk mengembangkan diri dan kemampuannya dalam bidang bisnis dan teknologi yang akan bermanfaat dalam kemajuan teknologi informasi."
               - type: "markdown"
-                text: "Tahun ini, **COMPUTERUN 2.0**. mengambil tema **\"EXECUTE\"** yaitu **Experience Business Creativity Through Technology** yang akan diselenggarakan dalam skala internasional. Setelah di tahun pertama **COMPUTERUN** memfokuskan dalam pengembangan wawasan terkait teknologi informasi, maka pada tahun kedua ini kami fokus menjadi wadah bagi para peserta, baik nasional maupun internasional untuk mereka mendapatkan pengalaman dalam proses pengembangan sebuah inovasi dengan wawasan dan kreativitas mengenai teknologi informasi yang dimiliki sebagai faktor pendukung utama dalam proses menciptakan inovasi tersebut."
+                text: "Tahun ini, **COMPUTERUN 2.0**. mengambil tema **\"EXECUTE\"** yaitu ***Experience Business Creativity Through Technology*** yang akan diselenggarakan dalam skala internasional. Setelah di tahun pertama **COMPUTERUN** memfokuskan dalam pengembangan wawasan terkait teknologi informasi, maka pada tahun kedua ini kami fokus menjadi wadah bagi para peserta, baik nasional maupun internasional untuk mereka mendapatkan pengalaman dalam proses pengembangan sebuah inovasi dengan wawasan dan kreativitas mengenai teknologi informasi yang dimiliki sebagai faktor pendukung utama dalam proses menciptakan inovasi tersebut."
           - title: "Tujuan Acara"
             children:
               - type: "card-container"
@@ -152,7 +152,7 @@ children:
           - title: "Pembatalan oleh Pihak 2 (Panitia)"
             children:
             - type: "markdown"
-              text: "Apabila karena satu dan lain hal seperti bencana alam (banjir, pandemic, kerusuhan, dsb) ataupun peraturan pemerintah sehingga acara tidak dapat dilaksanakan, maka pihak panitia dan pihak sponsor menanggung kerugiannya masing-masing secara eksklusif."
+              text: "Apabila karena satu dan lain hal seperti bencana alam (banjir, pandemi, kerusuhan, dsb) ataupun peraturan pemerintah sehingga acara tidak dapat dilaksanakan, maka pihak panitia dan pihak sponsor menanggung kerugiannya masing-masing secara eksklusif."
       - type: "section-heading"
         title: "Contact Person"
         show_down_arrow: true
