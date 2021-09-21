@@ -6,6 +6,13 @@ title: "Sponsorship Proposal"
 children:
   - type: "container"
     level: 2
+    show_decorations:
+      - topleftcircle
+      - box1
+      - box2
+      - box3
+      - circle1
+      - circle2
     children:
       - type: "section-heading"
         kicker: "COMPUTERUN 2.0: EXECUTE"
@@ -15,9 +22,9 @@ children:
           - title: "Pendahuluan"
             children:
               - type: "markdown"
-                text: "Visi **BINUS University** adalah ***A World Class University in continuous pursuit of innovation and enterprise***, artinya Universitas Bina Nusantara menerapkan prinsip kepada mahasiswanya untuk dapat mengembangkan diri dalam membuat terobosan baru maupun pengembangan ilmu pengetahuan yang akan menghasilkan contoh-contoh terbaik yang kualitasnya dapat diterima di lingkungan internasional baik dalam proses pembelajaran, penelitian, dan pengabdian masyarakat. Selain itu, inovasi-inovasi tersebut diharapkan dapat menghasilkan perubahan positif dan mendukung seorang individu maupun organisasi agar dapat berkontribusi pada lingkup internasional."
+                text: "Visi **BINUS *University*** adalah ***A World Class University in continuous pursuit of innovation and enterprise***, artinya Universitas Bina Nusantara menerapkan prinsip kepada mahasiswanya untuk dapat mengembangkan diri dalam membuat terobosan baru maupun pengembangan ilmu pengetahuan yang akan menghasilkan contoh-contoh terbaik yang kualitasnya dapat diterima di lingkungan internasional baik dalam proses pembelajaran, penelitian, dan pengabdian masyarakat. Selain itu, inovasi-inovasi tersebut diharapkan dapat menghasilkan perubahan positif dan mendukung seorang individu maupun organisasi agar dapat berkontribusi pada lingkup internasional."
               - type: "markdown"
-                text: "Melalui kolaborasi antara **Himpunan Mahasiswa Sistem Informasi (HIMSISFO)** dan **Himpunan Mahasiswa Teknik Informatika (HIMTI)** sebagai salah satu upaya untuk mendukung visi **BINUS University**, maka kami akan mengadakan event **COMPUTERUN 2.0**. Dengan tujuan untuk menjadi wadah bagi para peserta termasuk mahasiswa **BINUS University** untuk mengembangkan diri dan kemampuannya dalam bidang bisnis dan teknologi yang akan bermanfaat dalam kemajuan teknologi informasi."
+                text: "Melalui kolaborasi antara **Himpunan Mahasiswa Sistem Informasi (HIMSISFO)** dan **Himpunan Mahasiswa Teknik Informatika (HIMTI)** sebagai salah satu upaya untuk mendukung visi **BINUS *University***, maka kami akan mengadakan event **COMPUTERUN 2.0**. Dengan tujuan untuk menjadi wadah bagi para peserta termasuk mahasiswa **BINUS *University*** untuk mengembangkan diri dan kemampuannya dalam bidang bisnis dan teknologi yang akan bermanfaat dalam kemajuan teknologi informasi."
               - type: "markdown"
                 text: "Tahun ini, **COMPUTERUN 2.0**. mengambil tema **\"EXECUTE\"** yaitu ***Experience Business Creativity Through Technology*** yang akan diselenggarakan dalam skala internasional. Setelah di tahun pertama **COMPUTERUN** memfokuskan dalam pengembangan wawasan terkait teknologi informasi, maka pada tahun kedua ini kami fokus menjadi wadah bagi para peserta, baik nasional maupun internasional untuk mereka mendapatkan pengalaman dalam proses pengembangan sebuah inovasi dengan wawasan dan kreativitas mengenai teknologi informasi yang dimiliki sebagai faktor pendukung utama dalam proses menciptakan inovasi tersebut."
           - title: "Tujuan Acara"
@@ -32,7 +39,7 @@ children:
                     has_alternative_formats: false
                   body:
                     type: "markdown"
-                    text: "Memperkenalkan **BINUS University** dan organisasi Himpunan Mahasiswa Jurusan yaitu **HIMSISFO** dan **HIMTI** kepada masyarakat luas baik nasional maupun internasional."
+                    text: "Memperkenalkan **BINUS *University*** dan organisasi Himpunan Mahasiswa Jurusan yaitu **HIMSISFO** dan **HIMTI** kepada masyarakat luas baik nasional maupun internasional."
                 - type: "card"
                   cover_image:
                     type: "imagecompat"
@@ -122,9 +129,13 @@ children:
             foreground: "#000000"
           body:
             type: "markdown"
-            text: "Bentuk kerjasama lainnya dapat ditentukan sesuai dengan kesepakatan bersama dari perwakilan panitia dengan pihak sponsor. Hal ini dapat termasuk:\n+ Publikasi media (Media Partner)\n+ Pengadaan pembicara pada kegiatan Seminar maupun *Workshop*"
+            text: "Bentuk kerjasama lainnya dapat ditentukan sesuai dengan kesepakatan bersama dari perwakilan panitia dengan pihak sponsor."
   - type: "container"
     level: 2
+    show_decorations:
+      - ball2
+      - box2
+      - circle4
     children:
       - type: "section-heading"
         title: "Ketentuan Kerjasama"
