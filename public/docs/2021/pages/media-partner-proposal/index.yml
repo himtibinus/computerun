@@ -2,10 +2,10 @@
   version: 1.0
 type: "page"
 kicker: "COMPUTERUN 2.0: EXECUTE"
-title: "Sponsorship Proposal"
+title: "Media Partner Proposal"
 canonical_url: "/media-partner-proposal"
 related:
-  - media-partner-proposal
+  - sponsor-us
 children:
   - type: "container"
     level: 2
@@ -19,7 +19,7 @@ children:
     children:
       - type: "section-heading"
         kicker: "COMPUTERUN 2.0: EXECUTE"
-        title: "Sponsorship Proposal"
+        title: "Media Partner Proposal"
       - type: "about-container"
         children:
           - title: "Pendahuluan"
@@ -67,72 +67,11 @@ children:
           - title: "Manfaat Acara"
             children:
               - type: "markdown"
-                file: "/docs/2021/pages/sponsor-us/benefits.md"
+                file: "/docs/2021/pages/media-partner-proposal/benefits.md"
           - title: "Bentuk Kegiatan"
             children:
               - type: "markdown"
-                file: "/docs/2021/pages/sponsor-us/events.md"
-  - type: "container"
-    level: 1
-    children:
-      - type: "section-heading"
-        title: "Paket Sponsorship"
-        show_down_arrow: true
-      - type: "markdown"
-        text: "<p class=\"text-center\"><b>Catatan:</b> Pihak sponsor berhak mendapatkan dokumentasi acara setelah semua kegiatan acara telah selesai dilaksanakan.</p>"
-      - type: "card-container"
-        items_per_row: 1
-        class_container: "margin-1"
-        class: "col-md-6 col-xl-4"
-        children:
-        - type: "card"
-          banner:
-            text: "CHAIRMAN"
-            background: "-webkit-linear-gradient(60deg, #3381FF 0%, #AC1782 100%)"
-            foreground: "#ffffff"
-          body:
-            type: "markdown"
-            file: "/docs/2021/pages/sponsor-us/package-chairman.md"
-        - type: "card"
-          banner:
-            text: "CEO"
-            background: "-webkit-linear-gradient(60deg, #AC1782 0%, #FFB500 100%)"
-            foreground: "#ffffff"
-          body:
-            type: "markdown"
-            file: "/docs/2021/pages/sponsor-us/package-ceo.md"
-        - type: "card"
-          banner:
-            text: "GM"
-            background: "#AC1782"
-            foreground: "#ffffff"
-          body:
-            type: "markdown"
-            file: "/docs/2021/pages/sponsor-us/package-gm.md"
-        - type: "card"
-          banner:
-            text: "STAFF"
-            background: "#3381FF"
-            foreground: "#ffffff"
-          body:
-            type: "markdown"
-            file: "/docs/2021/pages/sponsor-us/package-staff.md"
-        - type: "card"
-          banner:
-            text: "SPONSOR LEPAS"
-            background: "#6d3eb0"
-            foreground: "#ffffff"
-          body:
-            type: "markdown"
-            text: "Sponsor lepas adalah pihak sponsor yang melakukan perjanjian kerjasama dengan panitia tanpa mengambil bentuk-bentuk yang telah ditentukan oleh pihak panitia sama seperti paket-paket promosi yang tertera dengan ketentuan hanya mengubah sedikit paket yang sudah tersedia dengan keputusan bersama antara pihak 1 dan pihak 2."
-        - type: "card"
-          banner:
-            text: "KERJASAMA LAIN"
-            background: "#ffe678"
-            foreground: "#000000"
-          body:
-            type: "markdown"
-            text: "Bentuk kerjasama lainnya dapat ditentukan sesuai dengan kesepakatan bersama dari perwakilan panitia dengan pihak sponsor."
+                file: "/docs/2021/pages/media-partner-proposal/events.md"
   - type: "container"
     level: 2
     show_decorations:
@@ -141,32 +80,30 @@ children:
       - circle4
     children:
       - type: "section-heading"
-        title: "Ketentuan Kerjasama"
+        title: "Ketentuan Media Partner"
         show_down_arrow: true
       - type: "card-container"
-        items_per_row: 1
+        items_per_row: 2
         class_container: "margin-2"
         children:
         - type: "card"
           banner:
-            text: "KETENTUAN WAJIB"
+            text: "KETENTUAN KERJASAMA"
             background: "-webkit-linear-gradient(60deg, #3381FF 0%, #AC1782 100%)"
             foreground: "#ffffff"
           body:
             type: "markdown"
-            file: "/docs/2021/pages/sponsor-us/terms-sponsor.md"
-      - type: "about-container"
-        children:
-          - title: "Pembatalan oleh Pihak 1 (Sponsor)"
-            children:
-            - type: "markdown"
-              text: "Apabila karena satu dan lain hal sponsor **melakukan pembatalan kerjasama yang telah ditandatangani,** baik dalam pembayaran uang muka/barang ataupun pelunasan yang telah dilakukan, maka panitia **tidak berkewajiban mengembalikan dana sponsor** yang telah diterimanya."
-            - type: "markdown"
-              text: "Apabila pembayaran **tidak dapat dilunasi** oleh pihak sponsor maka panitia berhak untuk melaksanakan pembuatan dan pemasangan media promosi seperti ukuran, jumlah, dan jenis **sesuai pembayaran yang telah diterima** oleh pihak panitia."
-          - title: "Pembatalan oleh Pihak 2 (Panitia)"
-            children:
-            - type: "markdown"
-              text: "Apabila karena satu dan lain hal seperti bencana alam (banjir, pandemi, kerusuhan, dsb) ataupun peraturan pemerintah sehingga acara tidak dapat dilaksanakan, maka pihak panitia dan pihak sponsor menanggung kerugiannya masing-masing secara eksklusif."
+            file: "/docs/2021/pages/media-partner-proposal/terms-partner.md"
+        - type: "card"
+          banner:
+            text: "KONTRAPRESTASI"
+            background: "-webkit-linear-gradient(60deg, #AC1782 0%, #FFB500 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "markdown"
+            file: "/docs/2021/pages/media-partner-proposal/terms-committee.md"
+      - type: "markdown"
+        text: "<p class=\"text-center\"><b>Catatan:</b> Walaupun kami telah menawarkan bentuk media partnership seperti yang tertera di atas, tidak menutup kemungkinan akan adanya bentuk media partnership lain melalui hasil negosiasi.</p>"
       - type: "section-heading"
         title: "Contact Person"
         show_down_arrow: true
