@@ -9,6 +9,30 @@
         @endcomponent
     </head>
     <body class="is-bootstrap" style="overflow-x: hidden">
+        <!-- Login Modal -->
+        <div class="modal fade" id="loginmodal" tabindex="-1" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div>
+                        <img onclick="closeModal()" class="float-end" src="/public/assets/images/home/modal-x.svg" alt="">
+                    </div>
+                    <h2 class="text-center">Welcome, Guest</h2>
+                    <div class="container d-flex d-flex flex-column justify-content-center align-items-center">
+                        <input class="text" id="email" type="email" name="email" placeholder="E-Mail">
+                        <input class="text" id="password" type="password" name="password" placeholder="Password">
+                        <div class="align-self-start">
+                            <input class="checkbox" id="rememberme" type="checkbox" name="rememberme">
+                            &nbsp; Remember me
+                        </div>
+                        <button type="submit">Login</button>
+                        <span>
+                            <a href="">Forgot Your Password?</a>
+                            <a href="">Create Account</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
         @if(isset($children))
             @foreach($children as $widget)
                 @component('functions.parse-widget', ['widget' => $widget])
