@@ -64,11 +64,11 @@ children:
           - title: "Manfaat Acara"
             children:
               - type: "markdown"
-                file: "/public/docs/2021/pages/sponsor-us/benefits.md"
+                file: "/docs/2021/pages/sponsor-us/benefits.md"
           - title: "Bentuk Kegiatan"
             children:
               - type: "markdown"
-                file: "/public/docs/2021/pages/sponsor-us/events.md"
+                file: "/docs/2021/pages/sponsor-us/events.md"
   - type: "container"
     level: 1
     children:
@@ -89,7 +89,7 @@ children:
             foreground: "#ffffff"
           body:
             type: "markdown"
-            file: "/public/docs/2021/pages/sponsor-us/package-chairman.md"
+            file: "/docs/2021/pages/sponsor-us/package-chairman.md"
         - type: "card"
           banner:
             text: "CEO"
@@ -97,7 +97,7 @@ children:
             foreground: "#ffffff"
           body:
             type: "markdown"
-            file: "/public/docs/2021/pages/sponsor-us/package-ceo.md"
+            file: "/docs/2021/pages/sponsor-us/package-ceo.md"
         - type: "card"
           banner:
             text: "GM"
@@ -105,7 +105,7 @@ children:
             foreground: "#ffffff"
           body:
             type: "markdown"
-            file: "/public/docs/2021/pages/sponsor-us/package-gm.md"
+            file: "/docs/2021/pages/sponsor-us/package-gm.md"
         - type: "card"
           banner:
             text: "STAFF"
@@ -113,7 +113,7 @@ children:
             foreground: "#ffffff"
           body:
             type: "markdown"
-            file: "/public/docs/2021/pages/sponsor-us/package-staff.md"
+            file: "/docs/2021/pages/sponsor-us/package-staff.md"
         - type: "card"
           banner:
             text: "SPONSOR LEPAS"
@@ -151,7 +151,7 @@ children:
             foreground: "#ffffff"
           body:
             type: "markdown"
-            file: "/public/docs/2021/pages/sponsor-us/terms-sponsor.md"
+            file: "/docs/2021/pages/sponsor-us/terms-sponsor.md"
       - type: "about-container"
         children:
           - title: "Pembatalan oleh Pihak 1 (Sponsor)"
