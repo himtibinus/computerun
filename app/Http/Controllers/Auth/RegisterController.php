@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -57,12 +58,12 @@ class RegisterController extends Controller
             'phone' => ['required', 'string'],
             'line' => ['nullable', 'string'],
             'whatsapp' => ['nullable', 'string'],
-            'id_mobile_legends' => ['nullable', 'string'],
-            'id_pubg_mobile' => ['nullable', 'string'],
-            'id_valorant' => ['nullable', 'string'],
             'university_id' => ['required', 'numeric'],
             'nim' => ['nullable', 'numeric'],
-            'new_university' => ['nullable', 'string']
+            'binus_regional' => ['nullable', 'string'],
+            'major_name' => ['nullable', 'string'],
+            'new_university' => ['nullable', 'string'],
+            'student_id_card' => ['nullable', 'image']
         ]);
     }
 
@@ -70,30 +71,55 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Models\User
      */
     protected function create(array $data)
     {
         if ($data['new_university'] != ""){
             $data['university_id'] = DB::table('universities')->insertGetId(['name' => $data['new_university']]);
         }
-        $binusian = ($data['university_id'] == 4) ? 1 : 0;
 
         if ($data['university_id'] == 2 || $data['university_id'] == 3) $data['university_id'] = 1;
 
-        return User::create([
+        $new_user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'phone' => $data['phone'],
-            'line' => $data['line'],
-            'whatsapp' => $data['whatsapp'],
-            'id_mobile_legends' => $data['id_mobile_legends'],
-            'id_pubg_mobile' => $data['id_pubg_mobile'],
-            'id_valorant' => $data['id_valorant'],
-            'nim' => $data['nim'],
-            'university_id' => $data['university_id'],
-            'binusian' => $binusian
         ]);
+
+        $user_properties = DB::table('user_properties');
+
+        // Save phone, LINE, WhatsApp information
+        $user_properties->insert(['user_id' => $new_user->id, 'field_id' => 'contacts.phone', 'value' => $data['phone']]);
+        if ($data['line']) $user_properties->insert(['user_id' => $new_user->id, 'field_id' => 'contacts.line', 'value' => $data['line']]);
+        if ($data['whatsapp']) $user_properties->insert(['user_id' => $new_user->id, 'field_id' => 'contacts.whatsapp', 'value' => $data['whatsapp']]);
+
+        // Save BINUSIAN status
+        if ($data['university_id'] == 4){
+            $user_properties->insert(['user_id' => $new_user->id, 'field_id' => 'binusian.regional', 'value' => $data['binus_regional']]);
+            $user_properties->insert(['user_id' => $new_user->id, 'field_id' => 'binusian.year', 'value' => '20' . substr($data['nim'], 0, 2)]);
+        }
+
+        // Save major / study program
+        if ($data['nim']) $user_properties->insert(['user_id' => $new_user->id, 'field_id' => 'university.nim', 'value' => $data['nim']]);
+        if ($data['major']) $user_properties->insert(['user_id' => $new_user->id, 'field_id' => 'university.major', 'value' => $data['major']]);
+
+        // Save Student ID Card
+        if (request()->hasFile('student_id_card')){
+            // Copy and register new upload
+            $path = request()->file('student_id_card')->store('verification');
+
+            $fileId = DB::table('files')->insertGetId([
+                "name" => $path
+            ]);
+
+            DB::table('kyc')->insert([
+                'ticket_id' => $new_user->id,
+                'file_id' => $fileId,
+                'created_at' => now()
+            ]);
+        }
+
+        return $new_user;
     }
 }

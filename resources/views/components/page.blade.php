@@ -1,6 +1,6 @@
 <?php
-    $title = (strlen($title) > 0) ? $title : 'Untitled Page';
-    $kicker = (strlen($kicker) > 0) ? $kicker : null;
+    $title = (isset($title) && strlen($title) > 0) ? $title : 'Untitled Page';
+    $kicker = (isset($kicker) && strlen($kicker ?? '') > 0) ? $kicker : null;
 ?>
 <!DOCTYPE html>
 <html>

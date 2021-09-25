@@ -1,0 +1,129 @@
+"@manifest":
+  version: 1.0
+type: "page"
+title: "Home"
+description: "Click here to read our Media Partner Proposal"
+canonical_url: "/"
+children:
+  - type: "computerun-hero"
+  - type: "container"
+    level: 1
+    children:
+      - type: "card-container"
+        class_container: "margin-2"
+        items_per_row: 2
+        children:
+          - type: "card"
+            body:
+              type: "markdown"
+              text: "+ **Email:** <a h\u0072ef=\"mai\u006cto:nat\u0086joir\u0040gmai\u006c.com\" rel=\"_b\u006cank\">na<i class=\"fst-norm\u0061l\">th<b class=\"fw-normal\">jo</b>i</i>r&co\u006dmat;\u0067mail.com</a>\n+ **Whatsapp:** <a href=\"ht\u0074ps://\u0077a.me\u002f62\u00385156\u003973\u003524\" rel=\"_blank\">08\u00351<\u0062 class=\"fw-normal\">56\u003973</b\u003e\u003524</a>\n+ **LINE:** <b class=\"fw-n\u006frmal\">n\u0061joi</b>r"
+          - type: "markdown"
+            text: "# About Us\n\n**COMPUTERUN** is a collaboration event between the **[Information Systems Student Association (HIMSISFO)](https://student-activity.binus.ac.id/himsisfo)** and the **[Informatics Students Association (HIMTI)](https://himti.or.id)** of **[BINUS University](https://binus.ac.id)**, as one of the efforts to supoprting the university to become **A World Class University in continuous pursuit of innovation and enterprise.**\n\nThis year, **COMPUTERUN 2.0** takes the theme **“EXECUTE”** which stands for **Experience Business Creativity Through Technology** which will be focused on as a forum for participants to gain experience of developing innovation supported by information technology, insight, and creativity.\n\n**COMPUTERUN 2.0** will be one of our first event to be held **internationally**, so let's join and connect with thousands of aspiring students worldwide!"
+      - type: "section-heading"
+        title: "Our Events"
+        show_down_arrow: true
+      - type: "about-container"
+        children:
+          - title: "Ceremonies"
+            children:
+              - type: "card-container"
+                items_per_row: 2
+                children:
+                  - type: "card"
+                    title: "Opening Ceremony + Virtual Run"
+                    body:
+                      type: "markdown"
+                      text: "AAA"
+                  - type: "card"
+                    title: "Closing Ceremony (Invitational)"
+                    body:
+                      type: "markdown"
+                      text: "AAA"
+          - title: "Business-IT Competitions"
+            children:
+              - type: "card-container"
+                items_per_row: 2
+                children:
+                  - type: "card"
+                    title: "Business-IT Case"
+                    body:
+                      type: "markdown"
+                      text: "AAA"
+                  - type: "card"
+                    title: "Web Design Competition"
+                    body:
+                      type: "markdown"
+                      text: "AAA"
+          - title: "Workshop"
+            children:
+              - type: "card-container"
+                items_per_row: 1
+                children:
+                  - type: "card"
+                    title: "Increasing User Satisfaction based on User Habits"
+                    body:
+                      type: "markdown"
+                      text: "AAA"
+          - title: "Seminar"
+            children:
+              - type: "card-container"
+                items_per_row: 2
+                children:
+                  - type: "card"
+                    title: "Creativity in Building and Managing Business during Pandemic"
+                    body:
+                      type: "markdown"
+                      text: "AAA"
+                  - type: "card"
+                    title: "Implementation of UI/UX in Building A Digital Business"
+                    body:
+                      type: "markdown"
+                      text: "AAA"
+  - type: "container"
+    level: 2
+    children:
+      - type: "section-heading"
+        title: "How to Register"
+        show_down_arrow: true
+      - type: "card-container"
+        items_per_row: 3
+        class_container: "margin-1"
+        children:
+        - type: "card"
+          banner:
+            text: "1. Create Account"
+            background: "-webkit-linear-gradient(60deg, #3381FF 0%, #6D3EB0 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "widgetgroup"
+            tag: "div"
+            class: "text-center"
+            children:
+              - type: "markdown"
+                text: "First thing first, create a new **COMPUTERUN 2.0** account by clicking on this button."
+              - type: "markdown"
+                text: "<a href=\"/register\" class=\"button button-gradient\">Create Account</a>"
+        - type: "card"
+          banner:
+            text: "2. Register on Events"
+            background: "-webkit-linear-gradient(60deg, #6D3EB0 0%, #AC1782 50%, #D87F65 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "widgetgroup"
+            tag: "div"
+            class: "text-center"
+            children:
+              - type: "markdown"
+                text: "After signed in with your freshly-new **COMPUTERUN 2.0** account, click that shiny **REGISTER NOW** buttons on events you'd like to participate. Some events may require you to fill in additional information, so please check them out first."
+        - type: "card"
+          banner:
+            text: "3. Join Our Group"
+            background: "-webkit-linear-gradient(60deg, #D87F65 0%, #FFB500 100%)"
+            foreground: "#ffffff"
+          body:
+            type: "widgetgroup"
+            tag: "div"
+            class: "text-center"
+            children:
+              - type: "markdown"
+                text: "...and finally, don't forget to join our official groups to receive important information regarding your events, competitions, and attendance."
