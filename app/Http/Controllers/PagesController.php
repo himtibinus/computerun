@@ -38,7 +38,8 @@ class PagesController extends Controller
      * @param  int  $id
      * @return array
      */
-    public static $plaintextProperties = ['kicker', 'title', 'description', 'text'];
+    public static $fullPlaintextProperties = ['kicker', 'title'];
+    public static $plaintextProperties = ['description', 'text'];
     public static function getExcerptFromWidget($widget, $recursive, $limit)
     {
         $result = '';
@@ -50,6 +51,11 @@ class PagesController extends Controller
         }
 
         foreach(PagesController::$plaintextProperties as $property) if (isset($widget[$property])){
+            $result .= $widget[$property] . ' ';
+            $limit -= strlen($widget[$property]) + 1;
+        }
+
+        if ($recursive == true) foreach(PagesController::$fullPlaintextProperties as $property) if (isset($widget[$property])){
             $result .= $widget[$property] . ' ';
             $limit -= strlen($widget[$property]) + 1;
         }

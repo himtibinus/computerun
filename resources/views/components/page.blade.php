@@ -9,6 +9,8 @@
         @endcomponent
     </head>
     <body class="is-bootstrap" style="overflow-x: hidden">
+        @component('components.navbar')
+        @endcomponent
         <!-- Login Modal -->
         <div class="modal fade" id="loginmodal" tabindex="-1" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -47,13 +49,14 @@
                     @foreach($related as $r)
                         <?php
                             $r_content = App\Http\Controllers\PagesController::parseYamlFromPage($r);
+                            $excerpt = App\Http\Controllers\PagesController::getExcerptFromWidget($r_content, false, 250)
                         ?>
                         @if($r_content !== false && isset($r_content['@manifest']))
                             <div class="col-12 col-sm-6 col-md-4">
                                 <a class="card my-3 discreet" href="{{ $r_content['canonical_url'] ?? ('/info/' . $r) }}">
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold">{{ $r_content['title'] }}</h5>
-                                        <p>{{ App\Http\Controllers\PagesController::getExcerptFromWidget($r_content, true, 250) }}</p>
+                                        <p class="card-text">{{ $excerpt ?? 'No Description' }}</p>
                                     </div>
                                 </a>
                             </div>

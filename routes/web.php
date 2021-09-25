@@ -15,13 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('static.index');
+    return (new App\Http\Controllers\PagesController())->show('home');
+//     return view('static.index');
 });
 // Route::get('/uses', function () {
 //     return view('static.uses');
 // });
 Route::get('/sponsor-us', function () {
     return (new App\Http\Controllers\PagesController())->show('sponsor-us');
+});
+Route::get('/media-partner-proposal', function () {
+    return (new App\Http\Controllers\PagesController())->show('media-partner-proposal');
 });
 Route::get('/event-template', function () {
     return view('static.event-template');

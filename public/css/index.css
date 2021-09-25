@@ -136,10 +136,11 @@ body:not(.is-bootstrap) .container-clip.for-footer{
 }
 
 .navbar-display {
-    padding: 3rem 3rem 0 3rem;
+    background-color: #ffb500;
+    /*padding: 3rem 3rem 0 3rem;
     display: flex;
     flex-direction: row;
-    align-items: center !important;
+    align-items: center !important;*/
 }
 
 .navbar-left {

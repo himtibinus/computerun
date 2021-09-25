@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-display navbar-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="./assets/C Logo 2021.png" alt="" style="width: 4vw; min-width: 80px;">
+        <a class="navbar-brand discreet" href="#">
+            <img src="/img/icons/2021/mainlogo/c-transparent.png" alt="" style="width: 4vw; min-width: 80px;">
         </a>
         <button
             class="navbar-toggler"
@@ -45,15 +45,15 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <div class="input-group">
+                <div class="input-group d-none">
                     <span class="input-group-text h3 mb-0" id="basic-addon1"><i class="bi bi-search"></i></span>
                     <input type="text" class="form-control h3 mb-0" placeholder="Search..." aria-label="Username" aria-describedby="basic-addon1">
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="container">
-                <p class="my-2"><b>Tip:</b> Use <kbd>/</kbd> or <kbd>Ctrl+K</kbd> to trigger this awesome menu!</p>
-                <div id="commandpallete-result">
+                <p class="my-2 d-none"><b>Tip:</b> Use <kbd>/</kbd> or <kbd>Ctrl+K</kbd> to trigger this awesome menu!</p>
+                <div id="commandpallete-result" class="d-none">
                     <h4 class="full-underline my-3"><i class="bi bi-search" aria-hidden="true"></i> Search Results</h4>
                     <div class="list-group">
                         <a href="#" class="discreet list-group-item list-group-item-action"><i class="bi bi-calendar-event"></i> Opening Ceremony</a>

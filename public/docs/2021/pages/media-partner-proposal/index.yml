@@ -3,6 +3,7 @@
 type: "page"
 kicker: "COMPUTERUN 2.0: EXECUTE"
 title: "Media Partner Proposal"
+description: "Click here to read our Media Partner Proposal"
 canonical_url: "/media-partner-proposal"
 related:
   - sponsor-us
@@ -114,20 +115,12 @@ children:
         children:
         - type: "card"
           banner:
-            text: "Christophe Pratihata"
+            text: "Nathania Joyce Irene"
             background: "-webkit-linear-gradient(60deg, #3381FF 0%, #6D3EB0 100%)"
             foreground: "#ffffff"
           body:
             type: "markdown"
-            text: "+ **Email:** <a h\u0072ef=\"ma\u0069lto:chri\u0073prat\u0069hata\u0040gmai\u006c.com\" rel=\"_b\u006cank\">chr<i class=\"fst-norm\u0061l\">isprat</i>iha<b class=\"fw-normal\">ta&co\u006dmat;\u0067ma</b>il.com</a>\n+ **Whatsapp:** <a href=\"ht\u0074ps://\u0077a.me\u002f62\u0038381\u0031336\u003888\" rel=\"_blank\">083<\u0062 class=\"fw-normal\">8113</b\u003e36888</a>\n+ **LINE:** C<b class=\"fw-n\u006frmal\">hri\u0073di</b>epie"
-        - type: "card"
-          banner:
-            text: "Edria Tansyvania"
-            background: "-webkit-linear-gradient(60deg, #6D3EB0 0%, #AC1782 50%, #D87F65 100%)"
-            foreground: "#ffffff"
-          body:
-            type: "markdown"
-            text: "+ **Email:** <a hre\u0066=\"mai\u006cto:ed\u0072ia\u002etans\u0079vanias\u0040g\u006dail.\u0063om\" rel=\"_bla\u006ek\">edria&pe\u0072iod\u003btan<i class=\"fst-\u006eormal\">syva<\u0063 cla\u0073s=\"fw-normal\">nias@gm<\u002fb>ai\u006c&perio\u0064;</i>com</a>\n+ **Whatsapp:** <a href=\"ht\u0074ps://w\u0061.me\u002f628\u00396\u00377552\u003258\" rel=\"_\u0062lank\">08967<i class=\"fst\u002dnormal\">7552</\u0069>258</a>\n+ **LINE:** Tan<b class=\"fw-n\u006frmal\">syva\u006eias</b\u003e"
+            text: "+ **Email:** <a h\u0072ef=\"mai\u006cto:nat\u0086joir\u0040gmai\u006c.com\" rel=\"_b\u006cank\">na<i class=\"fst-norm\u0061l\">th<b class=\"fw-normal\">jo</b>i</i>r&co\u006dmat;\u0067mail.com</a>\n+ **Whatsapp:** <a href=\"ht\u0074ps://\u0077a.me\u002f62\u00385156\u003973\u003524\" rel=\"_blank\">08\u00351<\u0062 class=\"fw-normal\">56\u003973</b\u003e\u003524</a>\n+ **LINE:** <b class=\"fw-n\u006frmal\">n\u0061joi</b>r"
         - type: "card"
           banner:
             text: "OFFICIAL ACCOUNTS"
