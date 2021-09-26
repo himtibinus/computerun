@@ -1,5 +1,6 @@
 <footer class="footer">
-    <div class="row justify-content-md-center mb-5">
+    <h1 class="text-center font-airstrike">Contact Us</h1>
+    <div class="row justify-content-md-center my-5">
         @component('components.social-media-icon', ['name' => 'Instagram', 'handle' => '@computerun', 'href' => 'https://instagram.com/computerun']) @endcomponent
         @component('components.social-media-icon', ['name' => 'Facebook', 'handle' => '@computerun', 'href' => 'https://www.facebook.com/Computerun-109395854669492']) @endcomponent
         @component('components.social-media-icon', ['name' => 'Twitter', 'handle' => '@Computerun2021', 'href' => 'https://twitter.com/Computerun2021']) @endcomponent

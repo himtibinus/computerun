@@ -24,9 +24,9 @@
     @component("components.navbar")
     @endcomponent
     @if (app('request')->path() == 'home' && Auth::check())
-    <div class="container-2 content-top bg-home">
+    <div class="container-2 content-top bg-home pb-0">
     @else
-    <div class="container-2 content-top bg-event">
+    <div class="container-2 content-top bg-event pb-0">
     @endif
         @if (app('request')->path() == 'home')
             @component("components.navbar-mobile")
@@ -202,6 +202,8 @@
                 @csrf
             </form>
         </div>
+        @component('components.imagecompat', ['src' => '/img/accessories/2021/wave-end-1.svg', 'class' => 'w-100 p-0 mt-5 mb-0'])
+        @endcomponent
     </div>
     @component('components.footer')
     @endcomponent
