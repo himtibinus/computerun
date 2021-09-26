@@ -41,7 +41,7 @@
 //        dd($tickets);
     ?>
     <!-- Your Tickets -->
-    <h1 class="full-underline {{session('status') ? 'content-divider' : ''}}">Your Tickets</h1>
+    <h1 class="text-center {{ session('status') ? 'content-divider' : '' }} font-airstrike gradient-text">Your Tickets</h1>
     @if (count($tickets) > 0)
         <table class="table margin-0 content-divider-short">
             <thead>
@@ -125,21 +125,21 @@
             <p class="h5">You can register to events via the <b>Register</b> button.</p>
         </div>
     @endif
-    <div class="text-center">
+    {{-- <div class="text-center">
         <a class="btn button button-gradient" data-toggle   ="modal" href="#" data-target="#register" role="button">Register</a>
-    </div>
+    </div> --}}
 </div>
 
 <!-- Profile Settings Form -->
-<form class="modal" tabindex="-1" role="dialog" id="accountSettings" action="/changeaccountdetails" method="POST">
+<form class="modal fade" tabindex="-1" role="dialog" id="accountSettings" action="/changeaccountdetails" method="POST">
     @csrf
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Profile Settings</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+      <div class="modal-content card">
+        <div class="modal-header card-img-top button-gradient">
+          <h3 class="modal-title fw-bold font-airstrike">Profile Settings</h3>
+          <a class="h3 text-white discreet mb-0" data-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-circle-fill" aria-hidden="true"></i>
+          </a>
         </div>
         <div class="modal-body">
             <h3 class="full-underline">Account Details</h3>
@@ -167,48 +167,15 @@
                     </div>
                 </div>
             </div>
-            <h3 class="full-underline content-divider-short">Contact Settings</h3>
             <div class="card content-divider-short">
                 <div class="card-body">
-                    <div class="form-group">
-                        <label for="action-change-phone">Change Phone Number</label>
-                        <input type="tel" class="form-control" name="action-change-phone" id="action-change-phone" autocomplete="tel" placeholder="{{Auth::user()->phone}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="action-change-line">Change LINE contact (ID or Phone Number, Optional)</label>
-                        <div class="input-group mb-3">
-                        <input type="number" class="form-control" name="action-change-line" id="action-change-line" autocomplete="tel" placeholder="{{Auth::user()->line}}">
-                            <div class="input-group-append">
-                                <a onClick="phoneNumberAutofill('action-change-line')" class="btn btn-success text-white">Copy from Phone</a>
-                            </div>
+                    @foreach(Illuminate\Support\Facades\DB::table('fields')->select('fields.id as field_id', 'fields.name as field_name', 'fields.editable as editable')->get() as $data)
+                        <div class="form-group">
+                            <?php $data->value = Illuminate\Support\Facades\DB::table('user_properties')->where('user_id', Auth::user()->id)->where('field_id', $data->field_id)->first() ?>
+                            <label for="action-change-{{ $data->field_id }}">{{ $data->field_name }}</label>
+                            <input type="text" class="form-control" @if($data->editable == true) name="action-change-{{ $data->field_id }}" @else disabled @endif id="action-change-{{ $data->field_id }}" placeholder="{{ $data->value->value ?? '' }}">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="action-change-whatsapp">Change WhatsApp phone number (Optional)</label>
-                        <div class="input-group mb-3">
-                        <input type="number" class="form-control" name="action-change-whatsapp" id="action-change-whatsapp" autocomplete="tel" placeholder="{{Auth::user()->whatsapp}}">
-                            <div class="input-group-append">
-                                <a onClick="phoneNumberAutofill('action-change-whatsapp')" class="btn btn-success text-white">Copy from Phone</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h3 class="full-underline content-divider-short">Game Account Details</h3>
-            <div class="card content-divider-short">
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="action-change-id_mobile_legends">Mobile Legends Account ID</label>
-                        <input type="text" class="form-control" name="action-change-id_mobile_legends" id="action-change-id_mobile_legends" placeholder="{{Auth::user()->id_mobile_legends}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="action-change-id_pubg_mobile">PUBG Mobile Account ID</label>
-                        <input type="text" class="form-control" name="action-change-id_pubg_mobile" id="action-change-id_pubg_mobile" placeholder="{{Auth::user()->id_pubg_mobile}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="action-change-id_valorant">Valorant Account ID</label>
-                        <input type="text" class="form-control" name="action-change-id_valorant" id="action-change-id_valorant" placeholder="{{Auth::user()->id_valorant}}">
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

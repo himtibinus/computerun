@@ -352,16 +352,10 @@ class UserSettingsController extends Controller
         $draft = [];
 
         foreach($request->all() as $key => $value) {
-            switch ($key){
-                case "action-change-phone":
-                    if ($value != '') DB::table('user_properties')->where('user_id', $userid)->where('field_id', 'contacts.phone')->update(['value' => $value]);
-                break;
-                case "action-change-line":
-                    if ($value != '') DB::table('user_properties')->where('user_id', $userid)->where('field_id', 'contacts.line')->update(['value' => $value]);
-                break;
-                case "action-change-whatsapp":
-                    if ($value != '') DB::table('user_properties')->where('user_id', $userid)->where('field_id', 'contacts.whatsapp')->update(['value' => $value]);
-                break;
+            if (str_starts_with($key, 'action-change-')){
+                $field_id = substr($key, 14);
+                $res = DB::table('fields')->select('id', DB::raw('replace(id, \'.\', \'_\') as id_mod'))->where('editable', true)->having('id_mod', $field_id)->first();
+                if ($res !== null && strlen($value) > 0) DB::table('user_properties')->upsert(['user_id' => Auth::user()->id, 'field_id' => $res->id, 'value' => $value], ['user_id', 'field_id']);
             }
         };
 

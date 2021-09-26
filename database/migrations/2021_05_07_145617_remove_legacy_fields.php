@@ -29,19 +29,19 @@ class RemoveLegacyFields extends Migration
     public function up()
     {
         // Rename unused 'category' on 'fields'
-        // Schema::table('fields', function (Blueprint $table) {
-        //     $table->renameColumn('category', 'icon');
-        // });
+        Schema::table('fields', function (Blueprint $table) {
+            $table->renameColumn('category', 'icon');
+        });
         Schema::table('fields', function (Blueprint $table) {
             $table->string('icon')->nullable(false)->default('bs.gear')->change();
         });
 
         // Add items to 'fields' table
         $fields = DB::table('fields');
-        // $fields->insert(['id' => 'accounts.moonton.mobile_legends', 'name' => 'Mobile Legends: Bang Bang User ID', 'editable' => true]);
-        // $fields->insert(['id' => 'accounts.riot.valorant', 'name' => 'Valorant User ID', 'editable' => true]);
-        // $fields->insert(['id' => 'accounts.tencent.pubg_mobile', 'name' => 'PUBG Mobile User ID', 'editable' => true]);
-        // $fields->insert(['id' => 'accounts.valve.dota2', 'name' => 'DOTA 2 User ID', 'editable' => true]);
+        $fields->insert(['id' => 'accounts.moonton.mobile_legends', 'name' => 'Mobile Legends: Bang Bang User ID', 'editable' => true]);
+        $fields->insert(['id' => 'accounts.riot.valorant', 'name' => 'Valorant User ID', 'editable' => true]);
+        $fields->insert(['id' => 'accounts.tencent.pubg_mobile', 'name' => 'PUBG Mobile User ID', 'editable' => true]);
+        $fields->insert(['id' => 'accounts.valve.dota2', 'name' => 'DOTA 2 User ID', 'editable' => true]);
         try {
             $fields->insert(['id' => 'binusian.community_service_hours', 'name' => 'Current BINUSIAN Community Service Hours', 'editable' => false]);
             $fields->insert(['id' => 'binusian.regional', 'name' => 'BINUSIAN Regional / Campus Location', 'editable' => false]);
@@ -55,14 +55,14 @@ class RemoveLegacyFields extends Migration
         } catch (Illuminate\Database\QueryException $e){
             printf("BINUSIAN-related fields already exists!\n");
         }
-        // $fields->insert(['id' => 'contacts.phone', 'name' => 'Phone Number', 'editable' => true]);
-        // $fields->insert(['id' => 'contacts.instagram', 'name' => 'Instagram registered username', 'editable' => true]);
-        // $fields->insert(['id' => 'contacts.line', 'name' => 'LINE registered phone number or ID', 'editable' => true]);
-        // $fields->insert(['id' => 'contacts.telegram', 'name' => 'Telegram registered phone number or username', 'editable' => true]);
-        // $fields->insert(['id' => 'contacts.twitter', 'name' => 'Twitter registered username', 'editable' => true]);
-        // $fields->insert(['id' => 'contacts.whatsapp', 'name' => 'WhatsApp registered phone number', 'editable' => true]);
-        // $fields->insert(['id' => 'university.nim', 'name' => 'Student ID / NIM', 'editable' => false]);
-        // $fields->insert(['id' => 'university.major', 'name' => 'Major / Study Program', 'editable' => false]);
+        $fields->insert(['id' => 'contacts.phone', 'name' => 'Phone Number', 'editable' => true]);
+        $fields->insert(['id' => 'contacts.instagram', 'name' => 'Instagram registered username', 'editable' => true]);
+        $fields->insert(['id' => 'contacts.line', 'name' => 'LINE registered phone number or ID', 'editable' => true]);
+        $fields->insert(['id' => 'contacts.telegram', 'name' => 'Telegram registered phone number or username', 'editable' => true]);
+        $fields->insert(['id' => 'contacts.twitter', 'name' => 'Twitter registered username', 'editable' => true]);
+        $fields->insert(['id' => 'contacts.whatsapp', 'name' => 'WhatsApp registered phone number', 'editable' => true]);
+        $fields->insert(['id' => 'university.nim', 'name' => 'Student ID / NIM', 'editable' => false]);
+        $fields->insert(['id' => 'university.major', 'name' => 'Major / Study Program', 'editable' => false]);
 
         // Update the Laravel's 'users' table
         $query = DB::table('users')->select(['id', 'binusian', 'nim', 'phone', 'line', 'whatsapp', 'id_mobile_legends', 'id_pubg_mobile', 'id_valorant', 'major'])->get();
