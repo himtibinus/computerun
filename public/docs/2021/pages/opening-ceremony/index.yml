@@ -1,0 +1,153 @@
+"@manifest":
+  version: 1.0
+type: "page"
+kicker: "Opening Ceremony + Virtual Run"
+title: "SPRINT (Striving Accomplishment to Run Within Technology)"
+#canonical_url: "/web-design-competition"
+disable_cache: true
+children:
+  - type: "container"
+    level: 2
+    show_decorations:
+      - topleftcircle
+      - box1
+      - box2
+      - box3
+      - circle1
+      - circle2
+    children:
+      - type: "section-heading"
+        kicker: "Opening Ceremony + Virtual Run"
+        title: "SPRINT (Striving Accomplishment to Run Within Technology)"
+      - type: "about-container"
+        children:
+          - title: "About"
+            children:
+              - type: "markdown"
+                text: "**SPRINT**, short for **Striving Accomplishment to Run Within Technology** is our ceremonial event marking the official start of our COMPUTERUN 2.0 event, there will be games, doorprizes, event information, virtual run milestone announcement, shows, and many more!"
+              - type: "markdown"
+                text: "Our Opening Ceremony will first begin with a **virtual run** competition that aims to provide causes for people to start implementing and maintaining a healthier lifestyle through running. Track your own running record from anywhere you want & get a chance to win prizes!"
+          - title: "Prizes"
+            children:
+            - type: "card-container"
+              items_per_row: 2
+              children:
+              - type: "card"
+                banner:
+                  text: "Best Male"
+                  background: "-webkit-linear-gradient(60deg, #6d3eb0 0%, #3381ff 100%)"
+                  foreground: "#ffffff"
+                body:
+                  type: "markdown"
+                  text: "<h2 class=\"fw-bold text-center\">Rp 500.000</h2>"
+              - type: "card"
+                banner:
+                  text: "Best Female"
+                  background: "-webkit-linear-gradient(60deg, #ac1782 0%, #d87f65 100%)"
+                  foreground: "#ffffff"
+                body:
+                  type: "markdown"
+                  text: "<h2 class=\"fw-bold text-center\">Rp 500.000</h2>"
+              - type: "card"
+                banner:
+                  text: "+ Free Merchandise"
+                  background: "#666666"
+                  foreground: "#ffffff"
+                body:
+                  type: "markdown"
+                  text: "<p class=\"mb-0\">All participats are eligible to get <b>free merchandise</b>, delivered directly to you!</p>"
+          - title: "Rules"
+            children:
+              - type: "markdown"
+                file: "/docs/2021/pages/opening-ceremony/rules.md"
+          - title: "FAQ"
+            children:
+              - type: "faq"
+                contents:
+                  - question: "Question"
+                    answer: "Answer"
+  - type: "container"
+    level: 1
+    show_decorations:
+      - ball2
+      - box2
+      - circle4
+    children:
+      - type: "section-heading"
+        title: "Join Now"
+        show_down_arrow: true
+      - type: "registration-form-container"
+        children_guest:
+        - type: "card-container"
+          items_per_row: 3
+          class_container: "margin-1"
+          children:
+          - type: "card"
+            banner:
+              text: "1. Create Account"
+              background: "-webkit-linear-gradient(60deg, #3381FF 0%, #6D3EB0 100%)"
+              foreground: "#ffffff"
+            body:
+              type: "widgetgroup"
+              tag: "div"
+              class: "text-center"
+              children:
+                - type: "markdown"
+                  text: "First thing first, create a new **COMPUTERUN 2.0** account by clicking on this button."
+                - type: "markdown"
+                  text: "<a href=\"/register\" class=\"button button-gradient\">Create Account</a>"
+          - type: "card"
+            banner:
+              text: "2. Register on Events"
+              background: "-webkit-linear-gradient(60deg, #6D3EB0 0%, #AC1782 50%, #D87F65 100%)"
+              foreground: "#ffffff"
+            body:
+              type: "widgetgroup"
+              tag: "div"
+              class: "text-center"
+              children:
+                - type: "markdown"
+                  text: "After signed in with your freshly-new **COMPUTERUN 2.0** account, click that shiny **REGISTER NOW** buttons on events you'd like to participate. Some events may require you to fill in additional information, so please check them out first."
+          - type: "card"
+            banner:
+              text: "3. Join Our Group"
+              background: "-webkit-linear-gradient(60deg, #D87F65 0%, #FFB500 100%)"
+              foreground: "#ffffff"
+            body:
+              type: "widgetgroup"
+              tag: "div"
+              class: "text-center"
+              children:
+                - type: "markdown"
+                  text: "...and finally, don't forget to join our official groups to receive important information regarding your events, competitions, and attendance."
+        children:
+          - type: "registration-form"
+            event_id: 1
+            additional_fields_purpose: "allow us to deliver our SPRINT merchandise to you."
+            additional_fields:
+              - type: "location.country"
+              - type: "location.home_address"
+              - type: "location.postal_code"
+              - type: "merchandise.tshirt.size"
+                choices:
+                  - value: "male-s"
+                    label: "Male, Small (45 x 66 cm)"
+                  - value: "male-m"
+                    label: "Male, Medium (47 x 69 cm)"
+                  - value: "male-l"
+                    label: "Male, Large (49 x 74 cm)"
+                  - value: "male-xl"
+                    label: "Male, Extra Large (52 x 78 cm)"
+                  - value: "female-s"
+                    label: "Female, Small (38 x 62 cm)"
+                  - value: "female-m"
+                    label: "Female, Medium (39 x 64 cm)"
+                  - value: "female-l"
+                    label: "Female, Large (42 x 66 cm)"
+                  - value: "female-xl"
+                    label: "Female, Extra Large (43 x 69 cm)"
+            price_packages:
+              - participants: 1
+                price: 170000
+              - participants: 2
+                price: 300000

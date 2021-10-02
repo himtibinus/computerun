@@ -169,9 +169,9 @@
             </div>
             <div class="card content-divider-short">
                 <div class="card-body">
-                    @foreach(Illuminate\Support\Facades\DB::table('fields')->select('fields.id as field_id', 'fields.name as field_name', 'fields.editable as editable')->get() as $data)
+                    @foreach(DB::table('fields')->select('fields.id as field_id', 'fields.name as field_name', 'fields.editable as editable')->get() as $data)
                         <div class="form-group">
-                            <?php $data->value = Illuminate\Support\Facades\DB::table('user_properties')->where('user_id', Auth::user()->id)->where('field_id', $data->field_id)->first() ?>
+                            <?php $data->value = DB::table('user_properties')->where('user_id', Auth::user()->id)->where('field_id', $data->field_id)->first() ?>
                             <label for="action-change-{{ $data->field_id }}">{{ $data->field_name }}</label>
                             <input type="text" class="form-control" @if($data->editable == true) name="action-change-{{ $data->field_id }}" @else disabled @endif id="action-change-{{ $data->field_id }}" placeholder="{{ $data->value->value ?? '' }}">
                         </div>
