@@ -23,6 +23,15 @@
 <body class="is-bootstrap">
     @component("components.navbar")
     @endcomponent
+    <?php
+      $user = Auth::user();
+
+      $verified = DB::table('user_properties')->where('user_id', $user->id)->where('field_id', 'verified')->first();
+      $user->verified = ($verified ? $verified->value : 0);
+
+      $nim = DB::table('user_properties')->where('user_id', $user->id)->where('field_id', 'university.nim')->first();
+      $user->verified = ($nim ? $nim->value : null);
+    ?>
     @if (app('request')->path() == 'home' && Auth::check())
     <div class="container-2 content-top bg-home pb-0">
     @else
@@ -39,94 +48,49 @@
             @endcomponent
         @endif
         <div class="margin-2 content-divider">
-            @if (Str::startsWith(app('request')->path(), 'admin/event/'))
-                <h1 class="font-800">
-                    {{$event->name}}
-                    @if ($event->opened == 1)
-                        @component ('components.bootstrap-icons', ['icon' => 'unlock'])
-                        @endcomponent
+            @switch (app('request')->path())
+                @case ('register')
+                    <p class="display-4 text-center font-800 gradient-text">Create Account</p>
+                    @break
+                @case ('password/reset')
+                    <p class="display-4 text-center font-800 gradient-text">Reset Password</p>
+                    @break
+                @default
+                    @guest
+                    <p class="display-4 text-center font-800 gradient-text">Login</p>
                     @else
-                        @component ('components.bootstrap-icons', ['icon' => 'lock-fill'])
-                        @endcomponent
-                    @endif
-                    @if ($event->attendance_opened == 1)
-                        @if ($event->attendance_is_exit == 1)
-                            @component ('components.bootstrap-icons', ['icon' => 'box-arrow-left'])
-                            @endcomponent
-                        @else
-                            @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right'])
-                            @endcomponent
-                        @endif
-                    @endif
-                </h1>
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="h4 font-700">Seats</p>
-                        <p class="display-4">{{$event->currentseats}}/{{$event->seats}}</p>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <p class="h4 font-700">Attendance</p>
-                        <p class="display-4">{{$event->lastattendance}}/{{$event->firstattendance}}</p>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <p class="h4 font-700">Event Token</p>
-                        <p class="display-4">{{$event->totp_key}}</p>
-                    </div>
-                </div>
-                <p class="lead">Welcome! Manage your tickets here.</p>
-                {{-- <a class="btn btn-primary" href="/register" role="button">Register</a> --}}
-                @if (app('request')->path() == 'home')
-                    <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
-                @endif
-                <a class="btn button button-white" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}</a>
-            @else
-                @switch (app('request')->path())
-                    @case ('register')
-                        <p class="display-4 text-center font-800 gradient-text">Create Account</p>
-                        @break
-                    @case ('password/reset')
-                        <p class="display-4 text-center font-800 gradient-text">Reset Password</p>
-                        @break
-                    @default
-                        @guest
-                        <p class="display-4 text-center font-800 gradient-text">Login</p>
-                        @else
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <h5 class="font-800 font-airstrike gradient-text">WELCOME,</h5>
-                                    <h1 class="font-800 font-airstrike gradient-text">{{Auth::user()->name}}
-                                        @if (Auth::user()->verified == 1)
-                                            @component ("components.bootstrap-icons", ["icon" => "patch-check-fll"])
-                                            @endcomponent
-                                        @endif
-                                    </h3>
-                                    <h3>{{DB::table('universities')->where('id', Auth::user()->university_id)->first()->name}}</h3>
-                                    @if (Auth::user()->university_id >= 2 && Auth::user()->university_id <= 4)
-                                        <h5 class="font-700">NIM: {{Auth::user()->nim}}</h5>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <h5 class="font-800 font-airstrike gradient-text">WELCOME,</h5>
+                                <h1 class="font-800 font-airstrike gradient-text">{{$user->name}}
+                                    @if ($user->verified == 1)
+                                        @component ("components.bootstrap-icons", ["icon" => "patch-check-fll"])
+                                        @endcomponent
                                     @endif
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    {{-- <h4 class="font-800">CONTACT DETAILS</h4>
-                                    <h1 class="display-4">{{Auth::user()->email}}</h1> --}}
-                                </div>
+                                </h3>
+                                <h3>{{DB::table('universities')->where('id', $user->university_id)->first()->name}}</h3>
+                                @if ($user->university_id >= 2 && $user->university_id <= 4)
+                                    <h5 class="font-700">NIM: {{$user->nim}}</h5>
+                                @endif
                             </div>
-                            <p class="lead">Welcome! Manage your tickets here.</p>
-                            {{-- <a class="btn btn-primary" href="/register" role="button">Register</a> --}}
-                            <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
-                            <a class="btn button button-white" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}</a>
-                        @endguest
-                @endswitch
-            @endif
+                            <div class="col-12 col-md-6">
+                                {{-- <h4 class="font-800">CONTACT DETAILS</h4>
+                                <h1 class="display-4">{{$user->email}}</h1> --}}
+                            </div>
+                        </div>
+                        <p class="lead">Welcome! Manage your tickets here.</p>
+                        {{-- <a class="btn btn-primary" href="/register" role="button">Register</a> --}}
+                        <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
+                        <a class="btn button button-white" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}</a>
+                    @endguest
+            @endswitch
             </span>
         </div>
         <div id="app">
-            @if (Auth::check() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3))
+            @if (Auth::check() && ($user->university_id == 2 || $user->university_id == 3))
             <nav class="navbar navbar-expand-md navbar-light shadow-sm font-800" style="background: -webkit-linear-gradient(115deg, #37e2bc, #249ef2); color: #22365f;">
                 <div class="container">
                     <a class="navbar-brand" href="#">
@@ -189,7 +153,7 @@
             <img class="container-clip" src="/img/backgrounds/2.png">
 
 
-            @if (Auth::check() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3))
+            @if (Auth::check() && ($user->university_id == 2 || $user->university_id == 3))
             <main class="margin-1 after-container-clip content-divider">
             @else
             <main class="margin-1 after-container-clip">

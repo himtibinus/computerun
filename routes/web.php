@@ -99,7 +99,7 @@ Route::post('/getuserdetails', 'UserSettingsController@getUserDetails');
 
 // Handle registration
 Route::get('/register/{id}', 'UserSettingsController@registrationRedirectHandler');
-Route::post('/registerevent', 'UserSettingsController@registerEvent');
+Route::post('/registerevent', 'UserSettingsController@registerToEvent');
 
 // Handle payments
 Route::get('/pay/{paymentcode}', 'UserSettingsController@paymentIndex');

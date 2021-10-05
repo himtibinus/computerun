@@ -19,27 +19,43 @@ class UserSettingsController extends Controller
         // Ensure that the user has logged in
         if (!Auth::check()) return response()->json(['error' => 'You are not authenticated']);
         // Ensure that the user has complete payload
-        if (!$request->has('email')) return response()->json(['error' => 'Incomplete Request']);
+        if (!$request->has('email') || !$request->has('eventId')) return response()->json(['error' => 'Incomplete Request']);
         if ($request->input('email') == Auth::user()->email){
             if ($request->input('allowSelf') == false) return response()->json(['error' => 'You should not add yourself as a member']);
-                $user_data = Auth::user();
-            return response()->json([
-                "name" => $user_data->name,
-                "id_mobile_legends" => $user_data->id_mobile_legends,
-                "id_pubg_mobile" => $user_data->id_pubg_mobile,
-                "id_valorant" => $user_data->id_valorant
-            ]);
+            $user_data = Auth::user();
         } else {
             // Search on database
             $user_data = DB::table('users')->where('email', $request->input('email'))->first();
             if (!$user_data) return response()->json(['error' => 'User not found']);
-            return response()->json([
-                "name" => $user_data->name,
-                "id_mobile_legends" => $user_data->id_mobile_legends,
-                "id_pubg_mobile" => $user_data->id_pubg_mobile,
-                "id_valorant" => $user_data->id_valorant
-            ]);
         }
+        if (!DB::table('events')->where('id', $request->input('eventId'))->first()) return response()->json(['error' => 'Event not found']);
+
+        // Check user_properties
+        $event_permissions = DB::table('event_permissions')->join('fields', 'event_permissions.field_id', 'fields.id')->where('event_id', $request->input('eventId'))->get();
+        $incomplete = []; $invalid = [];
+
+        $response = [
+            "name" => $user_data->name,
+            "incomplete" => $incomplete,
+            "invalid" => $invalid
+        ];
+
+        if (!Auth::guest() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3)) $response['eventPermissions'] = [];
+
+        foreach ($event_permissions as $permission){
+            $user_properties = DB::table('user_properties')->where('user_id', $user_data->id)->where('field_id', $permission->field_id)->first();
+            if (!$user_properties){
+                array_push($incomplete, $permission->name . ' (' . $permission->validation_description . ')');
+                return;
+            }
+            if (!Auth::guest() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3)) $response['eventPermissions'][] = [
+                'name' => $permission->name,
+                'current_value' => $user_properties->value
+            ];
+            if (strlen($permission->validation_rule) > 0 && !preg_match($permission->validation_rule, $user_properties->value)) array_push($invalid, $permission->name . ' (' . $permission->validation_description . ')');
+        }
+
+        return response()->json($response);
     }
 
     // Module to generate competition page
@@ -215,7 +231,194 @@ class UserSettingsController extends Controller
 
         return redirect('/home');
     }
+    // Module to register to certain events
+    public function registerToEvent(Request $request){
+        if (!Auth::check()) return redirect("/home");
 
+        // Get event ID
+        $event_id = $request->input("event_id");
+        $team_required = false;
+
+        // Get the slot number
+        $slots = ($request->has("slots") && $request->input("slots") > 1) ? $request->input("slots") : 1;
+
+        // Set the Payment Code
+        $payment_code = null;
+
+        // Check on database whether the event exists
+        $event = DB::table("events")->where("id", $event_id)->first();
+        $currentTickets = DB::table('registration')->selectRaw('count(*) as total')->where('event_id', $event->id)->where('status', '!=', 1)->first();
+
+        if (!$event){
+            $request->session()->put('error', "Event not found.");
+            return redirect('/home');
+        } else if ($currentTickets->total >= $event->seats) {
+            $request->session()->put('error', "Unable to register to " . $event->name . " due to full capacity.");
+            return redirect('/home');
+        } else if ($event->opened == 0) {
+            $request->session()->put('error', "The registration period for " . $event->name . " has been closed.");
+            return redirect('/home');
+        } else if ($event->team_members + $event->team_members_reserve > 0) $team_required = true;
+
+        if ($event->price > 0) $payment_code = uniqid();
+
+        // Create an array of users to be validated
+        $leader = Auth::user();
+        $members = [];
+        $reserve = [];
+
+        // Create an email draft
+        $event_title = (strlen($event->kicker) > 0 ? ($event->kicker . ': ') : '') . $event->name;
+        $email_template = [
+            'message_type' => 'MARKDOWN',
+            'sender_name' => 'HIMTI - ' . (strlen($event->kicker) > 0 ? $event->kicker : $event->name),
+            'created_at' => date("Y-m-d H:i:s")
+        ];
+
+        // Get whether teams are needed
+        if ($team_required == true){
+            if (!$request->has("create_team") || !$request->has("team_name") || $request->input("team_name") == ""){
+                $request->session()->put('error', "You will need to create a team for " . $event->name . ".");
+                return redirect('/home');
+            }
+
+            // Team members
+            for ($i = 1; $i <= $event->team_members; $i++){
+                if (!$request->has('team_member_' . $i)){
+                    $request->session()->put('error', "Incomplete team members");
+                    return redirect('/home');
+                }
+                $members[] = DB::table('users')->where('email', $request->input('team_member_' . $i))->first();
+            }
+
+            // Reserve members
+            for ($i = 1; $i <= $event->team_members; $i++){
+                if ($request->has('team_member_reserve_' . $i)){
+                    $reserve[] = DB::table('users')->where('email', $request->input('team_member_reserve_' . $i))->first();
+                }
+            }
+        }
+
+        // Validate users
+        $queue = [$leader];
+        $queue = array_merge($queue, $members, $reserve);
+        $event_permissions = DB::table('event_permissions')->where('event_id', $event->id)->get();
+
+        $validation_failed = 0;
+
+        foreach ($queue as $user){
+            $user_properties = DB::table('user_properties')->where('user_id', $user->id)->get();
+            $registrations = DB::table('registration')->where('event_id', $event->id)->where('ticket_id', $user->id)->where('status', '!=', 1)->get();
+            $validation = parent::validateFields($event_permissions, $user_properties);
+            if ($event->slots - count($registrations) <= 0) $validation->eligible_to_register = false;
+
+            if (!$validation->eligible_to_register){
+                $validation_failed++;
+            }
+        }
+
+        if ($validation_failed > 0){
+            $request->session()->put('error', "You or your team members are not eligible to register to this event.");
+            return redirect('/home');
+        }
+
+        if ($team_required == true){
+            // Create a new team
+            $team_id = DB::table("teams")->insertGetId(["name" => $request->input("team_name"), "event_id" => $event_id]);
+
+            // Assign the database template
+            $query = [];
+            $draft = ["event_id" => $event_id, "status" => (($event->auto_accept == true) ? 2 : 0), "payment_code" => $payment_code, "team_id" => $team_id, "ticket_id" => null, "remarks" => null];
+
+            // Assign the User ID of the team leader
+            $tempdetails = Auth::user();
+            for ($j = 0; $j < $slots; $j++){
+                $temp = $draft;
+                $temp["ticket_id"] = $tempdetails->id;
+                $temp["remarks"] = "Team Leader";
+                if ($slots > 1) $temp["remarks"] = $temp["remarks"] . ", Slot " . ($j + 1);
+                array_push($query, $temp);
+            }
+
+            // Find the User ID of team members
+            for ($i = 1; $i <= $event->team_members; $i++){
+                $tempdetails = DB::table("users")->where("email", $request->input("team_member_" . $i))->first();
+                for ($j = 0; $j < $slots; $j++){
+                    $temp = $draft;
+                    echo(print_r($tempdetails));
+                    $temp["ticket_id"] = $tempdetails->id;
+                    $temp["remarks"] = "Team Member";
+                    if ($slots > 1) $temp["remarks"] = $temp["remarks"] . ", Slot " . ($j + 1);
+                    array_push($query, $temp);
+                }
+                // Send Email
+                // Mail::to($request->input("team_member_" . ($i + 1)))->send(new SendNewTeamNotification(["name" => $tempdetails["name"], "team_name" => $request->input("team_name"), "team_id" => $team_id, "team_leader_name" => Auth::user()->name, "team_leader_email" => Auth::user()->email, "role" => "Main Player/Member " . ($i + 1), "event_name" => $event->name, "event_kicker" => $event->kicker]));
+                $email_draft = $email_template;
+                $email_draft['subject'] = 'You have been invited to join ' . $event_title . ' by ' . $leader->name;
+                $email_draft['message'] = 'You have been invited by ' . $leader->name . ' (' . $leader->email . ') to join as a member of "' . $request->input("team_name") . '" to join ' . $event_title . PHP_EOL . PHP_EOL . 'Your team and ticket details can be found on https://computerun.id/profile/.' . PHP_EOL . PHP_EOL . 'If you are being added by mistake, please contact the respective event committees.';
+                if ($event->price == 0 && $event->auto_accept == true && strlen($event->description_private) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_private;
+                else if (strlen($event->description_pending) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_pending;
+                $email_draft['email'] = $tempdetails->email;
+                DB::table('email_queue')->insert($email_draft);
+            }
+
+            // Find the User ID of reseve team members
+            for ($i = 1; $i <= $event->team_members_reserve; $i++){
+                if (!$request->has("team_member_reserve_" . $i) || $request->input("team_member_reserve_" . $i) == "") continue;
+                $tempdetails = DB::table("users")->where("email", $request->input("team_member_reserve_" .($i + 1)))->first();
+                for ($j = 0; $j < $slots; $j++){
+                    if ($request->has("team_member_reserve_" . ($i + 1))){
+                        $temp = $draft;
+                        $temp["ticket_id"] = $tempdetails->id;
+                        $temp["remarks"] = "Team Member (Reserve)";
+                    }
+                    if ($slots > 1) $temp["remarks"] = $temp["remarks"] . ", Slot " . ($j + 1);
+                    array_push($query, $temp);
+                }
+                // Send Email
+                // Mail::to($request->input("team_member_reserve_" . ($i + 1)))->send(new SendNewTeamNotification(["name" => $tempdetails->name, "team_name" => $request->input("team_name"), "team_id" => $team_id, "team_leader_name" => Auth::user()->name, "team_leader_email" => Auth::user()->email, "role" => "Reserve Player/Member " . ($i + 1), "event_name" => $event->name, "event_kicker" => $event->kicker]));
+                $email_draft = $email_template;
+                $email_draft['subject'] = 'You have been invited to join ' . $event_title . ' by ' . $leader->name;
+                $email_draft['message'] = 'You have been invited by ' . $leader->name . ' (' . $leader->email . ') to join as a reserve member of "' . $request->input("team_name") . '" to join ' . $event_title . PHP_EOL . PHP_EOL . 'Your team and ticket details can be found on https://computerun.id/profile/.' . PHP_EOL . PHP_EOL . 'If you are being added by mistake, please contact the respective event committees.';
+                if ($event->price == 0 && $event->auto_accept == true && strlen($event->description_private) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_private;
+                else if (strlen($event->description_pending) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_pending;
+                $email_draft['email'] = $tempdetails->email;
+                DB::table('email_queue')->insert($email_draft);
+            }
+            // Insert into the database
+            DB::table("registration")->insert($query);
+        } else {
+            // Assign the participant
+            DB::table("registration")->insert(["ticket_id" => Auth::user()->id, "event_id" => $event_id, "status" => (($event->auto_accept == true) ? 2 : 0), "payment_code" => $payment_code]);
+        }
+
+        // Send Email for Payment
+        // if($event->price > 0) Mail::to(Auth::user()->email)->send(SendInvoice::createEmail((object) ["name" => Auth::user()->name, "event_id" => $event->id, "user_id" => Auth::user()->id, "event_name" => $event->name, "payment_code" => $payment_code, "total_price" => $event->price * $slots]));
+
+        // Send Email for Payment
+        $email_template['subject'] = 'Welcome to ' . $event_title . '!';
+        $email_template['message'] = 'Thank you for registering to ' . $event_title . '.';
+        $email_template['email'] = $leader->email;
+
+        if ($event->price == 0 && $event->auto_accept == true){
+            $email_template['message'] .= ' Your registration has been approved by our team.' . PHP_EOL . PHP_EOL . 'Your ticket and team (if any) details can be found on https://computerun.id/profile/.' . PHP_EOL . PHP_EOL . 'If you are being registered by mistake, please contact the respective event committees.';
+            if (strlen($event->description_private) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_private;
+        } else {
+            $email_template['message'] .= ' Please finish your payment (if any) and wait while our team verifies and approves your registration.' . PHP_EOL . PHP_EOL . 'You may check your ticket status regularly on https://computerun.id/profile/.' . PHP_EOL . PHP_EOL . 'If you are being registered by mistake, please contact the respective event committees.';
+            if (strlen($event->description_pending) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_pending;
+        }
+
+        DB::table('email_queue')->insert($email_template);
+
+        // Return Response
+        if ($event->price > 0){
+            if (strlen($event->payment_link) > 0) return redirect($this->getPaymentLink($event, (object) ['payment_code' => $payment_code]));
+            else return redirect('/pay/' . $payment_code);
+        }
+
+        if ($request->has('redirect_to')) return redirect($request->input('redirect_to'));
+        return redirect('/home');
+    }
     // Module to register to certain events
     public function registerEvent(Request $request){
         if (!Auth::check()) return redirect("/home");
@@ -267,12 +470,8 @@ class UserSettingsController extends Controller
             $tempdetails = json_decode(json_encode(Auth::user()), true);
             for ($j = 0; $j < $slots; $j++){
                 $temp = $draft;
-                $temp["ticket_id"] = $tempdetails["id"];
-                if ($requires_account != null){
-                    $temp["remarks"] = "Team Leader, ID: " . $tempdetails["id_" . $requires_account];
-                } else {
-                    $temp["remarks"] = "Team Leader";
-                }
+                $temp["ticket_id"] = $tempdetails->id;
+                $temp["remarks"] = "Team Leader";
                 if ($slots > 1) $temp["remarks"] = $temp["remarks"] . ", Slot " . ($j + 1);
                 array_push($query, $temp);
             }
@@ -364,6 +563,7 @@ class UserSettingsController extends Controller
 
         DB::table('users')->where('id', $userid)->update($draft);
         $request->session()->put('status', "Your Account Settings has been updated.");
+        if ($request->has('redirect_to')) return redirect($request->input('redirect_to'));
         return redirect('/home');
     }
 

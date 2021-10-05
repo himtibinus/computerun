@@ -9,11 +9,11 @@
     </div>
     <div class="footer-credits">
         <div class="himsisfo-himti-container">
-            @component ('components.imagecompat', ['src' => '/img/icons/common/mainlogo/himsisfo.png'])@endcomponent
-            @component ('components.imagecompat', ['src' => '/img/icons/common/mainlogo/himti.png'])@endcomponent
+            @component ('components.imagecompat', ['src' => '/img/icons/common/mainlogo/himsisfo.png', 'has_alternative_formats' => true])@endcomponent
+            @component ('components.imagecompat', ['src' => '/img/icons/common/mainlogo/himti.png', 'has_alternative_formats' => true])@endcomponent
         </div>
         <div class="copyright">
-            @component ('components.imagecompat', ['src' => '/img/icons/2021/mainlogo/full.png'])@endcomponent<br>
+            @component ('components.imagecompat', ['src' => '/img/icons/2021/mainlogo/full.png', 'has_alternative_formats' => true])@endcomponent<br>
             &copy; 2020 - 2021 HIMSISFO &amp; HIMTI BINUS University
         </div>
     </div>

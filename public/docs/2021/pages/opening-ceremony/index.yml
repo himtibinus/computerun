@@ -1,10 +1,11 @@
 "@manifest":
   version: 1.0
 type: "page"
-kicker: "Opening Ceremony + Virtual Run"
-title: "SPRINT (Striving Accomplishment to Run Within Technology)"
-#canonical_url: "/web-design-competition"
+kicker: "COMPUTERUN 2.0"
+title: "Opening Ceremony"
 disable_cache: true
+related:
+  - sprint
 children:
   - type: "container"
     level: 2
@@ -17,45 +18,16 @@ children:
       - circle2
     children:
       - type: "section-heading"
-        kicker: "Opening Ceremony + Virtual Run"
-        title: "SPRINT (Striving Accomplishment to Run Within Technology)"
+        kicker: "COMPUTERUN 2.0"
+        title: "Opening Ceremony"
       - type: "about-container"
         children:
           - title: "About"
             children:
               - type: "markdown"
-                text: "**SPRINT**, short for **Striving Accomplishment to Run Within Technology** is our ceremonial event marking the official start of our COMPUTERUN 2.0 event, there will be games, doorprizes, event information, virtual run milestone announcement, shows, and many more!"
+                text: "This is our ceremonial event marking the **official start of our COMPUTERUN 2.0 event**, there will be games, doorprizes, event information, virtual run milestone announcement, shows, and many more!"
               - type: "markdown"
-                text: "Our Opening Ceremony will first begin with a **virtual run** competition that aims to provide causes for people to start implementing and maintaining a healthier lifestyle through running. Track your own running record from anywhere you want & get a chance to win prizes!"
-          - title: "Prizes"
-            children:
-            - type: "card-container"
-              items_per_row: 2
-              children:
-              - type: "card"
-                banner:
-                  text: "Best Male"
-                  background: "-webkit-linear-gradient(60deg, #6d3eb0 0%, #3381ff 100%)"
-                  foreground: "#ffffff"
-                body:
-                  type: "markdown"
-                  text: "<h2 class=\"fw-bold text-center\">Rp 500.000</h2>"
-              - type: "card"
-                banner:
-                  text: "Best Female"
-                  background: "-webkit-linear-gradient(60deg, #ac1782 0%, #d87f65 100%)"
-                  foreground: "#ffffff"
-                body:
-                  type: "markdown"
-                  text: "<h2 class=\"fw-bold text-center\">Rp 500.000</h2>"
-              - type: "card"
-                banner:
-                  text: "+ Free Merchandise"
-                  background: "#666666"
-                  foreground: "#ffffff"
-                body:
-                  type: "markdown"
-                  text: "<p class=\"mb-0\">All participats are eligible to get <b>free merchandise</b>, delivered directly to you!</p>"
+                text: "Everyone is able to participate in this Opening Ceremony, whether you are competing for SPRINT, Business-IT Case, Website Development, or none at all. We will **not** charge any fee in order to join this great ceremony, so let's join and have some fun!"
           - title: "Rules"
             children:
               - type: "markdown"
@@ -65,7 +37,9 @@ children:
               - type: "faq"
                 contents:
                   - question: "Question"
-                    answer: "Answer"
+                    answer:
+                      - type: "markdown"
+                        text: "Answer"
   - type: "container"
     level: 1
     show_decorations:
@@ -122,32 +96,4 @@ children:
                   text: "...and finally, don't forget to join our official groups to receive important information regarding your events, competitions, and attendance."
         children:
           - type: "registration-form"
-            event_id: 1
-            additional_fields_purpose: "allow us to deliver our SPRINT merchandise to you."
-            additional_fields:
-              - type: "location.country"
-              - type: "location.home_address"
-              - type: "location.postal_code"
-              - type: "merchandise.tshirt.size"
-                choices:
-                  - value: "male-s"
-                    label: "Male, Small (45 x 66 cm)"
-                  - value: "male-m"
-                    label: "Male, Medium (47 x 69 cm)"
-                  - value: "male-l"
-                    label: "Male, Large (49 x 74 cm)"
-                  - value: "male-xl"
-                    label: "Male, Extra Large (52 x 78 cm)"
-                  - value: "female-s"
-                    label: "Female, Small (38 x 62 cm)"
-                  - value: "female-m"
-                    label: "Female, Medium (39 x 64 cm)"
-                  - value: "female-l"
-                    label: "Female, Large (42 x 66 cm)"
-                  - value: "female-xl"
-                    label: "Female, Extra Large (43 x 69 cm)"
-            price_packages:
-              - participants: 1
-                price: 170000
-              - participants: 2
-                price: 300000
+            event_id: 4

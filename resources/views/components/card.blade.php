@@ -4,7 +4,7 @@
             if(!isset($banner['class'])) $banner['class'] = "";
             $banner['class'] = "card-img-top " . $banner['class'];
         ?>
-        <div class="{{ $banner['class'] ?? '' }} p-3 text-center" style="background: {{ $banner['background'] ?? 'none' }}; color: {{ $banner['foreground'] ?? '#000000' }};">
+        <div class="{{ $banner['class'] ?? '' }} p-3 text-center" style="@if(isset($banner['background'])) background: {{ $banner['background'] }}; @endif @if(isset($banner['foreground'])) color: {{ $banner['foreground'] }}; @endif">
             <p class="h4 m-0 fw-bold">{{ $banner['text'] ?? '' }}</p>
         </div>
     @endif

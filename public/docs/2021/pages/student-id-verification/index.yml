@@ -1,0 +1,63 @@
+"@manifest":
+  version: 1.0
+type: "page"
+kicker: "Help & Guidebook"
+title: "Student ID Card Verification"
+disable_cache: true
+description: "A detailed guideline on uploading student identification card."
+related:
+  - sprint
+children:
+  - type: "container"
+    level: 2
+    show_decorations:
+      - topleftcircle
+      - box1
+      - box2
+      - box3
+      - circle1
+      - circle2
+    children:
+      - type: "section-heading"
+        kicker: "Help & Guidebook"
+        title: "Student ID Card Verification"
+      - type: "about-container"
+        children:
+          - title: "About This Guidebook"
+            children:
+              - type: "markdown"
+                text: "This guidebook is intended for participants wishing to compete on both **[Business-IT Case](/info/business-it-case)** and/or **[Web Design](/info/web-design)** competitions. Please note that participants for [SPRINT](/info/sprint) and other events are **not** required to upload their Student ID Card to be eligible for participating in the respective events."
+              - type: "markdown"
+                text: "Since both competitions, as well as the entire **COMPUTERUN 2.0** event, will be held internationally, we acknowledge that there will be some edge cases where eligible participants are unable to submit Student ID Cards according to our general guidelines and requirements. If this is the case for you, please contact us through our **LINE Official Account** at **[@995bowex](https://line.me/R/ti/p/@995bowex)** or by emailing to **[competition.computerun2021@gmail.com](mailto:competition.computerun2021@gmail.com)** before the start of the competition."
+          - title: "Students of BINUS University"
+            children:
+              - type: "markdown"
+                text: "All **BINUS University**, **BINUS University International** (Senayan/JWC Campus), as well as **BINUS Online Learning (BOL)** students taking either bachelor or Master Track study programs are eligible to participate in both **[Business-IT Case](/info/business-it-case)** and **[Web Design](/info/web-design)** competitions. However, in order to be eligible for entering these competitions, **please kindly inform us if you or your member are a student of one of the Master Track programs** offered in BINUS University."
+              - type: "markdown"
+                text: "If you are an active student of **BINUS University**, **BINUS University International**, or **BINUS Online Learning (BOL)**, we accept **one** the following scans/screenshots as a valid Student ID Card evidence document:"
+              - type: "markdown"
+                text: "+ Your physical, **[BINUSIAN CARD FLAZZ](https://binus.edu/binusiancommunity/)** (only front face is required)\n+ Your **Profile/Settings** screenshot on **BINUS Mobile for Student (Academic Services)** app for [Android](https://play.google.com/store/apps/details?id=binus.itdivision.mobilestudent) and [iOS](https://apps.apple.com/id/app/binus-mobile-for-student/id1441962329)\n+ Your **Profile/Settings** screenshot on the all-new **BINUSMAYA (LMS)** app for [Android](https://play.google.com/store/apps/details?id=binus.itdivision.mobilestudent) and [iOS](https://apps.apple.com/id/app/binus-mobile-for-student/id1441962329)"
+          - title: "Other Eligible Students"
+            children:
+              - type: "markdown"
+                text: "Just like last year for Indonesian students, we are allowing active university students enrolling in any universities and higher education institutions, as long as they are officially registered in their respective country's department/ministry of (higher) education. Please ensure that your scanned Student ID Card (commonly referred as **\"Kartu Tanda Mahasiswa\"** or **KTM** in Indonesia) contains these three, important details:"
+              - type: "markdown"
+                text: "1. Your university or higher education institution's name or logo\n2. Your full name, and\n3. Your student ID number (**\"Nomor Induk Mahasiswa\"** / **NIM**)"
+              - type: "markdown"
+                text: "Some universities and higher education institutions may instead offer **digital student ID cards** which could be accessible from their respective mobile apps. If you decide to upload digital cards, **please ensure that the above three details are clearly visible** on the uploaded screenshot."
+          - title: "Additional Guidelines for Student ID Cards in Apple Wallet"
+            children:
+              - type: "markdown"
+                text: "If your digital Student ID card is integrated with the **Apple Wallet** app, the **Student ID number** might not be visible on the card by default. If this is the case, please send us both screenshot of:"
+              - type: "markdown"
+                text: "1. Your **front-facing digital card** (i.e. the ones visible from the homepage of the Wallet app), and\n2. Additional card details highlighting **your name and Student ID number**, shown by tapping the **More...** button on the card preview."
+              - type: "markdown"
+                text: "You may block or censor unnessecary details (e.g. your student card balance) before submitting the screenshots to us. For more information about digital Student ID card integration in Apple Wallet, please visit https://support.apple.com/en-us/HT208965."
+          - title: "Countermeasures Against Student ID Card Forgery"
+            children:
+              - type: "markdown"
+                text: "**Forgery of official documents is considered a <span class=\"text-danger\">serious offence</span> by Indonesian law as well as BINUS University's campus life regulations (PTTKK).** Hence, we will disqualify all participants and teams who are involved in forging Student ID cards for participating into our competitions, and are **not** responsible for refunds due to the disqualification."
+              - type: "markdown"
+                text: "Here we may retain the right to perform further inspections to ensure the validity of your submitted ID cards and related information, including but not limited to:"
+              - type: "markdown"
+                text: "+ Verifying your identity against public databases of university and higher education students, such as [Pangkalan Data Perguruan Tinggi (PDDikti)](https://pddikti.kemdikbud.go.id/) by the Ministry of Education, Republic of Indonesia.\n+ Requesting further information from you regarding your involvement in your selected university or higher education institution."

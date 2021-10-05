@@ -98,7 +98,7 @@
                         </td>
                         <td>
                             @foreach ($events as $item)
-                                @if ($item->attendance_opened == 1 && $list->event_id == $item->id && $list->status > 1 && $list->event_id < 6)
+                                @if ($item->attendance_opened == 1 && $list->event_id == $item->id && $list->status > 1 && ($list->event_id >= 3 && $list->event_id <= 6))
                                     <a class="btn no-minimum-width margin-0" href="/cp/{{$list->team_id}}">
                                         @component('components.bootstrap-icons', ['icon' => 'journal-text', 'size' => 30])
                                         @endcomponent

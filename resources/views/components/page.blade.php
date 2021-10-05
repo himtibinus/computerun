@@ -73,4 +73,28 @@
         @component('components.footer')
         @endcomponent
     </body>
+    <script>
+        function slide(e) {
+            /* Question of FAQ */
+            var top = e.parentElement;
+            /* Answer of FAQ */
+            var bot = e.parentElement.nextElementSibling;
+            /* Vertical line besides "Q" */
+            var br = e.parentElement.children[0].children[0];
+            /*- positioned element on top of another - */
+            var plus = e.children[1];
+            /* console.log(top); */
+            if (bot.classList.contains("bot-closed")) {
+                top.classList.remove("clr-purp")
+                bot.classList.remove("bot-closed");
+                br.classList.remove("br-purp");
+                plus.classList.remove("plus-rotate");
+            } else {
+                top.classList.add("clr-purp")
+                bot.classList.add("bot-closed");
+                br.classList.add("br-purp");
+                plus.classList.add("plus-rotate");
+            }
+        }
+    </script>
 </html>

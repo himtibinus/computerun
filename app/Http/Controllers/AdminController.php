@@ -93,28 +93,26 @@ class AdminController extends Controller
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
         }
-        // $query = "SELECT registration.*, user.name, user.email, user.phone, user.line, user.whatsapp, user.id_mobile_legends, user.id_pubg_mobile, user.id_valorant, university.name AS university_name FROM `registration` registration INNER JOIN `users` user ON registration.ticket_id = user.id INNER JOIN `universities` university ON user.university_id = university.id WHERE registration.event_id = " . $event_id;
-        $registration = $this->util_getParticipantsByEventId($event_id);
-        $committees = $this->util_getCommitteesByEventId($event_id);
+        $check = parent::checkAdminOrCommittee(Auth::id(), $event_id);
+        // Check whether the event exists
         $event = DB::table('events')->where('id', $event_id)->first();
-        $teams = DB::table('teams')->where('event_id', $event_id)->orderBy('score', 'desc')->get();
-        $file = null;
-        if(count($teams) != 0){
-            $temp = DB::table('registration')->where('team_id',$teams[0]->id)->first();
-            $file = DB::table('files')->where('id',$temp->file_id)->first();
+        if (!$event){
+            $request->session()->put('error', 'This event does not exist.');
+            return redirect('home');
         }
+        // Gather the data
+        $data = DB::table('registration')->select('registration.*', 'users.name', 'users.email', 'users.verified', 'users.email_verified_at', 'users.university_id', 'users.created_at', 'users.updated_at')->join('users', 'users.id', 'registration.ticket_id')->where('event_id', $event_id)->get();
 
-        $registration_count = count($registration);
-        $event->currentseats = 0;
-        $event->firstattendance = 0;
-        $event->lastattendance = 0;
-        for ($i = 0; $i < $registration_count; $i++){
-            if ($registration[$i]->status == 2 || $registration[$i]->status == 4 || $registration[$i]->status == 5) $event->currentseats++;
-            if ($registration[$i]->status == 4) $event->firstattendance++;
-            if ($registration[$i]->status == 5) $event->lastattendance++;
+        $event->current_seats = count($data);
+        $event->attending = 0;
+        $event->attended = 0;
+        foreach ($data as $registration){
+            if ($registration->status == 1) $event->current_seats--;
+            if ($registration->status == 4) $event->attending++;
+            if ($registration->status == 5) $event->attended++;
         }
-
-        return view('admin.eventdetails', ['registration' => $registration, 'committees' => $committees, 'event' => $event, 'teams' => $teams, 'file' => $file]);
+        // Return view
+        return view('admin.event-manager', ['event' => $event, 'registrations' => $data, 'role' => $check]);
     }
 
     public function postEventParticipants(Request $request, $event_id){
@@ -123,40 +121,91 @@ class AdminController extends Controller
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
         }
-
-        foreach($request->all() as $key => $value) {
+foreach($request->all() as $key => $value) {
             if (Str::startsWith($key, "status-") && $value >= 0){
                 $key = substr($key, 7);
                 DB::table('registration')->where('id', $key)->update(['status' => $value]);
             } else if (Str::startsWith($key, "action-")) switch ($key){
-                case "action-registration-status":
-                    if ($value == "enabled") DB::table('events')->where('id', $event_id)->update(['opened' => 1]);
-                    else if ($value == "disabled") DB::table('events')->where('id', $event_id)->update(['opened' => 0]);
-                break;
-                case "action-attendance-status":
-                    if ($value == "enabled") DB::table('events')->where('id', $event_id)->update(['attendance_opened' => 1]);
-                    else if ($value == "disabled") DB::table('events')->where('id', $event_id)->update(['attendance_opened' => 0]);
-                break;
-                case "action-attendance-type":
-                    if ($value == "entrance") DB::table('events')->where('id', $event_id)->update(['attendance_is_exit' => 0]);
-                    else if ($value == "exit") DB::table('events')->where('id', $event_id)->update(['attendance_is_exit' => 1]);
+                case "action-update-kicker":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['kicker' => $value]);
                 break;
                 case "action-update-name":
-                    if ($value != '') DB::table('events')->where('id', $event_id)->update(['name' => $value]);
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['name' => $value]);
                 break;
-                case "action-update-link":
-                    if ($value != '') DB::table('events')->where('id', $event_id)->update(['url_link' => $value]);
+                case "action-update-date":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['date' => new DateTime($value)]);
                 break;
                 case "action-update-location":
-                    if ($value != '') DB::table('events')->where('id', $event_id)->update(['location' => $value]);
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['location' => $value]);
                 break;
-                case "action-update-eventtoken":
-                    if ($value != '') DB::table('events')->where('id', $event_id)->update(['totp_key' => $value]);
+                case "action-update-price":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['price' => $value]);
+                break;
+                case "action-update-cover_image":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['cover_image' => $value]);
+                break;
+                case "action-update-theme_color_foreground":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['theme_color_foreground' => $value]);
+                break;
+                case "action-update-theme_color_background":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['theme_color_background' => $value]);
+                break;
+                case "action-update-description_public":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['description_public' => $value]);
+                break;
+                case "action-update-description_pending":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['description_pending' => $value]);
+                break;
+                case "action-update-description_private":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['description_private' => $value]);
+                break;
+                case "action-registration-status":
+                    if ($value == "enabled") DB::table('events')->where('id', $id)->update(['opened' => 1]);
+                    else if ($value == "disabled") DB::table('events')->where('id', $id)->update(['opened' => 0]);
+                break;
+                case "action-registration-private":
+                    if ($value == "private") DB::table('events')->where('id', $id)->update(['private' => 1]);
+                    else if ($value == "public") DB::table('events')->where('id', $id)->update(['private' => 0]);
+                break;
+                case "action-registration-auto_accept":
+                    if ($value == "enabled") DB::table('events')->where('id', $id)->update(['auto_accept' => 1]);
+                    else if ($value == "disabled") DB::table('events')->where('id', $id)->update(['auto_accept' => 0]);
                 break;
                 case "action-update-seats":
-                    if ($value > 0) DB::table('events')->where('id', $event_id)->update(['seats' => $value]);
+                    if ($value > 0) DB::table('events')->where('id', $id)->update(['seats' => $value]);
+                break;
+                case "action-update-slots":
+                    if ($value > 0) DB::table('events')->where('id', $id)->update(['slots' => $value]);
+                break;
+                case "action-update-team_members":
+                    if ($value > 0) DB::table('events')->where('id', $id)->update(['team_members' => $value]);
+                break;
+                case "action-update-team_members_reserve":
+                    if ($value > 0) DB::table('events')->where('id', $id)->update(['team_members_reserve' => $value]);
+                break;
+                case "action-update-payment_link":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['payment_link' => $value]);
+                break;
+                case "action-attendance-status":
+                    if ($value == "enabled") DB::table('events')->where('id', $id)->update(['attendance_opened' => 1]);
+                    else if ($value == "disabled") DB::table('events')->where('id', $id)->update(['attendance_opened' => 0]);
+                break;
+                case "action-attendance-type":
+                    if ($value == "entrance") DB::table('events')->where('id', $id)->update(['attendance_is_exit' => 0]);
+                    else if ($value == "exit") DB::table('events')->where('id', $id)->update(['attendance_is_exit' => 1]);
+                break;
+                case "action-update-url_link":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['url_link' => $value]);
+                break;
+                case "action-update-totp_key":
+                    if ($force_change || $value != '') DB::table('events')->where('id', $id)->update(['totp_key' => $value]);
                 break;
             }
+            // Clear cache
+            Cache::forget('availableEvents');
+            $availableEvents = DB::table('events')->where('private', false)->where('opened', true)->get();
+            Cache::put('availableEvents', $availableEvents, 300);
+
         }
 
         return redirect("/admin/event/" . $event_id);

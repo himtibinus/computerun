@@ -14,9 +14,13 @@ children:
         items_per_row: 2
         children:
           - type: "card"
+            banner:
+              text: "COMPUTERUN in 2020 (INSIGHT)"
+              background: "-webkit-linear-gradient(115deg, #0c1631, #314583);"
+              foreground: "#ffffff"
             body:
               type: "markdown"
-              text: "+ **Email:** <a h\u0072ef=\"mai\u006cto:nat\u0086joir\u0040gmai\u006c.com\" rel=\"_b\u006cank\">na<i class=\"fst-norm\u0061l\">th<b class=\"fw-normal\">jo</b>i</i>r&co\u006dmat;\u0067mail.com</a>\n+ **Whatsapp:** <a href=\"ht\u0074ps://\u0077a.me\u002f62\u00385156\u003973\u003524\" rel=\"_blank\">08\u00351<\u0062 class=\"fw-normal\">56\u003973</b\u003e\u003524</a>\n+ **LINE:** <b class=\"fw-n\u006frmal\">n\u0061joi</b>r"
+              text: "![image](https://student-activity.binus.ac.id/himti/wp-content/uploads/sites/13/2021/03/photo_2021-03-04_15-43-34.jpg)"
           - type: "markdown"
             text: "# About Us\n\n**COMPUTERUN** is an annual collaborative event held by the **[Information Systems Student Association (HIMSISFO)](https://student-activity.binus.ac.id/himsisfo)** and the **[Informatics Students Association (HIMTI)](https://himti.or.id)** of **[BINUS University](https://binus.ac.id)**, as one of the efforts in supporting the university to keep striving and becoming **A World-Class University in continuous pursuit of innovation and enterprise.**\n\n
             This year's theme **EXECUTE**, short for **'Experience Business Creativity through Technology'** aims to provide space for students to enhance their creativity skills, develop innovation through technology also gaining rich experiences, new knowledge, and valuable insights along the way.\n\n
@@ -32,54 +36,82 @@ children:
                 items_per_row: 2
                 children:
                   - type: "card"
-                    title: "Opening Ceremony"
+                    banner:
+                      class: "button-gradient"
+                      text: "Opening Ceremony"
                     body:
-                      type: "markdown"
-                      text: "Opening Ceremony is our ceremonial event marking the official start of our COMPUTERUN 2.0 event, there will be games, doorprizes, event information, virtual run milestone announcement, shows, and many more!"
+                      type: "widgetgroup"
+                      children:
+                        - type: "markdown"
+                          text: "**Opening Ceremony** is our ceremonial event marking the official start of our COMPUTERUN 2.0 event, there will be games, doorprizes, event information, virtual run milestone announcement, shows, and many more!"
+                        - type: "markdown"
+                          text: "<div class=\"text-center\"><a href=\"/info/opening-ceremony\" class=\"button button-gradient\">Register</a></div>"
                   - type: "card"
-                    title: "Closing Ceremony (Invitational)"
+                    banner:
+                      class: "button-gradient-2"
+                      text: "Closing Ceremony (Invitational)"
                     body:
                       type: "markdown"
                       text: "The awarding night is an invitational event dedicated to the winners of our competitions, deans, chairmans, committees, and many more to appreciate everyone’s contribution throughout the whole event. We’ll also be presenting awards to the winners, participate in fun activities, enjoy live shows, and many more!"
-          - title: "Virtual-Run"
+          - title: "Virtual Run Competition"
             children:
               - type: "card-container"
-                items_per_row: 1
+                items_per_row: 2
                 children:
                   - type: "card"
-                    title: "SPRINT: Virtual Run"
+                    banner:
+                      text: "SPRINT: Virtual Run"
+                      class: "button-gradient-5"
                     body:
-                      type: "markdown"
-                      text: "SPRINT, short for Striving Accomplishment to Run Within Technology is where people participate in a virtual run event that aims to provide causes for people to start implementing and maintaining a healthier lifestyle through running. Track your own running record from anywhere you want & get a chance to win prizes!"
+                      type: "widgetgroup"
+                      children:
+                        - type: "markdown"
+                          text: "SPRINT, short for **Striving Accomplishment to Run Within Technology** is where people participate in a virtual run event that aims to provide causes for people to start implementing and maintaining a healthier lifestyle through running. Track your own running record from anywhere you want & get a chance to win prizes!"
+                        - type: "markdown"
+                          text: "<div class=\"text-center\"><a href=\"/info/sprint\" class=\"button button-gradient-5\">Register</a></div>"
           - title: "Business-IT Competitions"
             children:
               - type: "card-container"
                 items_per_row: 2
                 children:
                   - type: "card"
-                    title: "Business-IT Case"
+                    banner:
+                      text: "Business-IT Case"
+                      class: "button-gradient"
                     body:
-                      type: "markdown"
-                      text: "COMPUTERUN2.0 Business IT Case Competition is an international scale Business IT Case Competition where undergraduate students from universities throughout the world compete to:\n
-                        - Test their collaborative and analytical skills of a group in finding solutions to solve real-life cases.\n
-                        - Get a chance to hone their mindset and creativity in the business & information-technology field.\n
-                        - Sharpening their mindset to produce effective business solutions."
+                      type: "widgetgroup"
+                      children:
+                        - type: "markdown"
+                          text: "**COMPUTERUN 2.0 Business IT Case Competition** is an international scale Business IT Case Competition where undergraduate students from **universities throughout the world** compete to:\n
+                            - Test their collaborative and analytical skills of a group in finding solutions to solve real-life cases.\n
+                            - Get a chance to hone their mindset and creativity in the business & information-technology field.\n
+                            - Sharpening their mindset to produce effective business solutions."
+                        - type: "markdown"
+                          text: "<div class=\"text-center\"><a href=\"/info/business-it-case\" class=\"button button-gradient\">Register</a></div>"
                   - type: "card"
-                    title: "Web Design Competition"
+                    banner:
+                      text: "Web Design Competition"
+                      class: "button-gradient-2"
                     body:
-                      type: "markdown"
-                      text: "An international-scale website design competition where undergraduate students from universities throughout the world solve problems and issues through website creation. This competition aims and seeks to:\n
-                        - Enhance student's ability to work and collaborate together in group.\n
-                        - Develop effective & creative solutions together in resolving problems.\n
-                        - Sharpening their mindset in preparing to tackle difficulties in the business & IT world in the future.\n
-                        - Improve their web-design skills."
+                      type: "widgetgroup"
+                      children:
+                        - type: "markdown"
+                          text: "An international-scale website design competition where undergraduate students from universities throughout the world **solve problems and issues through website creation**. This competition aims and seeks to:\n
+                            - Enhance student's ability to work and collaborate together in group.\n
+                            - Develop effective & creative solutions together in resolving problems.\n
+                            - Sharpening their mindset in preparing to tackle difficulties in the business & IT world in the future.\n
+                            - Improve their web-design skills."
+                        - type: "markdown"
+                          text: "<div class=\"text-center\"><a href=\"/info/web-design\" class=\"button button-gradient-2\">Register</a></div>"
           - title: "Workshop"
             children:
               - type: "card-container"
-                items_per_row: 1
+                items_per_row: 2
                 children:
                   - type: "card"
-                    title: "Increasing User Satisfaction based on User Habits"
+                    banner:
+                      text: "“Increasing User Satisfaction based on User Habits”"
+                      class: "button-gradient-5"
                     body:
                       type: "markdown"
                       text: "Get a chance to learn UI/UX Design skills faciliated by an industry-experienced instructor that will provide tutorials, tips & tricks revolving UI/UX design with the theme of increasing user's satisfaction based on user habits! Don't miss a chance in learning UI/UX Design skills! There will also be prizes during the end of the workshop!"
@@ -89,12 +121,16 @@ children:
                 items_per_row: 2
                 children:
                   - type: "card"
-                    title: "Creativity in Building and Managing Business during Pandemic"
+                    banner:
+                      text: "“Creativity in Building and Managing Business during Pandemic”"
+                      class: "button-gradient"
                     body:
                       type: "markdown"
                       text: "Attend our creativepreneur webinar where our industry-experienced speaker will share about how to build, develop, and maintain a business during the pandemic, handle real-life business challenges and risk, and many more!"
                   - type: "card"
-                    title: "Implementation of UI/UX in Building A Digital Business"
+                    banner:
+                      text: "“Implementation of UI/UX in Building A Digital Business”"
+                      class: "button-gradient-2"
                     body:
                       type: "markdown"
                       text: "Take part in our UI/UX webinar where our industry-experienced speaker will share insights about the importance of UI/UX design during this digital era, his work experience in the field, the advantage UI/UX to attract customer in a business, and many more!"
@@ -111,8 +147,7 @@ children:
         - type: "card"
           banner:
             text: "1. Create Account"
-            background: "-webkit-linear-gradient(60deg, #3381FF 0%, #6D3EB0 100%)"
-            foreground: "#ffffff"
+            class: "button-gradient-3"
           body:
             type: "widgetgroup"
             tag: "div"
@@ -121,12 +156,11 @@ children:
               - type: "markdown"
                 text: "First thing first, create a new **COMPUTERUN 2.0** account by clicking on this button."
               - type: "markdown"
-                text: "<a href=\"/register\" class=\"button button-gradient\">Create Account</a>"
+                text: "<a href=\"/register\" class=\"button button-gradient-3\">Create Account</a>"
         - type: "card"
           banner:
             text: "2. Register on Events"
-            background: "-webkit-linear-gradient(60deg, #6D3EB0 0%, #AC1782 50%, #D87F65 100%)"
-            foreground: "#ffffff"
+            class: "button-gradient-4"
           body:
             type: "widgetgroup"
             tag: "div"
@@ -137,8 +171,7 @@ children:
         - type: "card"
           banner:
             text: "3. Join Our Group"
-            background: "-webkit-linear-gradient(60deg, #D87F65 0%, #FFB500 100%)"
-            foreground: "#ffffff"
+            class: "button-gradient-5"
           body:
             type: "widgetgroup"
             tag: "div"

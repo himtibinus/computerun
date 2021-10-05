@@ -5,18 +5,11 @@
     <?php
         $requireTwibbonUpload = false;
         for ($i = 0; $i < count($requests); $i++){
-            // if ($requests[$i]->event_id == 1 || $requests[$i]->event_id == 2 || $request[$i]->event_id == 6){
-            //     $requireTwibbonUpload = true;
-            //     break;
-            // }
             switch ($requests[$i]->event_id) {
-                case '1':
+                case '3': // Business-IT Case
                     $requireTwibbonUpload = true;
                     break;
-                case '2':
-                    $requireTwibbonUpload = true;
-                    break;
-                case '6':
+                case '4': // Web Design Development
                     $requireTwibbonUpload = true;
                     break;
                 default:
@@ -48,7 +41,7 @@
             Session::forget('error');
         ?>
     @endif
-    <h1 class="full-underline">Upload Pages</h1><br><h5 style="text-align: center"><b>Your payment code:</b> {{$paymentcode}}</h5>
+    <h1 class="full-underline">Upload Payment Receipt</h1><br><h5 style="text-align: center"><b>Your payment code:</b> {{$paymentcode}}</h5>
     <p class="h4 text-center content-divider-short">Once the documents have been approved, you will eligible for participating in:</p>
     <div class="row justify-content-center content-divider-short">
         <div class="col-md-8 p-0 row justify-content-center">
@@ -79,21 +72,20 @@
             <div class="card content-divider-short">
                 <div class="card-body">
                     @if ($requireTwibbonUpload == true)
-                        If you are registering for <b>Business-IT Case</b> and <b>Mobile Application Development</b> Competitions, please attach the following in a ZIP file:
+                        If you are registering for <b>Business-IT Case</b> and <b>Website Design</b> Competitions, please attach the following in a ZIP file:
                         <ul>
                             <li>Your Payment Receipt</li>
-                            <li>Student ID Card of you and your team members (Verifikasi Kartu Tanda Mahasiswa)</li>
+                            <li>Student ID Card of you and your team members (Verifikasi Kartu Tanda Mahasiswa), see <a href="https://computerun.id/info/student-id-verification" target="_blank">https://computerun.id/info/student-id-verification</a> for details.</li>
                             <li>
                                 Screenshot of Twibbon Upload on Instagram Feeds (you and your team members)
                                 <br>
-                                Twibbon files can be found at <a href="https://drive.computerun.id/files">here</a>.<br>
-                                <p class="red-text">Please make sure to read the README.txt</p>
+                                Twibbon files can be found at <a href="https://drive.computerun.id/files">here</a>.
                             </li>
                         </ul>
                         If you had any questions feel free to chat us on <a href="https://computerun.id/line">LINE</a><br><br>
                         <img class="width-100" src="/docs/Verifikasi KTM.jpg">
                     @else
-                        Please upload a picture/screenshot of your payment receipt
+                        Please upload a picture/screenshot of your payment receipt.
                     @endif
                 </div>
             </div>

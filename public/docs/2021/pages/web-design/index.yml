@@ -1,0 +1,162 @@
+"@manifest":
+  version: 1.0
+type: "page"
+kicker: "Competitions"
+title: "Web Design Competition"
+disable_cache: true
+description: "An international-scale website design competition where undergraduate students from universities throughout the world solve problems and issues through website creation."
+related:
+  - sprint
+children:
+  - type: "container"
+    level: 2
+    show_decorations:
+      - topleftcircle
+      - box1
+      - box2
+      - box3
+      - circle1
+      - circle2
+    children:
+      - type: "section-heading"
+        kicker: "Competitions"
+        title: "Web Design Competition"
+      - type: "about-container"
+        children:
+          - title: "About"
+            children:
+              - type: "markdown"
+                text: "An international-scale website design competition where undergraduate students from universities throughout the world solve problems and issues through website creation. This competition aims and seeks to:"
+              - type: "markdown"
+                text: "- Enhance student's ability to work and collaborate together in group.\n- Develop effective & creative solutions together in resolving problems.\n- Sharpening their mindset in preparing to tackle difficulties in the business & IT world in the future.\n- Improve their web-design skills."
+          - title: "Prizes"
+            children:
+              - type: "card-container"
+                items_per_row: 2
+                children:
+                - type: "card"
+                  banner:
+                    text: "1st Place"
+                    class: "button-gradient-5"
+                  body:
+                    type: "markdown"
+                    text: "<h2 class=\"fw-bold text-center\">Rp 5.000.000</h2>"
+                - type: "card"
+                  banner:
+                    text: "2nd Place"
+                    class: "button-gradient-3"
+                  body:
+                    type: "markdown"
+                    text: "<h2 class=\"fw-bold text-center\">Rp 3.000.000</h2>"
+                - type: "card"
+                  banner:
+                    text: "3rd Place"
+                    class: "button-gradient-4"
+                  body:
+                    type: "markdown"
+                    text: "<h2 class=\"fw-bold text-center\">Rp 1.500.000</h2>"
+          - title: "Competition System"
+            children:
+              - type: "card-container"
+                items_per_row: 2
+                children:
+                - type: "card"
+                  banner:
+                    text: "Elimination Round"
+                    class: "button-gradient"
+                  body:
+                    type: "markdown"
+                    text: "+ In the first stage, Participants will create their website by coding according to the case that is given.\n+ There will be **five (5) best selected groups** that will qualify to the final round."
+                - type: "card"
+                  banner:
+                    text: "Final Round"
+                    class: "button-gradient-2"
+                  body:
+                    type: "markdown"
+                    text: "+ Participants will present their website results to the judges during the final round.\n+ Presentations will be held online via the ZOOM app."
+          - title: "Rules"
+            children:
+              - type: "markdown"
+                file: "/docs/2021/pages/web-design/rules.md"
+          - title: "FAQ"
+            children:
+              - type: "faq"
+                contents:
+                  - question: "Am I allowed to write proposals or answers in text editors other than Microsoft Word?"
+                    answer:
+                      - type: "markdown"
+                        text: "We are still allowing proposals written from other rich text processing software such as **Apple (iWork) Pages**, **LibreOffice Writer**, as well as **(Kingsoft) WPS Writer**, as long as the proposal is submitted in PDF format with the specified guidelines. This means that you do **not** need to worry about the file formats used for saving your working draft (.DOC, .DOCX, .ODT, .WPS, etc.)"
+                      - type: "markdown"
+                        text: "Users of Android, Chrome OS, Linux, and other operating systems where the Times New Roman font is not generally available are still allowed to use **[\"Liberation Serif\"](https://github.com/liberationfonts/liberation-fonts)** (default in Apache OpenOffice.org and LibreOffice), **[\"Tinos\"](https://fonts.google.com/specimen/Tinos)** (default in Chrome OS), **[\"(GNU) FreeSerif\"](http://www.gnu.org/software/freefont/)**, **\"Nimbus Roman\"**, **\"Nimbus Roman No9 L\"**, or **[\"TeX Gyre Termes\"](http://www.gust.org.pl/projects/e-foundry/tex-gyre)** as substitutions for the Times New Roman font on the generated PDF files."
+                  - question: "How do I upload the scanned Student ID Card, Instagram Twibbon evidence, as well as the Payment Receipt?"
+                    answer:
+                      - type: "markdown"
+                        text: "After you clicked on the **REGISTER** button below, you will be redirected to our payment form to upload these three evidences. Please note that we only accept uploads in **.ZIP archive** format and nothing else."
+                      - type: "markdown"
+                        text: "The zip archive **must** include evidences for **all the team leader and members**, and this means you only need to upload evidences once without requiring other team members to upload the same evidences on the payment page. **If you decide to re-upload the file, the older version of the uploaded file will be overriden and no longer available for us to review.**"
+                      - type: "markdown"
+                        text: "When scanning and uploading Student ID Card, please make sure that you and your team members' **university name**, **student identification number**, and the **full name** are clearly visible. Additional guidelines regarding the Student ID Card verification can be found on https://computerun.id/info/student-id-verification."
+  - type: "container"
+    level: 1
+    show_decorations:
+      - ball2
+      - box2
+      - circle4
+    children:
+      - type: "section-heading"
+        title: "Join Now"
+        show_down_arrow: true
+      - type: "registration-form-container"
+        children_guest:
+        - type: "card-container"
+          items_per_row: 3
+          class_container: "margin-1"
+          children:
+          - type: "card"
+            banner:
+              text: "1. Create Account"
+              background: "-webkit-linear-gradient(60deg, #3381FF 0%, #6D3EB0 100%)"
+              foreground: "#ffffff"
+            body:
+              type: "widgetgroup"
+              tag: "div"
+              class: "text-center"
+              children:
+                - type: "markdown"
+                  text: "First thing first, create a new **COMPUTERUN 2.0** account by clicking on this button."
+                - type: "markdown"
+                  text: "<a href=\"/register\" class=\"button button-gradient\">Create Account</a>"
+          - type: "card"
+            banner:
+              text: "2. Register on Events"
+              background: "-webkit-linear-gradient(60deg, #6D3EB0 0%, #AC1782 50%, #D87F65 100%)"
+              foreground: "#ffffff"
+            body:
+              type: "widgetgroup"
+              tag: "div"
+              class: "text-center"
+              children:
+                - type: "markdown"
+                  text: "After signed in with your freshly-new **COMPUTERUN 2.0** account, click that shiny **REGISTER NOW** buttons on events you'd like to participate. Some events may require you to fill in additional information, so please check them out first."
+          - type: "card"
+            banner:
+              text: "3. Join Our Group"
+              background: "-webkit-linear-gradient(60deg, #D87F65 0%, #FFB500 100%)"
+              foreground: "#ffffff"
+            body:
+              type: "widgetgroup"
+              tag: "div"
+              class: "text-center"
+              children:
+                - type: "markdown"
+                  text: "...and finally, don't forget to join our official groups to receive important information regarding your events, competitions, and attendance."
+        children:
+          - type: "registration-form"
+            event_id: 4
+            use_random_team_name: false
+            form_redirect_to: "/info/web-design"
+            additional_fields:
+              - type: "location.country"
+            price_packages:
+              - participants: 3
+                price: 150000
