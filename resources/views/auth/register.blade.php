@@ -142,7 +142,7 @@
                     </div>
                 </div>
             </div>
-            <h2 class="full-underline mb-4">Student ID Card</h2>
+            <!--<h2 class="full-underline mb-4">Student ID Card</h2>
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="alert alert-warning" role="alert">
@@ -160,7 +160,7 @@
                         @enderror
                     </div>
                 </div>
-            </div>
+            </div>-->
             <h2 class="full-underline mb-4">Confirm Password</h2>
             <div class="card mb-4">
                 <div class="card-body">
