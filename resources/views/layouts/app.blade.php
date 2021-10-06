@@ -24,29 +24,21 @@
     @component("components.navbar")
     @endcomponent
     <?php
-      $user = Auth::user();
+      if (Auth::check()){
+        $user = Auth::user();
 
-      $verified = DB::table('user_properties')->where('user_id', $user->id)->where('field_id', 'verified')->first();
-      $user->verified = ($verified ? $verified->value : 0);
+        $verified = DB::table('user_properties')->where('user_id', $user->id)->where('field_id', 'verified')->first();
+        $user->verified = ($verified ? $verified->value : 0);
 
-      $nim = DB::table('user_properties')->where('user_id', $user->id)->where('field_id', 'university.nim')->first();
-      $user->verified = ($nim ? $nim->value : null);
+        $nim = DB::table('user_properties')->where('user_id', $user->id)->where('field_id', 'university.nim')->first();
+        $user->verified = ($nim ? $nim->value : null);
+      }
     ?>
     @if (app('request')->path() == 'home' && Auth::check())
     <div class="container-2 content-top bg-home pb-0">
     @else
     <div class="container-2 content-top bg-event pb-0">
     @endif
-        @if (app('request')->path() == 'home')
-            @component("components.navbar-mobile")
-            @endcomponent
-        @elseif (Str::startsWith(app('request')->path(), 'admin/event/'))
-            @component("components.navbar-mobile", ["template" => "admin-event-details"])
-            @endcomponent
-        @else
-            @component("components.navbar-mobile", ["template" => "login-page"])
-            @endcomponent
-        @endif
         <div class="margin-2 content-divider">
             @switch (app('request')->path())
                 @case ('register')
