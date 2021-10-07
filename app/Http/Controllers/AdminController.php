@@ -121,7 +121,7 @@ class AdminController extends Controller
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
         }
-foreach($request->all() as $key => $value) {
+        foreach($request->all() as $key => $value) {
             if (Str::startsWith($key, "status-") && $value >= 0){
                 $key = substr($key, 7);
                 DB::table('registration')->where('id', $key)->update(['status' => $value]);

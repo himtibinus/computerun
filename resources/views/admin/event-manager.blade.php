@@ -6,7 +6,6 @@
 ?>
 <form action="/admin/event/{{ $event->id }}" method="POST" class="row flex-row-reverse justify-content-center mx-0">
     @csrf
-    <input name="_method" type="hidden" value="PUT">
     <div class="col-12 col-xl-4 p-4 pr-sm-0">
         @if($admin == true)
             <h1 class="display-4 fw-bolder mb-4">Settings</h1>
