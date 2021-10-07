@@ -1,8 +1,8 @@
 "@manifest":
   version: 1.0
 type: "page"
-kicker: "COMPUTERUN 2.0"
-title: "Opening Ceremony"
+kicker: "Seminar"
+title: "“Creativity in Building and Managing Business during Pandemic”"
 disable_cache: true
 related:
   - sprint
@@ -18,20 +18,18 @@ children:
       - circle2
     children:
       - type: "section-heading"
-        kicker: "COMPUTERUN 2.0"
-        title: "Opening Ceremony"
+        kicker: "Seminar"
+        title: "“Creativity in Building and Managing Business during Pandemic”"
       - type: "about-container"
         children:
           - title: "About"
             children:
               - type: "markdown"
-                text: "This is our ceremonial event marking the **official start of our COMPUTERUN 2.0 event**, there will be games, doorprizes, event information, virtual run milestone announcement, shows, and many more!"
-              - type: "markdown"
-                text: "Everyone is able to participate in this Opening Ceremony, whether you are competing for SPRINT, Business-IT Case, Website Development, or none at all. We will **not** charge any fee in order to join this great ceremony, so let's join and have some fun!"
+                text: "Attend our creativepreneur webinar where our industry-experienced speaker will share about how to build, develop, and maintain a business during the pandemic, handle real-life business challenges and risk, and many more!"
           - title: "Rules"
             children:
               - type: "markdown"
-                file: "/docs/2021/pages/opening-ceremony/rules.md"
+                file: "/docs/2021/pages/seminar-1/rules.md"
   - type: "container"
     level: 1
     show_decorations:
@@ -88,5 +86,5 @@ children:
                   text: "...and finally, don't forget to join our official **LINE and WhatsApp groups** to receive important information regarding your events, competitions, and attendance."
         children:
           - type: "registration-form"
-            event_id: 1
-            form_redirect_to: "/info/opening-ceremony"
+            event_id: 10
+            form_redirect_to: "/info/seminar-1"

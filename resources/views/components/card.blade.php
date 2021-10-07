@@ -1,4 +1,4 @@
-<div class="card my-3">
+<div class="card my-3 {{ $class ?? '' }}">
     @if(isset($banner) && is_array($banner))
         <?php
             if(!isset($banner['class'])) $banner['class'] = "";

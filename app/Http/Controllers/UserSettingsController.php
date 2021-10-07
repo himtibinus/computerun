@@ -292,7 +292,7 @@ class UserSettingsController extends Controller
             }
 
             // Reserve members
-            for ($i = 1; $i <= $event->team_members; $i++){
+            for ($i = 1; $i <= $event->team_members_reserve; $i++){
                 if ($request->has('team_member_reserve_' . $i)){
                     $reserve[] = DB::table('users')->where('email', $request->input('team_member_reserve_' . $i))->first();
                 }
@@ -365,13 +365,12 @@ class UserSettingsController extends Controller
             // Find the User ID of reseve team members
             for ($i = 1; $i <= $event->team_members_reserve; $i++){
                 if (!$request->has("team_member_reserve_" . $i) || $request->input("team_member_reserve_" . $i) == "") continue;
-                $tempdetails = DB::table("users")->where("email", $request->input("team_member_reserve_" .($i + 1)))->first();
+                $tempdetails = DB::table("users")->where("email", $request->input("team_member_reserve_" . $i))->first();
                 for ($j = 0; $j < $slots; $j++){
-                    if ($request->has("team_member_reserve_" . ($i + 1))){
-                        $temp = $draft;
-                        $temp["ticket_id"] = $tempdetails->id;
-                        $temp["remarks"] = "Team Member (Reserve)";
-                    }
+                    $temp = $draft;
+                    echo(print_r($tempdetails));
+                    $temp["ticket_id"] = $tempdetails->id;
+                    $temp["remarks"] = "Reserve Team Member";
                     if ($slots > 1) $temp["remarks"] = $temp["remarks"] . ", Slot " . ($j + 1);
                     array_push($query, $temp);
                 }
@@ -385,6 +384,7 @@ class UserSettingsController extends Controller
                 $email_draft['email'] = $tempdetails->email;
                 DB::table('email_queue')->insert($email_draft);
             }
+            var_dump($query);
             // Insert into the database
             DB::table("registration")->insert($query);
         } else {

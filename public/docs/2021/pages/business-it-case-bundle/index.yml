@@ -1,9 +1,10 @@
 "@manifest":
   version: 1.0
 type: "page"
-kicker: "COMPUTERUN 2.0"
-title: "Opening Ceremony"
+kicker: "Event Bundle"
+title: "Business-IT Case Competition + Workshop Bundle"
 disable_cache: true
+description: "Register for both events and save a total of Rp30.000!"
 related:
   - sprint
 children:
@@ -18,20 +19,8 @@ children:
       - circle2
     children:
       - type: "section-heading"
-        kicker: "COMPUTERUN 2.0"
-        title: "Opening Ceremony"
-      - type: "about-container"
-        children:
-          - title: "About"
-            children:
-              - type: "markdown"
-                text: "This is our ceremonial event marking the **official start of our COMPUTERUN 2.0 event**, there will be games, doorprizes, event information, virtual run milestone announcement, shows, and many more!"
-              - type: "markdown"
-                text: "Everyone is able to participate in this Opening Ceremony, whether you are competing for SPRINT, Business-IT Case, Website Development, or none at all. We will **not** charge any fee in order to join this great ceremony, so let's join and have some fun!"
-          - title: "Rules"
-            children:
-              - type: "markdown"
-                file: "/docs/2021/pages/opening-ceremony/rules.md"
+        kicker: "Event Bundle"
+        title: "Business-IT Case Competition + Workshop Bundle"
   - type: "container"
     level: 1
     show_decorations:
@@ -39,11 +28,11 @@ children:
       - box2
       - circle4
     children:
-      - type: "section-heading"
-        title: "Join Now"
-        show_down_arrow: true
       - type: "registration-form-container"
         children_guest:
+        - type: "section-heading"
+          title: "How to Join"
+          show_down_arrow: true
         - type: "card-container"
           items_per_row: 3
           class_container: "margin-1"
@@ -87,6 +76,15 @@ children:
                 - type: "markdown"
                   text: "...and finally, don't forget to join our official **LINE and WhatsApp groups** to receive important information regarding your events, competitions, and attendance."
         children:
+          - type: "section-heading"
+            title: "Join Now"
+            show_down_arrow: true
           - type: "registration-form"
-            event_id: 1
-            form_redirect_to: "/info/opening-ceremony"
+            event_id: 7
+            use_random_team_name: false
+            form_redirect_to: "/info/business-it-case-bundle"
+            additional_fields:
+              - type: "location.country"
+            price_packages:
+              - participants: 3
+                price: 450000

@@ -29,6 +29,10 @@ children:
                 text: "An international-scale website design competition where undergraduate students from universities throughout the world solve problems and issues through website creation. This competition aims and seeks to:"
               - type: "markdown"
                 text: "- Enhance student's ability to work and collaborate together in group.\n- Develop effective & creative solutions together in resolving problems.\n- Sharpening their mindset in preparing to tackle difficulties in the business & IT world in the future.\n- Improve their web-design skills."
+          - title: "Fees"
+            children:
+              - type: "markdown"
+                text: "+ **Web Design Competition only:** Rp300.000\n+ **With [Workshop Bundle](/info/web-design-bundle):** Rp450.000 (for 3 participants, originally Rp480.000)"
           - title: "Prizes"
             children:
               - type: "card-container"
@@ -82,12 +86,6 @@ children:
             children:
               - type: "faq"
                 contents:
-                  - question: "Am I allowed to write proposals or answers in text editors other than Microsoft Word?"
-                    answer:
-                      - type: "markdown"
-                        text: "We are still allowing proposals written from other rich text processing software such as **Apple (iWork) Pages**, **LibreOffice Writer**, as well as **(Kingsoft) WPS Writer**, as long as the proposal is submitted in PDF format with the specified guidelines. This means that you do **not** need to worry about the file formats used for saving your working draft (.DOC, .DOCX, .ODT, .WPS, etc.)"
-                      - type: "markdown"
-                        text: "Users of Android, Chrome OS, Linux, and other operating systems where the Times New Roman font is not generally available are still allowed to use **[\"Liberation Serif\"](https://github.com/liberationfonts/liberation-fonts)** (default in Apache OpenOffice.org and LibreOffice), **[\"Tinos\"](https://fonts.google.com/specimen/Tinos)** (default in Chrome OS), **[\"(GNU) FreeSerif\"](http://www.gnu.org/software/freefont/)**, **\"Nimbus Roman\"**, **\"Nimbus Roman No9 L\"**, or **[\"TeX Gyre Termes\"](http://www.gust.org.pl/projects/e-foundry/tex-gyre)** as substitutions for the Times New Roman font on the generated PDF files."
                   - question: "How do I upload the scanned Student ID Card, Instagram Twibbon evidence, as well as the Payment Receipt?"
                     answer:
                       - type: "markdown"
@@ -103,11 +101,11 @@ children:
       - box2
       - circle4
     children:
-      - type: "section-heading"
-        title: "Join Now"
-        show_down_arrow: true
       - type: "registration-form-container"
         children_guest:
+        - type: "section-heading"
+          title: "How to Join"
+          show_down_arrow: true
         - type: "card-container"
           items_per_row: 3
           class_container: "margin-1"
@@ -149,8 +147,25 @@ children:
               class: "text-center"
               children:
                 - type: "markdown"
-                  text: "...and finally, don't forget to join our official groups to receive important information regarding your events, competitions, and attendance."
+                  text: "...and finally, don't forget to join our official **LINE and WhatsApp groups** to receive important information regarding your events, competitions, and attendance."
         children:
+          - type: "section-heading"
+            title: "Join Now"
+            show_down_arrow: true
+          - type: "card-container"
+            items_per_row: 1
+            class_container: "margin-1"
+            class: "col-md-8 col-lg-6"
+            children:
+            - type: "card"
+              banner:
+                text: "Special Offers for Participants"
+                class: "button-gradient-4"
+              body:
+                type: "markdown"
+                text: "Join our **Workshop** and **Web Design Competition** altogether and save a total of **Rp30.000!<br><a class=\"button button-gradient-4\" href=\"/info/web-design-bundle\">Get the Workshop Bundle (Total Rp450.000)</a>**"
+          - type: "section-heading"
+            title: "Register without Workshop"
           - type: "registration-form"
             event_id: 4
             use_random_team_name: false
@@ -159,4 +174,4 @@ children:
               - type: "location.country"
             price_packages:
               - participants: 3
-                price: 150000
+                price: 300000

@@ -29,6 +29,10 @@ children:
                 text: "COMPUTERUN2.0 Business IT Case Competition is an international scale Business IT Case Competition where undergraduate students from universities throughout the world compete to:"
               - type: "markdown"
                 text: "- Test their collaborative and analytical skills of a group in finding solutions to solve real-life cases.\n- Get a chance to hone their mindset and creativity in the business & information-technology field.\n- Sharpening their mindset to produce effective business solutions."
+          - title: "Fees"
+            children:
+              - type: "markdown"
+                text: "+ **Business-IT Case Competition only:** Rp300.000\n+ **With [Workshop Bundle](/info/business-it-case-bundle):** Rp450.000 (for 3 participants, originally Rp480.000)"
           - title: "Prizes"
             children:
               - type: "card-container"
@@ -101,11 +105,11 @@ children:
       - box2
       - circle4
     children:
-      - type: "section-heading"
-        title: "Join Now"
-        show_down_arrow: true
       - type: "registration-form-container"
         children_guest:
+        - type: "section-heading"
+          title: "How to Join"
+          show_down_arrow: true
         - type: "card-container"
           items_per_row: 3
           class_container: "margin-1"
@@ -147,8 +151,25 @@ children:
               class: "text-center"
               children:
                 - type: "markdown"
-                  text: "...and finally, don't forget to join our official groups to receive important information regarding your events, competitions, and attendance."
+                  text: "...and finally, don't forget to join our official **LINE and WhatsApp groups** to receive important information regarding your events, competitions, and attendance."
         children:
+          - type: "section-heading"
+            title: "Join Now"
+            show_down_arrow: true
+          - type: "card-container"
+            items_per_row: 1
+            class_container: "margin-1"
+            class: "col-md-8 col-lg-6"
+            children:
+            - type: "card"
+              banner:
+                text: "Special Offers for Participants"
+                class: "button-gradient-4"
+              body:
+                type: "markdown"
+                text: "Join our **Workshop** and **Business-IT Case Competition** altogether and save a total of **Rp30.000!<br><a class=\"button button-gradient-4\" href=\"/info/business-it-case-bundle\">Get the Workshop Bundle (Total Rp450.000)</a>**"
+          - type: "section-heading"
+            title: "Register without Workshop"
           - type: "registration-form"
             event_id: 3
             use_random_team_name: false
@@ -157,4 +178,4 @@ children:
               - type: "location.country"
             price_packages:
               - participants: 3
-                price: 150000
+                price: 300000

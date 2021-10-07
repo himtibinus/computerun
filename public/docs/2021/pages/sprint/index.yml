@@ -59,6 +59,10 @@ children:
                 body:
                   type: "markdown"
                   text: "<p class=\"mb-0\">Complete the 5 KM challenge and get your medal, t-shirt, and string bag delivered to your house</p>"
+          - title: "Fees"
+            children:
+              - type: "markdown"
+                file: "/docs/2021/pages/sprint/fees.md"
           - title: "Rules"
             children:
               - type: "markdown"
@@ -67,10 +71,30 @@ children:
             children:
               - type: "faq"
                 contents:
-                  - question: "Question"
+                  - question: "Can I participate in SPRINT outside of Indonesia?"
                     answer:
                       - type: "markdown"
-                        text: "answer"
+                        text: "We would like to apologize that SPRINT is currently unavailable to international participants due to concerns with international shipment/delivery of our Finisher Pack."
+                  - question: "How do I get the STRAVA club link and the upload form?"
+                    answer:
+                      - type: "markdown"
+                        text: "Once your registration has been approved, please come back to this page (under the **Join Now** section) to see the STRAVA club link as well as the running record upload form."
+                  - question: "Should I pay the Shipment/Delivery Fee first or later?"
+                    answer:
+                      - type: "markdown"
+                        text: "**Yes,** please pay the delivery fee altogether with the registration fee to us."
+                      - type: "markdown"
+                        text: "If you are registering for two (2) persons, you'll need to pay the Shipment/Delivery Fee for both."
+                  - question: "I'm registering for two pax and we're living in the same place. Can I just pay the Shipment/Delivery Fee once for both of us?"
+                    answer:
+                      - type: "markdown"
+                        text: "First, please make sure that both of you agree to do so, since we will **not** be responsible for handling further deliveries once the Finisher Pack(s) have been successfully delivered to you."
+                      - type: "markdown"
+                        text: "Then, please let us know via our [LINE Official Account](http://lin.ee/57zX9DW6k) if you would like to do so, so our committees won't deny your application due to false positives for insufficient funds (i.e. you haven't paid the Delivery Fee for the other person)."
+                  - question: "Will I get refunds if I failed to reach the target?"
+                    answer:
+                      - type: "markdown"
+                        text: "**The registration fees are non-refundable and non-negotiable.** However, paid delivery fees can be refunded to you by contacting us through our [LINE Official Account](http://lin.ee/57zX9DW6k)."
   - type: "container"
     level: 1
     show_decorations:
@@ -78,11 +102,11 @@ children:
       - box2
       - circle4
     children:
-      - type: "section-heading"
-        title: "Join Now"
-        show_down_arrow: true
       - type: "registration-form-container"
         children_guest:
+        - type: "section-heading"
+          title: "How to Join"
+          show_down_arrow: true
         - type: "card-container"
           items_per_row: 3
           class_container: "margin-1"
@@ -124,14 +148,52 @@ children:
               class: "text-center"
               children:
                 - type: "markdown"
-                  text: "...and finally, don't forget to join our official groups to receive important information regarding your events, competitions, and attendance."
+                  text: "...and finally, don't forget to join our official **STRAVA Club** to receive important information regarding your events, competitions, and attendance."
         children:
+          - type: "section-heading"
+            title: "Join Now"
+            show_down_arrow: true
           - type: "registration-form"
             event_id: 2
             form_redirect_to: "/info/sprint"
             additional_fields_purpose: "allow us to deliver our SPRINT merchandise to you. Please note that the stated ticket price does not include shipping costs."
             additional_fields:
-              - type: "location.country"
+              - type: "location.indonesia.province"
+                choices:
+                  - value: Aceh
+                  - value: Bali
+                  - value: Banten
+                  - value: Bengkulu
+                  - value: DI Yogyakarta
+                  - value: DKI Jakarta
+                  - value: Gorontalo
+                  - value: Jambi
+                  - value: Jawa Barat
+                  - value: Jawa Tengah
+                  - value: Jawa Timur
+                  - value: Kalimantan Barat
+                  - value: Kalimantan Selatan
+                  - value: Kalimantan Tengah
+                  - value: Kalimantan Timur
+                  - value: Kalimantan Utara
+                  - value: Kepulauan Bangka Belitung
+                  - value: Kepulauan Riau
+                  - value: Lampung
+                  - value: Maluku
+                  - value: Maluku Utara
+                  - value: Nusa Tenggara Barat
+                  - value: Nusa Tenggara Timur
+                  - value: Papua
+                  - value: Papua Barat
+                  - value: Riau
+                  - value: Sulawesi Barat
+                  - value: Sulawesi Selatan
+                  - value: Sulawesi Tengah
+                  - value: Sulawesi Tenggara
+                  - value: Sulawesi Utara
+                  - value: Sumatera Barat
+                  - value: Sumatera Selatan
+                  - value: Sumatera Utara
               - type: "location.home_address"
               - type: "location.postal_code"
               - type: "merchandise.tshirt.size"

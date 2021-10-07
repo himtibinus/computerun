@@ -10,7 +10,7 @@ children:
     level: 1
     children:
       - type: "card-container"
-        class_container: "margin-2"
+        class_container: "margin-1"
         items_per_row: 2
         children:
           - type: "card"
@@ -45,14 +45,14 @@ children:
                         - type: "markdown"
                           text: "**Opening Ceremony** is our ceremonial event marking the official start of our COMPUTERUN 2.0 event, there will be games, doorprizes, event information, virtual run milestone announcement, shows, and many more!"
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/opening-ceremony\" class=\"button button-gradient\">Register</a></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/opening-ceremony\" class=\"button button-gradient\">Register</a><br><small>Free of charge and open to all participants.</small></div>"
                   - type: "card"
                     banner:
                       class: "button-gradient-2"
                       text: "Closing Ceremony (Invitational)"
                     body:
                       type: "markdown"
-                      text: "The awarding night is an invitational event dedicated to the winners of our competitions, deans, chairmans, committees, and many more to appreciate everyone’s contribution throughout the whole event. We’ll also be presenting awards to the winners, participate in fun activities, enjoy live shows, and many more!"
+                      text: "The **awarding night** is an invitational event dedicated to the winners of our competitions, deans, chairmans, committees, and many more to appreciate everyone’s contribution throughout the whole event. We’ll also be presenting awards to the winners, participate in fun activities, enjoy live shows, and many more!"
           - title: "Virtual Run Competition"
             children:
               - type: "card-container"
@@ -68,7 +68,7 @@ children:
                         - type: "markdown"
                           text: "SPRINT, short for **Striving Accomplishment to Run Within Technology** is where people participate in a virtual run event that aims to provide causes for people to start implementing and maintaining a healthier lifestyle through running. Track your own running record from anywhere you want & get a chance to win prizes!"
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/sprint\" class=\"button button-gradient-5\">Register</a></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/sprint\" class=\"button button-gradient-5\">Rp 170.000</a><br><small>Prices excluding delivery/shipping costs. Bulk discounts available.</small></div>"
           - title: "Business-IT Competitions"
             children:
               - type: "card-container"
@@ -87,7 +87,7 @@ children:
                             - Get a chance to hone their mindset and creativity in the business & information-technology field.\n
                             - Sharpening their mindset to produce effective business solutions."
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/business-it-case\" class=\"button button-gradient\">Register</a></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/business-it-case\" class=\"button button-gradient\">Rp 300.000</a><br><small>Special price available for Workshop Bundle.</small></div>"
                   - type: "card"
                     banner:
                       text: "Web Design Competition"
@@ -102,7 +102,7 @@ children:
                             - Sharpening their mindset in preparing to tackle difficulties in the business & IT world in the future.\n
                             - Improve their web-design skills."
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/web-design\" class=\"button button-gradient-2\">Register</a></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/web-design\" class=\"button button-gradient-2\">Rp 300.000</a><br><small>Special price available for Workshop Bundle.</small></div>"
           - title: "Workshop"
             children:
               - type: "card-container"
@@ -113,8 +113,12 @@ children:
                       text: "“Increasing User Satisfaction based on User Habits”"
                       class: "button-gradient-5"
                     body:
-                      type: "markdown"
-                      text: "Get a chance to learn UI/UX Design skills faciliated by an industry-experienced instructor that will provide tutorials, tips & tricks revolving UI/UX design with the theme of increasing user's satisfaction based on user habits! Don't miss a chance in learning UI/UX Design skills! There will also be prizes during the end of the workshop!"
+                      type: "widgetgroup"
+                      children:
+                        - type: "markdown"
+                          text: "Get a chance to learn UI/UX Design skills faciliated by an industry-experienced instructor that will provide tutorials, tips & tricks revolving UI/UX design with the theme of increasing user's satisfaction based on user habits! Don't miss a chance in learning UI/UX Design skills! There will also be prizes during the end of the workshop!"
+                        - type: "markdown"
+                          text: "<div class=\"text-center\"><a href=\"/info/workshop\" class=\"button button-gradient-5\">Rp 60.000</a><br><small>Special price available for new Business-IT Case and Web Design Competition teams.</small></div>"
           - title: "Seminar"
             children:
               - type: "card-container"
@@ -125,15 +129,23 @@ children:
                       text: "“Creativity in Building and Managing Business during Pandemic”"
                       class: "button-gradient"
                     body:
-                      type: "markdown"
-                      text: "Attend our creativepreneur webinar where our industry-experienced speaker will share about how to build, develop, and maintain a business during the pandemic, handle real-life business challenges and risk, and many more!"
+                      type: "widgetgroup"
+                      children:
+                        - type: "markdown"
+                          text: "Attend our creativepreneur webinar where our industry-experienced speaker will share about how to build, develop, and maintain a business during the pandemic, handle real-life business challenges and risk, and many more!"
+                        - type: "markdown"
+                          text: "<div class=\"text-center\"><a href=\"/info/seminar-1\" class=\"button button-gradient\">Register</a><br><small>Free of charge and open to all participants.</small></div>"
                   - type: "card"
                     banner:
                       text: "“Implementation of UI/UX in Building A Digital Business”"
                       class: "button-gradient-2"
                     body:
-                      type: "markdown"
-                      text: "Take part in our UI/UX webinar where our industry-experienced speaker will share insights about the importance of UI/UX design during this digital era, his work experience in the field, the advantage UI/UX to attract customer in a business, and many more!"
+                      type: "widgetgroup"
+                      children:
+                        - type: "markdown"
+                          text: "Take part in our UI/UX webinar where our industry-experienced speaker will share insights about the importance of UI/UX design during this digital era, his work experience in the field, the advantage UI/UX to attract customer in a business, and many more!"
+                        - type: "markdown"
+                          text: "<div class=\"text-center\"><a href=\"/info/seminar-2\" class=\"button button-gradient-2\">Register</a><br><small>Free of charge and open to all participants.</small></div>"
   - type: "container"
     level: 2
     children:
