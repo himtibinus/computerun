@@ -24,5 +24,7 @@
   - **Header:** PAPER TITLE – COMPUTERUN 2.0
   - **Footer:** Page Number at bottom right of the page (starting from the first page after the cover)
 
+Users of operating systems where **Times New Roman** is not generally available are allowed to substitute the font with **[Liberation Serif](https://github.com/liberationfonts/liberation-fonts)** (default in Apache OpenOffice.org and LibreOffice), **[Tinos](https://fonts.google.com/specimen/Tinos)** (default in Chrome OS), **[(GNU) FreeSerif](http://www.gnu.org/software/freefont/)**, **Nimbus Roman**, **Nimbus Roman No9 L**, or **[TeX Gyre Termes](http://www.gust.org.pl/projects/e-foundry/tex-gyre)** in the generated PDF files.
+
 ## Additional Rules and Guidelines
 Full details of the COMPUTERUN 2.0 Business IT Case Competition guidelines are available on [this Guidebook (PDF)]().

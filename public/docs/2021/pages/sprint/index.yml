@@ -37,7 +37,7 @@ children:
               children:
               - type: "card"
                 banner:
-                  text: "Best Male"
+                  text: "Best Male Runner"
                   background: "-webkit-linear-gradient(60deg, #6d3eb0 0%, #3381ff 100%)"
                   foreground: "#ffffff"
                 body:
@@ -45,7 +45,7 @@ children:
                   text: "<h2 class=\"fw-bold text-center\">Rp 500.000</h2>"
               - type: "card"
                 banner:
-                  text: "Best Female"
+                  text: "Best Female Runner"
                   background: "-webkit-linear-gradient(60deg, #ac1782 0%, #d87f65 100%)"
                   foreground: "#ffffff"
                 body:
@@ -129,7 +129,7 @@ children:
           - type: "registration-form"
             event_id: 2
             form_redirect_to: "/info/sprint"
-            additional_fields_purpose: "allow us to deliver our SPRINT merchandise to you."
+            additional_fields_purpose: "allow us to deliver our SPRINT merchandise to you. Please note that the stated ticket price does not include shipping costs."
             additional_fields:
               - type: "location.country"
               - type: "location.home_address"

@@ -86,8 +86,6 @@ children:
                     answer:
                       - type: "markdown"
                         text: "We are still allowing proposals written from other rich text processing software such as **Apple (iWork) Pages**, **LibreOffice Writer**, as well as **(Kingsoft) WPS Writer**, as long as the proposal is submitted in PDF format with the specified guidelines. This means that you do **not** need to worry about the file formats used for saving your working draft (.DOC, .DOCX, .ODT, .WPS, etc.)"
-                      - type: "markdown"
-                        text: "Users of Android, Chrome OS, Linux, and other operating systems where the Times New Roman font is not generally available are still allowed to use **[\"Liberation Serif\"](https://github.com/liberationfonts/liberation-fonts)** (default in Apache OpenOffice.org and LibreOffice), **[\"Tinos\"](https://fonts.google.com/specimen/Tinos)** (default in Chrome OS), **[\"(GNU) FreeSerif\"](http://www.gnu.org/software/freefont/)**, **\"Nimbus Roman\"**, **\"Nimbus Roman No9 L\"**, or **[\"TeX Gyre Termes\"](http://www.gust.org.pl/projects/e-foundry/tex-gyre)** as substitutions for the Times New Roman font on the generated PDF files."
                   - question: "How do I upload the scanned Student ID Card, Instagram Twibbon evidence, as well as the Payment Receipt?"
                     answer:
                       - type: "markdown"
