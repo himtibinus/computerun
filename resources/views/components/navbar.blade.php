@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="container">
-                <p class="my-2 d-none"><b>Tip:</b> Use <kbd>/</kbd> or <kbd>Ctrl+K</kbd> to trigger this awesome menu!</p>
+                <p class="my-2"><b>Tip:</b> Use <kbd>/</kbd> or <kbd>(Ctrl/⌘)+K</kbd> to trigger this awesome menu!</p>
                 <div id="commandpallete-result" class="d-none">
                     <h4 class="full-underline my-3"><i class="bi bi-search" aria-hidden="true"></i> Search Results</h4>
                     <div class="list-group">
