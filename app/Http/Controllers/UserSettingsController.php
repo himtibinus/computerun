@@ -271,7 +271,7 @@ class UserSettingsController extends Controller
         $event_title = (strlen($event->kicker) > 0 ? ($event->kicker . ': ') : '') . $event->name;
         $email_template = [
             'message_type' => 'MARKDOWN',
-            'sender_name' => 'HIMTI - ' . (strlen($event->kicker) > 0 ? $event->kicker : $event->name),
+            'sender_name' => 'COMPUTERUN 2.0 - ' . (strlen($event->kicker) > 0 ? $event->kicker : $event->name),
             'created_at' => date("Y-m-d H:i:s")
         ];
 
