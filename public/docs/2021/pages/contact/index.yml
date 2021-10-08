@@ -1,0 +1,60 @@
+"@manifest":
+  version: 1.0
+type: "page"
+title: "Contact Us"
+disable_cache: true
+children:
+  - type: "container"
+    level: 2
+    show_decorations:
+      - topleftcircle
+      - box1
+      - box2
+      - box3
+      - circle1
+    children:
+      - type: "section-heading"
+        title: "Contact Us"
+      - type: "card-container"
+        class_container: "margin-2"
+        items_per_row: 2
+        children:
+        - type: "card"
+          banner:
+            text: "Our Social Media"
+            class: "button-gradient-3"
+          body:
+            type: "widgetgroup"
+            children:
+              - type: "markdown"
+                text: "We are active in many social media platforms, ranging from **Instagram** to **TikTok** to **LinkedIn**. Don't forget to follow us to get updated information regarding **COMPUTERUN 2.0**!"
+              - type: "markdown"
+                text: "<div class=\"text-center\"><a href=\"https://linktr.ee/computerun\" class=\"button button-gradient-3\">Follow Us</a></div>"
+              - type: "markdown"
+                text: "**COMPUTERUN 2.0** is proudly presented by the **HIMSISFO (Information Systems Student Association)** and **HIMTI (Computer Science Student Association)** of **[BINUS University](https://binus.ac.id)**. To learn more about both of us, please visit:"
+              - type: "markdown"
+                text: "<div class=\"text-center\"><a href=\"https://student-activity.binus.ac.id/himsisfo/contact-us/\" class=\"button button-gradient-3\">HIMSISFO</a> <a href=\"https://student-activity.binus.ac.id/himti/contact-us/\" class=\"button button-gradient-3\">HIMTI</a></div>"
+        - type: "card"
+          banner:
+            text: "For Help, Issues, and Refunds"
+            class: "button-gradient-4"
+          body:
+            type: "widgetgroup"
+            children:
+              - type: "markdown"
+                text: "If you are encountering any issues regarding COMPUTERUN 2.0, please contact us through our LINE Official Account (formerly LINE@) or by email"
+              - type: "markdown"
+                text: "<div class=\"text-center\"><a href=\"http://lin.ee/57zX9DW6k\" class=\"button button-gradient-4\">LINE: @995bowex</a> <a href=\"mailto:computerun2.0@gmail.com\" class=\"button button-gradient-4\">computerun2.0@gmail.com</a></div>"
+              - type: "markdown"
+                text: "We recommend you to read our rules, policies, and guidelines before asking further questions, such as **[performing Student ID Card verification](/info/student-id-verification)** to be eligible to participate in **[Business-IT Case](/info/business-it-case)** as well as **[Web Design](/info/web-design)** competitions."
+        - type: "card"
+          banner:
+            text: "For Sponsorship and Media Partner opportunities"
+            class: "button-gradient-5"
+          body:
+            type: "widgetgroup"
+            children:
+              - type: "markdown"
+                text: "We are currently open for Sponsorship and Media Partner opportunities. You may review our proposal and terms by clicking the links below."
+              - type: "markdown"
+                text: "<div class=\"text-center\"><a href=\"/sponsor-us\" class=\"button button-gradient-5\">Sponsorship</a> <a href=\"/media-partner-proposal\" class=\"button button-gradient-5\">Media Partner </a></div>"

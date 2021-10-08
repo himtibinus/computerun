@@ -26,7 +26,13 @@ children:
             This year's theme **EXECUTE**, short for **'Experience Business Creativity through Technology'** aims to provide space for students to enhance their creativity skills, develop innovation through technology also gaining rich experiences, new knowledge, and valuable insights along the way.\n\n
             **COMPUTERUN 2.0** will be one of our first event to be held **internationally**, so let's join and connect with thousands of aspiring students worldwide!"
       - type: "section-heading"
+        title: "Latest News"
+        id: "news"
+        show_down_arrow: true
+      - type: "news"
+      - type: "section-heading"
         title: "Our Events"
+        id: "events"
         show_down_arrow: true
       - type: "about-container"
         children:

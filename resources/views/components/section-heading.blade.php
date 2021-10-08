@@ -1,4 +1,4 @@
-<div class="margin-2 text-center content-divider pt-3 pb-4">
+<div class="margin-2 text-center content-divider pt-3 pb-4" id="{{ $id ?? '' }}">
     @if(isset($kicker))<span class="h4 font-700">{{ $kicker }}</span><br>@endif
     <p class="h1 font-800 gradient-text font-airstrike my-large">{{ $title }}</p>
 </div>

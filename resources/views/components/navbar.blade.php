@@ -18,17 +18,17 @@
                     <a class="nav-link" href="/" style="color:#8D2A97;">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:#8D2A97;">About</a>
+                    <a class="nav-link" href="/#news" style="color:#8D2A97;">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:#8D2A97;">Events</a>
+                    <a class="nav-link" href="/#events" style="color:#8D2A97;">Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:#8D2A97;">Contact</a>
+                    <a class="nav-link" href="/contact" style="color:#8D2A97;">Contact</a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link" href="#" style="color:#8D2A97;">Guidebook</a>
-                </li>
+                </li>-->
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#commandpalette" aria-label="Toggle navigation" style="color:#8D2A97;">
                         <i class="bi bi-person-circle" style="color: #8D2A97"></i>&nbsp;
@@ -99,26 +99,22 @@
                             <i class="bi bi-house-fill h1"></i>
                             <p class="h5">Home</p>
                         </a>
-                        <div class="col-3 m-2">
+                        <a class="col-3 m-2 discreet" href="/#news">
                             <i class="bi bi-info-circle h1"></i>
-                            <p class="h5">About</p>
-                        </div>
-                        <div class="col-3 m-2">
+                            <p class="h5">News</p>
+                        </a>
+                        <a class="col-3 m-2 discreet" href="/#events">
                             <i class="bi bi-calendar-week h1"></i>
                             <p class="h5">Events</p>
-                        </div>
-                        <div class="col-3 m-2">
+                        </a>
+                        <a class="col-3 m-2 discreet" href="/contact">
                             <i class="bi bi-chat-quote h1"></i>
                             <p class="h5">Contact</p>
-                        </div>
-                        <div class="col-3 m-2">
-                            <i class="bi bi-book-half h1"></i>
-                            <p class="h5">Guidebook</p>
-                        </div>
-                        <div class="col-3 m-2">
+                        </a>
+                        <a class="col-3 m-2 discreet" href="/home">
                             <i class="bi bi-person-circle h1"></i>
                             <p class="h5">Profile</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

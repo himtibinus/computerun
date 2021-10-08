@@ -65,12 +65,12 @@ Route::get('/webinar', function () {
 //});
 
 Route::get('/contact', function () {
-    return view('static.contact');
+    return (new App\Http\Controllers\PagesController())->show('contact');
 });
 
-Route::get('/faq', function () {
-    return view('static.faq');
-});
+// Route::get('/faq', function () {
+//     return view('static.faq');
+// });
 
 Route::get('/twibbon', function () {
     return redirect('/docs/Twibbon-Computerun2020.png');
