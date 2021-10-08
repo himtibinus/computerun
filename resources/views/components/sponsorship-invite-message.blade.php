@@ -39,13 +39,12 @@
             </span>
             @break
         @case(6)
-            <span class="h6" style="font-family: 'Comic Sans MS', ChalkboardSE-Bold, Chilanka, Qanelas, Poppins, sans-serif; font-weight: 700;">
+            <!--<span class="h6" style="font-family: 'Comic Sans MS', ChalkboardSE-Bold, Chilanka, Qanelas, Poppins, sans-serif; font-weight: 700;">
                 Hello, webmaster's here,<br><br>
                 We are currently experiencing an internal issue where there are no sponsors available at this moment.<br><br>
                 While our <a href="/sponsor-us">Sponsorship Proposal</a> is ready to be shared, here's a picture of a cat.<br><br>
                 <img src="/img/icons/2020/loan-7AIDE8PrvA0-unsplash.jpg">
-            </span>
-            @break
+            </span>-->
         @case(7)
             <span class="h3 red-text font-800"><u>UNDER CONSTRUCTION</u></span><br>
             <span class="h6">
