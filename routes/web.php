@@ -98,7 +98,8 @@ Route::post('postcontroller', 'PostController@formSubmit');
 // Route::resource('/login', 'TicketStatusController');
 // Route::get('/logout', 'TicketStatusController@logout');
 
-Auth::routes();
+Auth::routes(['verfiy' => true]));
+
 Route::post('/changeaccountdetails', 'UserSettingsController@updateContacts');
 
 // Get user details (for registration)
