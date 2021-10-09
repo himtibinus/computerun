@@ -234,7 +234,8 @@ class UserSettingsController extends Controller
     // Module to register to certain events
     public function registerToEvent(Request $request){
         if (!Auth::check()) return redirect("/home");
-
+        $redirect_to = '/home';
+        if ($request->has('redirect_to')) $redirect_to = $request->input('redirect_to');
         // Get event ID
         $event_id = $request->input("event_id");
         $team_required = false;
@@ -251,13 +252,13 @@ class UserSettingsController extends Controller
 
         if (!$event){
             $request->session()->put('error', "Event not found.");
-            return redirect('/home');
+            return redirect($redirect_to);
         } else if ($currentTickets->total >= $event->seats) {
             $request->session()->put('error', "Unable to register to " . $event->name . " due to full capacity.");
-            return redirect('/home');
+            return redirect($redirect_to);
         } else if ($event->opened == 0) {
             $request->session()->put('error', "The registration period for " . $event->name . " has been closed.");
-            return redirect('/home');
+            return redirect($redirect_to);
         } else if ($event->team_members + $event->team_members_reserve > 0) $team_required = true;
 
         if ($event->price > 0) $payment_code = uniqid();
@@ -279,14 +280,14 @@ class UserSettingsController extends Controller
         if ($team_required == true){
             if (!$request->has("create_team") || !$request->has("team_name") || $request->input("team_name") == ""){
                 $request->session()->put('error', "You will need to create a team for " . $event->name . ".");
-                return redirect('/home');
+                return redirect($redirect_to);
             }
 
             // Team members
             for ($i = 1; $i <= $event->team_members; $i++){
                 if (!$request->has('team_member_' . $i)){
                     $request->session()->put('error', "Incomplete team members");
-                    return redirect('/home');
+                    return redirect($redirect_to);
                 }
                 $members[] = DB::table('users')->where('email', $request->input('team_member_' . $i))->first();
             }
@@ -319,7 +320,7 @@ class UserSettingsController extends Controller
 
         if ($validation_failed > 0){
             $request->session()->put('error', "You or your team members are not eligible to register to this event.");
-            return redirect('/home');
+            return redirect($redirect_to);
         }
 
         if ($team_required == true){
@@ -355,7 +356,7 @@ class UserSettingsController extends Controller
                 // Mail::to($request->input("team_member_" . ($i + 1)))->send(new SendNewTeamNotification(["name" => $tempdetails["name"], "team_name" => $request->input("team_name"), "team_id" => $team_id, "team_leader_name" => Auth::user()->name, "team_leader_email" => Auth::user()->email, "role" => "Main Player/Member " . ($i + 1), "event_name" => $event->name, "event_kicker" => $event->kicker]));
                 $email_draft = $email_template;
                 $email_draft['subject'] = 'You have been invited to join ' . $event_title . ' by ' . $leader->name;
-                $email_draft['message'] = 'You have been invited by ' . $leader->name . ' (' . $leader->email . ') to join as a member of "' . $request->input("team_name") . '" to join ' . $event_title . PHP_EOL . PHP_EOL . 'Your team and ticket details can be found on https://computerun.id/profile/.' . PHP_EOL . PHP_EOL . 'If you are being added by mistake, please contact the respective event committees.';
+                $email_draft['message'] = 'You have been invited by ' . $leader->name . ' (' . $leader->email . ') to join as a member of "' . $request->input("team_name") . '" to join ' . $event_title . PHP_EOL . PHP_EOL . 'Your team and ticket details can be found on [https://computerun.id/profile/](https://computerun.id/profile/).' . PHP_EOL . PHP_EOL . 'If you are being added by mistake, please contact the respective event committees.';
                 if ($event->price == 0 && $event->auto_accept == true && strlen($event->description_private) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_private;
                 else if (strlen($event->description_pending) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_pending;
                 $email_draft['email'] = $tempdetails->email;
@@ -378,7 +379,7 @@ class UserSettingsController extends Controller
                 // Mail::to($request->input("team_member_reserve_" . ($i + 1)))->send(new SendNewTeamNotification(["name" => $tempdetails->name, "team_name" => $request->input("team_name"), "team_id" => $team_id, "team_leader_name" => Auth::user()->name, "team_leader_email" => Auth::user()->email, "role" => "Reserve Player/Member " . ($i + 1), "event_name" => $event->name, "event_kicker" => $event->kicker]));
                 $email_draft = $email_template;
                 $email_draft['subject'] = 'You have been invited to join ' . $event_title . ' by ' . $leader->name;
-                $email_draft['message'] = 'You have been invited by ' . $leader->name . ' (' . $leader->email . ') to join as a reserve member of "' . $request->input("team_name") . '" to join ' . $event_title . PHP_EOL . PHP_EOL . 'Your team and ticket details can be found on https://computerun.id/profile/.' . PHP_EOL . PHP_EOL . 'If you are being added by mistake, please contact the respective event committees.';
+                $email_draft['message'] = 'You have been invited by ' . $leader->name . ' (' . $leader->email . ') to join as a reserve member of "' . $request->input("team_name") . '" to join ' . $event_title . PHP_EOL . PHP_EOL . 'Your team and ticket details can be found on [https://computerun.id/profile/](https://computerun.id/profile/).' . PHP_EOL . PHP_EOL . 'If you are being added by mistake, please contact the respective event committees.';
                 if ($event->price == 0 && $event->auto_accept == true && strlen($event->description_private) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_private;
                 else if (strlen($event->description_pending) > 0) $email_template['message'] .= PHP_EOL . PHP_EOL . '## Important Information for Event/Attendance' . PHP_EOL . PHP_EOL . $event->description_pending;
                 $email_draft['email'] = $tempdetails->email;
@@ -416,12 +417,14 @@ class UserSettingsController extends Controller
             else return redirect('/pay/' . $payment_code);
         }
 
-        if ($request->has('redirect_to')) return redirect($request->input('redirect_to'));
-        return redirect('/home');
+        return redirect($redirect_to);
     }
     // Module to register to certain events
     public function registerEvent(Request $request){
         if (!Auth::check()) return redirect("/home");
+
+        $redirect_to = '/home';
+        if ($request->has('redirect_to')) $redirect_to = $request->input('redirect_to');
 
         // Get event ID
         $event_id = $request->input("event_id");
@@ -437,17 +440,17 @@ class UserSettingsController extends Controller
         $event = DB::table("events")->where("id", $event_id)->first();
         if (!$event){
             $request->session()->put('error', "Event not found.");
-            return redirect('/home');
+            return redirect($redirect_to);
         } else if ($event->opened == 0) {
             $request->session()->put('error', "The registration period for " . $event->name . " has been closed.");
-            return redirect('/home');
+            return redirect($redirect_to);
         } else if ($event->team_members + $event->team_members_reserve > 0) $team_required = true;
 
         // Get whether teams are needed
         if ($team_required == true){
             if (!$request->has("create_team") || !$request->has("team_name") || $request->input("team_name") == ""){
                 $request->session()->put('error', "You will need to create a team for " . $event->name . ".");
-                return redirect('/home');
+                return redirect($redirect_to);
             }
             // Create a new team
             $team_id = DB::table("teams")->insertGetId(["name" => $request->input("team_name"), "event_id" => $event_id]);
@@ -528,7 +531,7 @@ class UserSettingsController extends Controller
 
         // Return Response
         $request->session()->put('status', "Your registration request has been sent. Please check your email for payment instructions.");
-        return redirect('/home');
+        return redirect($redirect_to);
     }
 
     // Module to Unified Registration Flow
@@ -564,7 +567,7 @@ class UserSettingsController extends Controller
         DB::table('users')->where('id', $userid)->update($draft);
         $request->session()->put('status', "Your Account Settings has been updated.");
         if ($request->has('redirect_to')) return redirect($request->input('redirect_to'));
-        return redirect('/home');
+        return redirect($redirect_to);
     }
 
     public function downloadFileCompetition($teamid){
