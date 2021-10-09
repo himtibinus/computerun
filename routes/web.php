@@ -144,6 +144,10 @@ Route::post('/attendance/{eventId}/{id}', 'NewAttendanceController@store');
 // });
 
 // User Dashboard
+Route::get('/profile', function () {
+    return redirect('/home');
+});
+
 Route::get('/home', 'HomeController@index')->name('dashboard.home');
 
 // Administration Panel
