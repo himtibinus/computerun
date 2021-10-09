@@ -8,7 +8,7 @@ The above registration fee does **not** include additional fees for shipment or 
 |---|---|---|
 | **Java, Bali, and Nusa Tenggara Barat** | Rp30.000 |
 | **Nusa Tenggara Timur** | Rp 35.000 |
-| **Sulawesi and nearby islands**<br>(e.g. Riau islands and Belitung) | Rp 35.000 |
+| **Sumatra and nearby islands**<br>(e.g. Riau islands and Belitung) | Rp 35.000 |
 | **Kalimantan** | Rp60.000 |
 | **Sulawesi and nearby islands** | Rp71.000 |
 | **Maluku and North Maluku islands** | Rp95.000 |
