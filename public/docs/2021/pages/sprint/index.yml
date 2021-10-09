@@ -67,6 +67,12 @@ children:
             children:
               - type: "markdown"
                 file: "/docs/2021/pages/sprint/rules.md"
+          - title: "Guidebook"
+            children:
+              - type: "markdown"
+                text: "If you are **confused and feeling new** about Strava. Please read this **[guidebook](https://drive.google.com/file/d/1iwdeqRvIAh0KM6fo6B6KCnVax9fL7bxP/view)**."
+              - type: "markdown"
+                text: "The guidebook will help you answer your question regarding the Virtual run, let’s find out more information in the guidebook"
           - title: "FAQ"
             children:
               - type: "faq"
