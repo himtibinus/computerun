@@ -97,6 +97,9 @@
                              @endif
                         </td>
                         <td>
+                            @if ($list->status < 2 && strlen($list->payment_code) > 0)
+                                <a href="/pay/{{ $list->payment_code }}" class="btn button no-minimum-width button-gradient button-small margin-0">Pay</a>
+                            @endif
                             @foreach ($events as $item)
                                 @if ($item->attendance_opened == 1 && $list->event_id == $item->id && $list->status > 1 && ($list->event_id >= 3 && $list->event_id <= 6))
                                     <a class="btn no-minimum-width margin-0" href="/cp/{{$list->team_id}}">

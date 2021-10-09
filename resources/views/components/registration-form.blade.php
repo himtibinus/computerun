@@ -266,8 +266,12 @@
                   <br>
                   <b>Team: </b> {{ DB::table('teams')->where('id', $registration->team_id)->first()->name }} <b>(Team ID: {{ $registration->team_id }})</b>
                 @endif
+                @if(strlen($registration->payment_code) > 0)
+                  <br>
+                  <b>Payment Code: </b> {{ $registration->payment_code }}</b>
+                @endif
               </p>
-              @if($registration->status == 1 && strlen($registration->payment_code) > 0)
+              @if($registration->status < 2 && strlen($registration->payment_code) > 0)
                 <div class="btn-toolbar" role="toolbar">
                   <div class="btn-group mr-2" role="group">
                     @if(strlen($event->payment_link) > 0)
