@@ -87,6 +87,12 @@
                     @else
                         Please upload a picture/screenshot of your payment receipt.
                     @endif
+                    <hr>
+                    Please send payments by <b>bank transfer</b> to:
+                    <ul>
+                      <li><b>Account Name:</b> Felisia Mathea</li>
+                      <li><b>Account Number:</b> 5271899018 (Bank Central Asia / BCA, Indonesia)</li>
+                    </ul>
                 </div>
             </div>
             <h1 class="full-underline content-divider-short">Upload Documents</h1>
