@@ -64,7 +64,7 @@
                             </h3>
                             <h5>{{ DB::table('universities')->where('id', $USER->university_id)->first()->name ?? '' }}
                                 @if ($USER->university_id >= 4)
-                                    &bull;Student ID/NIM: {{ DB::table('user_properties')->where('user_id', $USER->id)->where('field_id' = 'university.nim')->first()->value }}
+                                    &bull;Student ID/NIM: {{ DB::table('user_properties')->where('user_id', $USER->id)->where('field_id', 'university.nim')->first()->value }}
                                 @endif
                             </h5>
                         @else

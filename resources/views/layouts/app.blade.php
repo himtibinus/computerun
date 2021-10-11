@@ -82,66 +82,6 @@
             </span>
         </div>
         <div id="app">
-            @if (Auth::check() && ($user->university_id == 2 || $user->university_id == 3))
-            <nav class="navbar navbar-expand-md navbar-light shadow-sm font-800" style="background: -webkit-linear-gradient(115deg, #37e2bc, #249ef2); color: #22365f;">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-                        Admin Menu
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto font-700">
-                            <!-- Authentication Links -->
-                            @guest
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
-                                @endif
-                            @else
-                                <li class="nav-item dropdown">
-                                    <a id="profileDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        Profile
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
-                                        <a class="dropdown-item" href="/home#tickets">Your Tickets</a>
-                                        <a class="dropdown-item" href="/home#teams">Your Teams</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a id="adminDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        Admin
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
-                                        <a class="dropdown-item" href="/admin/events">Manage Events</a>
-                                        <a class="dropdown-item" href="/admin/users">Manage Users</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                </li>
-                            @endguest
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            @endif
             <img class="container-clip" src="/img/backgrounds/2.png">
 
 
@@ -163,5 +103,24 @@
     </div>
     @component('components.footer')
     @endcomponent
+    <script>
+        // Utility function to use Ctrl+K or /
+        var commandPalette = new bootstrap.Modal(document.getElementById('commandpalette'))
+        var macOS = navigator.userAgent.indexOf('Mac OS X') != -1;
+        document.addEventListener('keydown', function (event) {
+            if (
+                (event.key === '/') ||
+                (
+                    (
+                        (macOS && event.metaKey) ||
+                        (!macOS && event.ctrlKey)
+                    ) && event.key === 'k'
+                )
+            ) {
+                event.preventDefault();
+                commandPalette.show();
+            }
+        });
+    </script>
 </body>
 </html>
