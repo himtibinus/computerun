@@ -1,3 +1,4 @@
+<?php $USER = Auth::user() ?>
 <nav class="navbar navbar-expand-lg navbar-display navbar-light sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand discreet" href="/">
@@ -32,7 +33,7 @@
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#commandpalette" aria-label="Toggle navigation" style="color:#8D2A97;">
                         <i class="bi bi-person-circle" style="color: #8D2A97"></i>&nbsp;
-                        <span>{{ Auth::user()->name ?? 'Guest' }}</span>
+                        <span>{{ $USER->name ?? 'Guest' }}</span>
                     </a>
                 </li>
             </ul>
@@ -55,15 +56,15 @@
                 <div class="row">
                     <div class="col-8">
                         @if (Auth::check())
-                            <h3 class="font-800">{{Auth::user()->name ?? 'Guest'}}
-                                @if (Auth::user()->verified == 1)
+                            <h3 class="font-800">{{$USER->name ?? 'Guest'}}
+                                @if ($USER->verified == 1)
                                     @component ("components.bootstrap-icons", ["icon" => "patch-check-fll"])
                                     @endcomponent
                                 @endif
                             </h3>
-                            <h5>{{ DB::table('universities')->where('id', Auth::user()->university_id)->first()->name ?? '' }}
-                                @if (Auth::user()->university_id >= 4)
-                                    &bull;Student ID/NIM: {{ Auth::user()->nim }}
+                            <h5>{{ DB::table('universities')->where('id', $USER->university_id)->first()->name ?? '' }}
+                                @if ($USER->university_id >= 4)
+                                    &bull;Student ID/NIM: {{ DB::table('user_properties')->where('user_id', $USER->id)->where('field_id' = 'university.nim')->first()->value }}
                                 @endif
                             </h5>
                         @else
@@ -111,10 +112,29 @@
                             <i class="bi bi-chat-quote h1"></i>
                             <p class="h5">Contact</p>
                         </a>
-                        <a class="col-3 m-2 discreet" href="/home">
-                            <i class="bi bi-person-circle h1"></i>
-                            <p class="h5">Profile</p>
-                        </a>
+                        @if(Auth::guest())
+                            <a class="col-3 m-2 discreet" href="/register">
+                                <i class="bi bi-person-circle h1"></i>
+                                <p class="h5">Create Account</p>
+                            </a>
+                        @else
+                            @if($USER->university_id == 2)
+                                <a class="col-3 m-2 discreet" href="/admin/users">
+                                    <i class="bi bi-people-lines-fill h1"></i>
+                                    <p class="h5">Manage Users</p>
+                                </a>
+                            @endif
+                            @if($USER->university_id == 2 || $USER->university_id == 3)
+                                <a class="col-3 m-2 discreet" href="/admin/events">
+                                    <i class="bi bi-clipboard-check h1"></i>
+                                    <p class="h5">Manage Events</p>
+                                </a>
+                            @endif
+                            <a class="col-3 m-2 discreet" href="/logout">
+                                <i class="bi bi-person-circle h1"></i>
+                                <p class="h5">Logout</p>
+                            </a>
+                        @endif
                     </div>
                 </div>
             </div>
