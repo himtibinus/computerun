@@ -120,7 +120,7 @@
                         @else
                             @if($USER->university_id == 2)
                                 <a class="col-3 m-2 discreet" href="/admin/users">
-                                    <i class="bi bi-people-lines-fill h1"></i>
+                                    <i class="bi bi-person-lines-fill h1"></i>
                                     <p class="h5">Manage Users</p>
                                 </a>
                             @endif
@@ -131,7 +131,7 @@
                                 </a>
                             @endif
                             <a class="col-3 m-2 discreet" href="/logout">
-                                <i class="bi bi-person-circle h1"></i>
+                                <i class="bi bi-box-arrow-right h1"></i>
                                 <p class="h5">Logout</p>
                             </a>
                         @endif
