@@ -107,7 +107,7 @@ children:
           - title: "Guidebook"
             children:
               - type: "markdown"
-                text: "If you are **feeling new and confused** about Strava. Please kindly read this **[Strava guidebook])**."
+                text: "If you are **feeling new and confused** about Strava. Please kindly read this **[Strava guidebook](https://drive.google.com/file/d/1F5rW0kv06LGsCggJa2b06rbhzFK8rB7h/view?usp=sharing)**."
               - type: "markdown"
                 text: "The guidebook will help you answer your question regarding the Virtual run, let’s find out more information in the guidebook"
           - title: "FAQ"
