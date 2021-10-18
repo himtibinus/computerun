@@ -96,7 +96,7 @@ Route::post('postcontroller', 'PostController@formSubmit');
 
 // Login / User Dashboard
 // Route::resource('/login', 'TicketStatusController');
-// Route::get('/logout', 'TicketStatusController@logout');
+Route::get('/logout', 'TicketStatusController@logout');
 
 Auth::routes(['verify' => true]);
 
