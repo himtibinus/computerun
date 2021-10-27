@@ -58,7 +58,7 @@ children:
                   foreground: "#ffffff"
                 body:
                   type: "markdown"
-                  text: "<h5 class=\"fw-bold text-center\">November 15, 2021</h5>
+                  text: "<h5 class=\"fw-bold text-center\">November 15, 2021</h5>"
               - type: "card"
                 banner:
                   text: "Ceremony"
