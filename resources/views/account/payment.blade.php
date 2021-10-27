@@ -79,11 +79,11 @@
                             <li>
                                 Screenshot of Twibbon Upload on Instagram Feeds (you and your team members)
                                 <br>
-                                Twibbon files can be found at <a href="https://drive.computerun.id/files">here</a>.
+                                Twibbon files can be found at <a href="https://computerun.id/info/twibbon-guidelines" target="_blank">https://computerun.id/info/twibbon-guidelines</a>.
                             </li>
                         </ul>
                         If you had any questions feel free to chat us on <a href="https://computerun.id/line">LINE</a><br><br>
-                        <img class="width-100" src="/docs/Verifikasi KTM.jpg">
+<!--                         <img class="width-100" src="/docs/Verifikasi KTM.jpg"> -->
                     @else
                         Please upload a picture/screenshot of your payment receipt.
                     @endif
