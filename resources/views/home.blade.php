@@ -28,17 +28,19 @@
     @endif
 
     <?php
-        $tickets = DB::table('registration')
-            ->join("events", "events.id", "=", "registration.event_id")
-            ->where('registration.ticket_id', Auth::user()->id)
-            ->get();
-        $events = DB::table('events')->orderBy('name', 'asc')->get();
-//        $events_original = DB::table('events')->orderBy('id', 'asc')->get();
-        $id = DB::table('registration')->where('registration.ticket_id', Auth::user()->id)->select('id')->get();
-        for ($i = 0; $i < count($tickets); $i++){
+        if (!Auth::guest()){
+            $tickets = DB::table('registration')
+                ->join("events", "events.id", "=", "registration.event_id")
+                ->where('registration.ticket_id', Auth::user()->id)
+                ->get();
+            $events = DB::table('events')->orderBy('name', 'asc')->get();
+    //        $events_original = DB::table('events')->orderBy('id', 'asc')->get();
+            $id = DB::table('registration')->where('registration.ticket_id', Auth::user()->id)->select('id')->get();
+            for ($i = 0; $i < count($tickets); $i++){
                 $tickets[$i]->id = $id[$i]->id;
+            }
+    //        dd($tickets);
         }
-//        dd($tickets);
     ?>
     <!-- Your Tickets -->
     <h1 class="text-center {{ session('status') ? 'content-divider' : '' }} font-airstrike gradient-text">Your Tickets</h1>
