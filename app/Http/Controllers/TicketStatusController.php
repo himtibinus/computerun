@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -180,10 +181,10 @@ class TicketStatusController extends Controller
         //
     }
 
-    public function logout(Request $request){
-        Session::forget('name');
-        Session::forget('nim');
-        Session::forget('ticket_number');
-        return redirect('/');
+    public function logout(Request $request)
+    {
+        Session::flush();
+        Auth::logout();
+        return redirect('/login');
     }
 }
