@@ -30,6 +30,43 @@ children:
                 text: "**SPRINT**, short for **Striving Accomplishment to Run Within Technology** is our **virtual run** competition that aims to provide causes for people to start implementing and maintaining a healthier lifestyle through running. Track your own running record from anywhere you want & get a chance to win prizes!"
               - type: "markdown"
                 text: "**SPRINT** will be one of our first events to be hold alongsige our official **[Opening Ceremony](/info/opening-ceremony)**, where we will also announce our SPRINT milestones on the event."
+          - title: "Timeline"
+            children:
+            - type: "card-container"
+              items_per_row: 2
+              children:
+              - type: "card"
+                banner:
+                  text: "Registration & Payment"
+                  background: "-webkit-linear-gradient(60deg, #6d3eb0 0%, #3381ff 100%)"
+                  foreground: "#ffffff"
+                body:
+                  type: "markdown"
+                  text: "<h5 class=\"fw-bold text-center\">October 10, 2021 - October 31, 2021</h5>"
+              - type: "card"
+                banner:
+                  text: "Running Period"
+                  background: "-webkit-linear-gradient(60deg, #6d3eb0 0%, #3381ff 100%)"
+                  foreground: "#ffffff"
+                body:
+                  type: "markdown"
+                  text: "<h5 class=\"fw-bold text-center\">November 1, 2021 - November 15, 2021</h5>
+              - type: "card"
+                banner:
+                  text: "Submit before"
+                  background: "-webkit-linear-gradient(60deg, #ac1782 0%, #d87f65 100%)"
+                  foreground: "#ffffff"
+                body:
+                  type: "markdown"
+                  text: "<h5 class=\"fw-bold text-center\">November 15, 2021</h5>
+              - type: "card"
+                banner:
+                  text: "Ceremony"
+                  background: "-webkit-linear-gradient(60deg, #ac1782 0%, #d87f65 100%)"
+                  foreground: "#ffffff"
+                body:
+                  type: "markdown"
+                  text: "<h5 class=\"fw-bold text-center\">November 21, 2021</h5>
           - title: "Prizes"
             children:
             - type: "card-container"
@@ -67,6 +104,12 @@ children:
             children:
               - type: "markdown"
                 file: "/docs/2021/pages/sprint/rules.md"
+          - title: "Guidebook"
+            children:
+              - type: "markdown"
+                text: "If you are **feeling new and confused** about Strava. Please kindly read this **[Strava guidebook](https://drive.google.com/file/d/1F5rW0kv06LGsCggJa2b06rbhzFK8rB7h/view?usp=sharing)**."
+              - type: "markdown"
+                text: "The guidebook will help you answer your question regarding the Virtual run, let’s find out more information in the guidebook"
           - title: "FAQ"
             children:
               - type: "faq"
