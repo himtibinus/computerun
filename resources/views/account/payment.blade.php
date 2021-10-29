@@ -3,14 +3,14 @@
 @section('content')
 <div class="container">
     <?php
-        $requireTwibbonUpload = false;
+        $requireStudentIdCard = false;
         for ($i = 0; $i < count($requests); $i++){
             switch ($requests[$i]->event_id) {
                 case '3': // Business-IT Case
-                    $requireTwibbonUpload = true;
+                    $requireStudentIdCard = true;
                     break;
                 case '4': // Web Design Development
-                    $requireTwibbonUpload = true;
+                    $requireStudentIdCard = true;
                     break;
                 default:
                     break;
@@ -71,22 +71,19 @@
             <h1 class="full-underline content-divider-short">Instructions</h1>
             <div class="card content-divider-short">
                 <div class="card-body">
-                    @if ($requireTwibbonUpload == true)
-                        If you are registering for <b>Business-IT Case</b> and <b>Website Design</b> Competitions, please attach the following in a ZIP file:
-                        <ul>
-                            <li>Your Payment Receipt</li>
+                    If you are registering for <b>Business-IT Case</b> and <b>Website Design</b> Competitions, please attach the following in a ZIP file:
+                    <ul>
+                        <li>Your Payment Receipt</li>
+                        @if ($requireStudentIdCard == true)
                             <li>Student ID Card of you and your team members (Verifikasi Kartu Tanda Mahasiswa), see <a href="https://computerun.id/info/student-id-verification" target="_blank">https://computerun.id/info/student-id-verification</a> for details.</li>
-                            <li>
-                                Screenshot of Twibbon Upload on Instagram Feeds (you and your team members)
-                                <br>
-                                Twibbon files can be found at <a href="https://computerun.id/info/twibbon-guidelines" target="_blank">https://computerun.id/info/twibbon-guidelines</a>.
-                            </li>
-                        </ul>
-                        If you had any questions feel free to chat us on <a href="https://computerun.id/line">LINE</a><br><br>
-<!--                         <img class="width-100" src="/docs/Verifikasi KTM.jpg"> -->
-                    @else
-                        Please upload a picture/screenshot of your payment receipt.
-                    @endif
+                        @endif
+                        <li>
+                            Screenshot of Twibbon Upload on Instagram Feeds (you and your team members)
+                            <br>
+                            Twibbon files can be found at <a href="https://computerun.id/info/twibbon-guidelines" target="_blank">https://computerun.id/info/twibbon-guidelines</a>.
+                        </li>
+                    </ul>
+                    If you had any questions feel free to chat us on <a href="https://computerun.id/line">LINE</a><br><br>
                     <hr>
                     Please send payments by <b>bank transfer</b> to:
                     <ul>
