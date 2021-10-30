@@ -229,6 +229,26 @@
     @else
       @foreach($registration_list as $registration)
         <div class="col-md-6">
+          @if($registration->status == 0 && strlen($event->description_pending) > 0)
+            <div class="card mb-4">
+              <div class="card-header h4 bg-info text-white">
+                <i class="bi bi-info-circle"></i> Important Information
+              </div>
+              <div class="card-body text-dark">
+                {{ new Parsedown())->text($event->description_pending) }}
+              </div>
+            </div>
+          @endif
+          @if($registration->status >= 2 && strlen($event->description_private) > 0)
+            <div class="card mb-4">
+              <div class="card-header h4 bg-info text-white">
+                <i class="bi bi-info-circle"></i> Important Information
+              </div>
+              <div class="card-body text-dark">
+                {{ new Parsedown())->text($event->description_private) }}
+              </div>
+            </div>
+          @endif
           <div class="card mb-4">
             <div class="card-header h4 bg-primary text-white">
               <i class="bi bi-card-heading"></i> Ticket #{{ $registration->id }}
