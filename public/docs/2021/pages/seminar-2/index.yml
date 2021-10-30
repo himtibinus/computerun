@@ -2,7 +2,7 @@
   version: 1.0
 type: "page"
 kicker: "Seminar"
-title: "“Creativity in Building and Managing Business during Pandemic”"
+title: "“Implementation of UI/UX in Building A Digital Business”"
 disable_cache: true
 related:
   - sprint
@@ -19,13 +19,13 @@ children:
     children:
       - type: "section-heading"
         kicker: "Seminar"
-        title: "“Creativity in Building and Managing Business during Pandemic”"
+        title: "“Implementation of UI/UX in Building A Digital Business”"
       - type: "about-container"
         children:
           - title: "About"
             children:
               - type: "markdown"
-                text: "Attend our creativepreneur webinar where our industry-experienced speaker will share about how to build, develop, and maintain a business during the pandemic, handle real-life business challenges and risk, and many more!"
+                text: "Take part in our UI/UX webinar where our industry-experienced speaker will share insights about the importance of UI/UX design during this digital era, his work experience in the field, the advantage UI/UX to attract customer in a business, and many more!"
           - title: "Rules"
             children:
               - type: "markdown"
