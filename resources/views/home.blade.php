@@ -121,6 +121,17 @@
                             @endif
                         </td>
                     </tr>
+                    @if($list->status >= 2 && strlen($list->description_private) > 0)
+                        <tr>
+                            <td></td>
+                            <td colspan="3">{{ new Parsedown())->text($list->description_private) }}</td>
+                        </tr>
+                    @elseif(strlen($list->description_pending) > 0)
+                        <tr>
+                            <td></td>
+                            <td colspan="3">{{ new Parsedown())->text($list->description_pending) }}</td>
+                        </tr>
+                    @endif
                 @endforeach
             </tbody>
         </table>
