@@ -244,7 +244,7 @@
                 <i class="bi bi-info-circle"></i> Important Information
               </div>
               <div class="card-body text-dark">
-                {{ new Parsedown())->text($event->description_pending) }}
+                {{ (new Parsedown())->text($event->description_pending) }}
               </div>
             </div>
           @endif
