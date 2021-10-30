@@ -223,10 +223,8 @@
                     <b>Email:</b> {{ $registration->email }}<br>
                     <b>University: </b> {{ DB::table('universities')->where('id', $registration->university_id)->first()->name }}<br>
                     @if(strlen($registration->team_id) > 0)
-                        <br>
-                        <b>Team: </b> {{ DB::table('teams')->where('id', $registration->team_id)->first()->name }} <b>(Team ID: {{ $registration->team_id }})</b>
+                        <b>Team: </b> {{ DB::table('teams')->where('id', $registration->team_id)->first()->name }}<br>
                     @endif
-                    @if(strlen($registration->check_in_timestamp) > 0
                     @if(strlen($registration->payment_code) > 0)
                         <b>Payment Code:</b> {{ $registration->payment_code }}<br>
                     @endif
