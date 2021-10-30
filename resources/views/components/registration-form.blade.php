@@ -235,7 +235,7 @@
                 <i class="bi bi-info-circle"></i> Important Information
               </div>
               <div class="card-body text-dark">
-                {{ new Parsedown())->text($event->description_private) }}
+                {{ (new Parsedown())->text($event->description_private) }}
               </div>
             </div>
           @elseif(strlen($event->description_pending) > 0)
