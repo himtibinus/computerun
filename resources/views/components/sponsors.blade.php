@@ -6,5 +6,7 @@
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'why-apparel', 'name' => 'W.H.Y Apparel'])
         @endcomponent
+        @component ('components.sponsor-item', ['id' => 'tiketcom', 'name' => 'Tiket.com'])
+        @endcomponent
     </div>
 </div>
