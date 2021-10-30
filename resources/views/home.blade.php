@@ -124,12 +124,12 @@
                     @if($list->status >= 2 && strlen($list->description_private) > 0)
                         <tr>
                             <td></td>
-                            <td colspan="3">{{ (new Parsedown())->text($list->description_private) }}</td>
+                            <td colspan="3"><b>Important Information for {{ $list->name }}</b><br>{!! (new Parsedown())->text($list->description_private) !!}</td>
                         </tr>
                     @elseif(strlen($list->description_pending) > 0)
                         <tr>
                             <td></td>
-                            <td colspan="3">{{ (new Parsedown())->text($list->description_pending) }}</td>
+                            <td colspan="3"><b>Important Information for {{ $list->name }}</b><br>{!! (new Parsedown())->text($list->description_pending) !!}</td>
                         </tr>
                     @endif
                 @endforeach

@@ -103,13 +103,10 @@
         var macOS = navigator.userAgent.indexOf('Mac OS X') != -1;
         document.addEventListener('keydown', function (event) {
             if (
-                (event.key === '/') ||
                 (
-                    (
-                        (macOS && event.metaKey) ||
-                        (!macOS && event.ctrlKey)
-                    ) && event.key === 'k'
-                )
+                    (macOS && event.metaKey) ||
+                    (!macOS && event.ctrlKey)
+                ) && event.key === 'k'
             ) {
                 event.preventDefault();
                 commandPalette.show();
