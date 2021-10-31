@@ -44,7 +44,7 @@
     ?>
     <!-- Your Tickets -->
     <h1 class="text-center {{ session('status') ? 'content-divider' : '' }} font-airstrike gradient-text">Your Tickets</h1>
-    @if (count($tickets) > 0)
+    @if (isset($tickets) && count($tickets) > 0)
         <table class="table margin-0 content-divider-short">
             <thead>
                 <tr>
