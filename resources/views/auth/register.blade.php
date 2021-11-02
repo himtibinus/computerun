@@ -42,7 +42,7 @@
                     <div class="form-group row" id="nim-container">
                         <label for="nim" class="col-md-4 col-form-label text-md-right">{{ __('Student ID Number / NIM') }}<b class="text-danger">*</b></label>
                         <div class="col-md-6">
-                            <input id="nim" type="number" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}">
+                            <input id="nim" type="text" class="form-control @error('nim') is-invalid @enderror" name="nim" value="{{ old('nim') }}">
 
                             @error('nim')
                                 <span class="invalid-feedback" role="alert">

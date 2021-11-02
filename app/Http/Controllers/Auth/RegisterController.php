@@ -59,7 +59,7 @@ class RegisterController extends Controller
             'line' => ['nullable', 'string'],
             'whatsapp' => ['nullable', 'string'],
             'university_id' => ['required', 'numeric'],
-            'nim' => ['nullable', 'numeric'],
+            'nim' => ['nullable', 'string'],
             'binus_regional' => ['nullable', 'string'],
             'major_name' => ['nullable', 'string'],
             'new_university' => ['nullable', 'string'],
