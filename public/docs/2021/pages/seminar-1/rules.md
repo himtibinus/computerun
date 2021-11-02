@@ -4,3 +4,4 @@
 4. Participants are **prohibited from smoking/vaping and sleeping** during the seminar.
 5. Participants must fill **both entry and exit tickets** in order to receive an E-Certificate (all participants) as well as [SAT points](https://student.binus.ac.id/sat/) (BINUSIAN only).
 6. Participants are only allowed to ask from the Question Form provided in [Slido](https://sli.do).
+7. Registration will Open on 1 December 2021 - 3 January 2022
