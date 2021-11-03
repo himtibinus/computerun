@@ -25,17 +25,18 @@
                       $field['value'] = DB::table('user_properties')->where('user_id', Auth::user()->id)->where('field_id', $field['type'])->first();
                       $field['name'] = DB::table('fields')->where('id', $field['type'])->first()->name;
                       if (!$field['value']) $registration_valid = false;
+                      $required = !(isset($field['optional']) && $field['optional'] == true);
                     ?>
                     <div class="mb-3">
                       <label for="action-change-{{ $field['type'] }}" class="form-label">{{ $field['name'] }}<span class="text-danger">*</span></label>
                       @if (isset($field['choices']))
-                        <select class="form-select" aria-label="Default select example" name="action-change-{{ str_replace('.', '_', $field['type']) }}" id="action-change-{{ $field['type'] }}" required>
+                        <select class="form-select" aria-label="Default select example" name="action-change-{{ str_replace('.', '_', $field['type']) }}" id="action-change-{{ $field['type'] }}" @if($required) required @endif>
                           @foreach($field['choices'] as $choice)
                             <option value="{{ $choice['value'] }}" @if(isset($field['value']->value) && $field['value']->value == $choice['value']) selected @endif>{{ $choice['label'] ?? $choice['value'] }}</option>
                           @endforeach
                         </select>
                       @else
-                        <input type="text" class="form-control" name="action-change-{{ str_replace('.', '_', $field['type']) }}" id="action-change-{{ $field['type'] }}" value="{{ $field['value']->value ?? '' }}" required>
+                        <input type="text" class="form-control" name="action-change-{{ str_replace('.', '_', $field['type']) }}" id="action-change-{{ $field['type'] }}" value="{{ $field['value']->value ?? '' }}" @if($required) required @endif>
                       @endif
                     </div>
                   @endforeach

@@ -257,6 +257,8 @@ children:
                     label: "Female, Large (42 x 66 cm)"
                   - value: "female-xl"
                     label: "Female, Extra Large (43 x 69 cm)"
+              - type: "promo.sprint"
+                optional: true
             price_packages:
               - participants: 1
                 reserve: true

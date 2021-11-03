@@ -112,4 +112,6 @@ children:
             form_redirect_to: "/info/workshop"
             additional_fields:
               - type: "location.country"
+              - type: "promo.workshop"
+                optional: true
             price: 60000
