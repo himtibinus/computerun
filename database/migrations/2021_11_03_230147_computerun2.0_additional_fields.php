@@ -15,6 +15,7 @@ class Computerun2AdditionalFields extends Migration
         $fields = DB::table('fields');
         $fields->insert(['id' => 'promo.business_it_case', 'name' => 'Promo Code for Business-IT Case Competition', 'editable' => true]);
         $fields->insert(['id' => 'promo.business_it_case_bundle', 'name' => 'Promo Code for Business-IT Case Competition (Bundle)', 'editable' => true]);
+        $fields->insert(['id' => 'promo.sprint', 'name' => 'Promo Code for SPRINT', 'editable' => true]);
         $fields->insert(['id' => 'promo.web_design', 'name' => 'Promo Code for Web Design Competition', 'editable' => true]);
         $fields->insert(['id' => 'promo.web_design_bundle', 'name' => 'Promo Code for Web Design Competition (Bundle)', 'editable' => true]);
         $fields->insert(['id' => 'promo.workshop', 'name' => 'Promo Code for Workshop', 'editable' => true]);
@@ -36,6 +37,7 @@ class Computerun2AdditionalFields extends Migration
         $user_properties = DB::table('user_properties');
         $user_properties->where('field_id', 'promo.business_it_case')
             ->orWhere('field_id', 'promo.business_it_case_bundle')
+            ->orWhere('field_id', 'promo.sprint')
             ->orWhere('field_id', 'promo.web_design')
             ->orWhere('field_id', 'promo.web_design_bundle')
             ->orWhere('field_id', 'promo.workshop')
