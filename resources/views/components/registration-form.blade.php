@@ -28,7 +28,7 @@
                       $required = !(isset($field['optional']) && $field['optional'] == true);
                     ?>
                     <div class="mb-3">
-                      <label for="action-change-{{ $field['type'] }}" class="form-label">{{ $field['name'] }}<span class="text-danger">*</span></label>
+                      <label for="action-change-{{ $field['type'] }}" class="form-label">{{ $field['name'] }} @if($required) <b class="red-text">*</b> @endif </label>
                       @if (isset($field['choices']))
                         <select class="form-select" aria-label="Default select example" name="action-change-{{ str_replace('.', '_', $field['type']) }}" id="action-change-{{ $field['type'] }}" @if($required) required @endif>
                           @foreach($field['choices'] as $choice)
