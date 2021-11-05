@@ -89,10 +89,10 @@ else {
       }
     }
     ksort($articles, SORT_NUMERIC);
-    Cache::put('news', $articles , 360);
   } catch (Exception $e){
     $articles = [];
   }
+  Cache::put('news', $articles , 360);
 }
 ?>
 
