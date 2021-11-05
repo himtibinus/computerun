@@ -6,3 +6,6 @@
 6. Participants submit their running records (distance and screenshot) through **our form available on COMPUTERUN 2.0 website**.
 7. Participants are **allowed** to submit their running records **multiple times**.
 8. The **Finisher Pack (medal, t-shirt, and string bag)** will only be given to those who have reached the target distance of 5 km.
+
+## Additional Rules and Guidelines
+Full details of the COMPUTERUN 2.0 SPRINT Virtual Run Competition guidelines are available on [this Guidebook (PDF)](https://drive.google.com/drive/folders/1POK9vsjJk08WX1VD6ajv5E5vPNc6nKXb).

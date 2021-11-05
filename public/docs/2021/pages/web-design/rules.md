@@ -17,4 +17,4 @@
 + Judges and the committees possess the right to cancel or disqualify participants that are proven cheating, fraud indicated in plagiarism or any copyright infringement.
 
 ## Additional Rules and Guidelines
-Full details of the COMPUTERUN 2.0 Web Design Competition guidelines are available on [this Guidebook (PDF)]().
+Full details of the COMPUTERUN 2.0 Web Design Competition guidelines are available on [this Guidebook (PDF)](https://drive.google.com/drive/folders/1POK9vsjJk08WX1VD6ajv5E5vPNc6nKXb).
