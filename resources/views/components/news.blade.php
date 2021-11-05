@@ -43,52 +43,56 @@ $articles = [];
 
 if (Cache::has('news')) $articles = Cache::get('news');
 else {
-  foreach ($sources as $source){
-    // Fetch data
-    if ($source['source_type'] == 'atom' || $source['source_type'] == 'rss'){
-      $feed = simplexml_load_file($source['feed_url']);
-      $entries = ($source['source_type'] == 'atom') ? $feed->entry : $feed->channel->item;
+  try {
+    foreach ($sources as $source){
+      // Fetch data
+      if ($source['source_type'] == 'atom' || $source['source_type'] == 'rss'){
+        $feed = simplexml_load_file($source['feed_url']);
+        $entries = ($source['source_type'] == 'atom') ? $feed->entry : $feed->channel->item;
 
-      foreach ($entries as $entry){
-        // Title
-        $item = [
-          'title' => (string) $entry->title,
-          'content_type' => $source['content_type'],
-          'categories' => [],
-        ];
+        foreach ($entries as $entry){
+          // Title
+          $item = [
+            'title' => (string) $entry->title,
+            'content_type' => $source['content_type'],
+            'categories' => [],
+          ];
 
-        // URL
-        if ($source['source_type'] == 'atom') {
-          $item['url'] = (string) $entry->link->attributes()->{'href'};
-        } else {
-          $item['url'] = (string) $entry->link;
-        }
-
-        // Timestamp
-        if (isset($entry->pubDate)) $item['timestamp'] = (int) strtotime($entry->pubDate . " UTC");
-        else if (isset($entry->published)) $item['timestamp'] = (int) strtotime($entry->published . " UTC");
-        else $item['timestamp'] = (int) $entry->timestamp;
-
-        // Cover Image
-        if (isset($entry->enclosure)) $item['cover_image'] = (string) $entry->enclosure->attributes()->{'url'};
-        else if (isset($entry->children('media', TRUE)->content)) $item['cover_image'] = (string) $entry->children('media', TRUE)->content->attributes()->url;
-        else if (isset($entry->children('media', TRUE)->group)) $item['cover_image'] = (string) $entry->children('media', TRUE)->group->children('media', TRUE)->thumbnail->attributes()->url;
-
-        // Categories and Tags
-        if (isset($entry->category)){
-          // if (!is_array($entry->category)) $entry->category = array($entry->category);
-          foreach ($entry->category as $category){
-            array_push($item['categories'], (string) $category->attributes()->term);
+          // URL
+          if ($source['source_type'] == 'atom') {
+            $item['url'] = (string) $entry->link->attributes()->{'href'};
+          } else {
+            $item['url'] = (string) $entry->link;
           }
-        }
 
-        // Push into article list
-        $articles[$item['timestamp']] = $item;
+          // Timestamp
+          if (isset($entry->pubDate)) $item['timestamp'] = (int) strtotime($entry->pubDate . " UTC");
+          else if (isset($entry->published)) $item['timestamp'] = (int) strtotime($entry->published . " UTC");
+          else $item['timestamp'] = (int) $entry->timestamp;
+
+          // Cover Image
+          if (isset($entry->enclosure)) $item['cover_image'] = (string) $entry->enclosure->attributes()->{'url'};
+          else if (isset($entry->children('media', TRUE)->content)) $item['cover_image'] = (string) $entry->children('media', TRUE)->content->attributes()->url;
+          else if (isset($entry->children('media', TRUE)->group)) $item['cover_image'] = (string) $entry->children('media', TRUE)->group->children('media', TRUE)->thumbnail->attributes()->url;
+
+          // Categories and Tags
+          if (isset($entry->category)){
+            // if (!is_array($entry->category)) $entry->category = array($entry->category);
+            foreach ($entry->category as $category){
+              array_push($item['categories'], (string) $category->attributes()->term);
+            }
+          }
+
+          // Push into article list
+          $articles[$item['timestamp']] = $item;
+        }
       }
     }
+    ksort($articles, SORT_NUMERIC);
+    Cache::put('news', $articles , 360);
+  } catch (Exception $e){
+    $articles = [];
   }
-  ksort($articles, SORT_NUMERIC);
-  Cache::put('news', $articles , 360);
 }
 ?>
 

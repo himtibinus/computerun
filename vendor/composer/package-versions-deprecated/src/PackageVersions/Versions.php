@@ -167,7 +167,7 @@ final class Versions
   'tysonandre/var_representation_polyfill' => '0.1.1@0a942e74e18af5514749895507bc6ca7ab96399a',
   'vimeo/psalm' => '4.10.0@916b098b008f6de4543892b1e0651c1c3b92cbfa',
   'webmozart/path-util' => '2.3.0@d939f7edc24c9a1bb9c0dee5cb05d8e859490725',
-  'laravel/laravel' => 'dev-main@9d8b02d7a253b79c36c3ea2fee0d554c4f7696a3',
+  'laravel/laravel' => 'dev-master@2f9e2c2d059407a3fed87f4c2f44cb84e0b53956',
 );
 
     private function __construct()
@@ -227,7 +227,7 @@ final class Versions
             }
         } else {
             $rawData = InstalledVersions::getRawData();
-            if ($rawData === []) {
+            if ($rawData === null || $rawData === []) {
                 return false;
             }
         }
