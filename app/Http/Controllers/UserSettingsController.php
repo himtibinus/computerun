@@ -547,6 +547,9 @@ class UserSettingsController extends Controller
         // Ensure that the user has logged in
         if (!Auth::check()) return redirect("/home");
 
+        $redirect_to = '/home';
+        if ($request->has('redirect_to')) $redirect_to = $request->input('redirect_to');
+
         // Set the User ID
         $userid = Auth::user()->id;
 
@@ -566,7 +569,6 @@ class UserSettingsController extends Controller
 
         DB::table('users')->where('id', $userid)->update($draft);
         $request->session()->put('status', "Your Account Settings has been updated.");
-        if ($request->has('redirect_to')) return redirect($request->input('redirect_to'));
         return redirect($redirect_to);
     }
 
