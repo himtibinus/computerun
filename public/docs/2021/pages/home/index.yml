@@ -22,9 +22,7 @@ children:
               type: "markdown"
               text: "![image](https://student-activity.binus.ac.id/himti/wp-content/uploads/sites/13/2021/03/photo_2021-03-04_15-43-34.jpg)"
           - type: "markdown"
-            text: "# About Us\n\n**COMPUTERUN** is an annual collaborative event held by the **[Information Systems Student Association (HIMSISFO)](https://student-activity.binus.ac.id/himsisfo)** and the **[Informatics Students Association (HIMTI)](https://himti.or.id)** of **[BINUS University](https://binus.ac.id)**, as one of the efforts in supporting the university to keep striving and becoming **A World-Class University in continuous pursuit of innovation and enterprise.**\n\n
-            This year's theme **EXECUTE**, short for **'Experience Business Creativity through Technology'** aims to provide space for students to enhance their creativity skills, develop innovation through technology also gaining rich experiences, new knowledge, and valuable insights along the way.\n\n
-            **COMPUTERUN 2.0** will be one of our first event to be held **internationally**, so let's join and connect with thousands of aspiring students worldwide!"
+            text: "# About Us\n\n**COMPUTERUN** is an annual collaborative event held by the **[Information Systems Student Association (HIMSISFO)](https://student-activity.binus.ac.id/himsisfo)** and the **[Informatics Students Association (HIMTI)](https://himti.or.id)** of **[BINUS University](https://binus.ac.id)**, as one of the efforts in supporting the university to keep striving and becoming **A World-Class University in continuous pursuit of innovation and enterprise.**\n\nThis year's theme **EXECUTE**, short for **'Experience Business Creativity through Technology'** aims to provide space for students to enhance their creativity skills, develop innovation through technology also gaining rich experiences, new knowledge, and valuable insights along the way.\n\n**COMPUTERUN 2.0** will be one of our first event to be held **internationally**, so let's join and connect with thousands of aspiring students worldwide!"
       - type: "section-heading"
         title: "Latest News"
         id: "news"
@@ -74,7 +72,7 @@ children:
                         - type: "markdown"
                           text: "SPRINT, short for **Striving Accomplishment to Run Within Technology** is where people participate in a virtual run event that aims to provide causes for people to start implementing and maintaining a healthier lifestyle through running. Track your own running record from anywhere you want & get a chance to win prizes!"
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/sprint\" class=\"button button-gradient-5\">Rp 170.000</a><br><small>Prices excluding delivery/shipping costs. Bulk discounts available.</small></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/sprint\" class=\"button button-gradient-5\">From Rp 55.000</a><br><small>Prices excluding delivery/shipping costs. Bulk discounts available.</small></div>"
           - title: "Business-IT Competitions"
             children:
               - type: "card-container"
@@ -140,7 +138,7 @@ children:
                         - type: "markdown"
                           text: "Attend our creativepreneur webinar where our industry-experienced speaker will share about how to build, develop, and maintain a business during the pandemic, handle real-life business challenges and risk, and many more!"
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/seminar-1\" class=\"button button-gradient\">Register</a><br><small>Free of charge and open to all participants.</small></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/seminar-1\" class=\"button button-gradient\">Coming Soon</a><br><small>Free of charge and open to all participants.</small></div>"
                   - type: "card"
                     banner:
                       text: "“Implementation of UI/UX in Building A Digital Business”"

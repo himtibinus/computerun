@@ -201,6 +201,12 @@ children:
             form_redirect_to: "/info/sprint"
             additional_fields_purpose: "allow us to deliver our SPRINT merchandise to you. Please note that the stated ticket price does not include shipping costs."
             additional_fields:
+              - type: "sprint.version"
+                choices:
+                  - value: "lite"
+                    label: "Medal-only"
+                  - value: "full"
+                    label: "Full Finisher Pack"
               - type: "location.indonesia.province"
                 choices:
                   - value: Aceh

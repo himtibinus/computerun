@@ -63,6 +63,9 @@
                   <div class="form-check mb-3" onclick="provideFields({{ $pax['participants'] }}, {{ $pax['reserve'] ?? 'false' }})">
                     <input class="form-check-input" type="radio" name="package" id="package-{{ $pax['participants'] }}" value="{{ $pax['participants'] }}">
                     <label class="form-check-label" for="package-{{ $pax['participants'] }}" value="{{ $pax['participants'] }}">
+                      @if(isset($pax['name']))
+                        <b>{{ $pax['name'] }}</b>
+                      @endif
                       {{ $pax['participants'] }} pax: Rp. {{ $pax['price'] }}
                     </label>
                   </div>
