@@ -204,9 +204,9 @@ children:
               - type: "sprint.version"
                 choices:
                   - value: "lite"
-                    label: "Medal-only"
+                    label: "Medal-only (Rp55.000)"
                   - value: "full"
-                    label: "Full Finisher Pack"
+                    label: "Full Finisher Pack (Rp170.000)"
               - type: "location.indonesia.province"
                 choices:
                   - value: Aceh
