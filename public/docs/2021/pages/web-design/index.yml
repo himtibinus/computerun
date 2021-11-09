@@ -40,25 +40,11 @@ children:
                 children:
                 - type: "card"
                   banner:
-                    text: "1st Place"
-                    class: "button-gradient-5"
+                    text: "Grand Prize"
+                    class: "button-gradient"
                   body:
                     type: "markdown"
-                    text: "<h2 class=\"fw-bold text-center\">Rp 5.000.000</h2>"
-                - type: "card"
-                  banner:
-                    text: "2nd Place"
-                    class: "button-gradient-3"
-                  body:
-                    type: "markdown"
-                    text: "<h2 class=\"fw-bold text-center\">Rp 3.000.000</h2>"
-                - type: "card"
-                  banner:
-                    text: "3rd Place"
-                    class: "button-gradient-4"
-                  body:
-                    type: "markdown"
-                    text: "<h2 class=\"fw-bold text-center\">Rp 1.500.000</h2>"
+                    text: "<h2 class=\"fw-bold text-center\">UP TO 5 MILLION RUPIAH ++</h2>"
           - title: "Competition System"
             children:
               - type: "card-container"
