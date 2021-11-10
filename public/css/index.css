@@ -736,16 +736,16 @@ body:not(.is-bootstrap) .card-container .card img {
     justify-content: space-evenly;
 }
 /* Default Size: Small */
-.sponsors-container picture, .sponsors-container picture {
-    margin: 1vw;
+.sponsors-container picture, .sponsors-container img {
+    margin: 1rem;
 }
-.sponsors-container.small picture, .sponsors-container picture img {
+.sponsors-container.small picture, .sponsors-container.small picture img {
     height: auto;
     max-height: 10vw;
     width: auto;
     max-width: calc(10vw * 7/4);
 }
-.sponsors-container.small picture.baseline, .sponsors-container picture.baseline img {
+.sponsors-container.small picture.baseline, .sponsors-container.small picture.baseline img {
     height: auto;
     max-height: 5vw;
     width: auto;
