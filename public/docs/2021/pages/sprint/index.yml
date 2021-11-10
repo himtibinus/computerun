@@ -268,7 +268,7 @@ children:
             price_packages:
               - participants: 1
                 reserve: true
-                price: 170000
+                price: "55000/170000"
               - participants: 2
                 reserve: true
                 price: 300000
