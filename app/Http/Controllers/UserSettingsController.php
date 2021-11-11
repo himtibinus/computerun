@@ -235,6 +235,7 @@ class UserSettingsController extends Controller
                 'subject' => "$user->name has just paid for our $event->event_name. Would you mind checking it out?",
                 'sender_name' => 'Shift (COMPUTERUN 2.0)',
                 'email' => $admin->email,
+                'created_at' => now(),
                 'message_type' => 'MARKDOWN',
                 'message' => "Hey admins,<br><br>**$user->name** has just submitted payment receipts for **$event->event_name**. Just look for **Payment Code #$paymentcode** on https://computerun.id/admin/event/$event->event_id and download the file from https://computerun.id/admin/downloadFile/1/$fileId.<br><br>Oh, and make sure you're logged in as an admin before viewing it. Thanks and have a nice day!"
             ]);
