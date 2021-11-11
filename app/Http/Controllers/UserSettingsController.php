@@ -227,6 +227,19 @@ class UserSettingsController extends Controller
             ->where("status", '<=',2)
             ->update(["file_id" => $fileId]);
 
+        $user = Auth::user();
+        $admins = DB::table('users')->select(['name', 'email'])->where('university_id', 2)->get();
+        foreach ($admins as $admin){
+            DB::table('email_queue')->insert([
+                'subject' => "$user->name has just paid for our " + $requests[0]->event_name + ". Would you mind checking it out?",
+                'sender_name' => 'Shift (COMPUTERUN 2.0)',
+                'email' => $admin->email,
+                'message_type' => 'MARKDOWN',
+                'message' => "Hey admins,<br><br>**$user->name** has just submitted payment receipts for **" + $requests[0]->event_name + "**. Just look for **Payment Code #$paymentcode** on https://computerun.id/admin/event/" + $requests[0]->event_id +
+                    " and download the file from https://computerun.id/admin/downloadFile/1/$fileId.<br><br>Oh, and make sure you're logged in as an admin before viewing it. Thanks and have a nice day!"
+            ]);
+        }
+
         $request->session()->put('status', 'Your files have been uploaded');
 
         return redirect('/home');
