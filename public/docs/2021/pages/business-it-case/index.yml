@@ -32,7 +32,7 @@ children:
           - title: "Fees"
             children:
               - type: "markdown"
-                text: "+ **Business-IT Case Competition only:** <s>Rp300.000</s> <b>Rp270.000<b>\n+ **With [Workshop Bundle](/info/business-it-case-bundle):** <s>Rp450.000</s> <b>380.000<b> (for 3 participants, originally Rp480.000)"
+                text: "+ **Business-IT Case Competition only:** <s>Rp300.000</s> <b>Rp270.000</b>\n+ **With [Workshop Bundle](/info/business-it-case-bundle):** <s>Rp450.000</s> <b>380.000</b> (for 3 participants, originally Rp480.000)"
           - title: "Prizes"
             children:
               - type: "card-container"
