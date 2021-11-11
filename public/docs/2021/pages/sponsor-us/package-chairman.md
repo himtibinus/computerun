@@ -1,4 +1,4 @@
-<p class="h2 text-center fw-bold">Rp 12.000.000,-</p>
+<p class="h2 text-center fw-bold">Rp 8.000.000,-</p>
 1. **Logo ukuran XL** pada:
    + *Virtual background* pembicara dan pembawa acara
    + Setiap publikasi (termasuk *trailer* dan *aftermovie*) pada [akun-akun sosial media resmi **COMPUTERUN 2.0**]

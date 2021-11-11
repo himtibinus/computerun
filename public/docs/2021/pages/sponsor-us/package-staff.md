@@ -1,4 +1,4 @@
-<p class="h2 text-center fw-bold">Rp 3.000.000,-</p>
+<p class="h2 text-center fw-bold">Rp 2.000.000,-</p>
 **Logo ukuran S** pada:
    + Setiap publikasi (termasuk *trailer* dan *aftermovie*) pada [akun-akun sosial media resmi **COMPUTERUN 2.0**]
    + Bagian *footer* pada website resmi **COMPUTERUN 2.0**
