@@ -17,17 +17,9 @@
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'bncc', 'name' => 'Bina Nusantara Computer Club (BNCC)', 'square' => true])
         @endcomponent
-        @component ('components.sponsor-item', ['id' => 'dunia-coding', 'name' => 'Dunia Coding', 'square' => true])
-        @endcomponent
         @component ('components.sponsor-item', ['id' => 'filemagz', 'name' => 'Filemagz'])
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'girlskode', 'name' => 'Girls Kode', 'baseline' => true])
-        @endcomponent
-        @component ('components.sponsor-item', ['id' => 'harisenin', 'name' => 'harisenin.com', 'baseline' => true])
-        @endcomponent
-        @component ('components.sponsor-item', ['id' => 'infolomba', 'name' => 'Info Lomba', 'square' => true])
-        @endcomponent
-        @component ('components.sponsor-item', ['id' => 'kampus-update', 'name' => 'KampusUpdate.com', 'baseline' => true])
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'mave-magz', 'name' => 'MAVE magz'])
         @endcomponent
@@ -35,11 +27,7 @@
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'ppi-delft', 'name' => 'PPI Delft'])
         @endcomponent
-        @component ('components.sponsor-item', ['id' => 'ppi-taiwan', 'name' => 'PPI Taiwan'])
-        @endcomponent
         @component ('components.sponsor-item', ['id' => 'radio-kampus-itb', 'name' => 'Radio Kampus ITB', 'baseline' => true])
-        @endcomponent
-        @component ('components.sponsor-item', ['id' => 'radio-ppi-dunia', 'name' => 'Radio Kampus ITB', 'baseline' => true])
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'ruang-event', 'name' => 'Ruang Event', 'baseline' => true])
         @endcomponent
