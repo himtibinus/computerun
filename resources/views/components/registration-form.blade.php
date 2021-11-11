@@ -66,7 +66,7 @@
                       @if(isset($pax['name']))
                         <b>{{ $pax['name'] }}</b>
                       @endif
-                      {{ $pax['participants'] }} pax: Rp. {{ $pax['price'] }}
+                      {{ $pax['participants'] }} pax: Rp. {!! $pax['price'] !!}
                     </label>
                   </div>
                 @endforeach
@@ -74,7 +74,7 @@
                 <p class="text-center">You will be redirected to our payment form to upload your payment receipt.</p>
                 <div class="text-center" id="submit-validation"></div>
               @else
-                <p class="h2 fw-bold text-center mb-0">Price: @if(isset($price))Rp {{ $price }} @else FREE @endif</p>
+                <p class="h2 fw-bold text-center mb-0">Price: @if(isset($price))Rp {!! $price !!} @else FREE @endif</p>
                 <div class="text-center">
                   <div class="text-center"><b class="red-text">By registering to this competition, you agree to our rules and regulations.<br></b><button type="submit" class="button button-gradient-2 content-divider-short" onclick="this.form.submit();this.setAttribute('disabled','disabled');">Submit</button></div>
                 </div>
