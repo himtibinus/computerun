@@ -8,6 +8,8 @@
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'tiketcom', 'name' => 'Tiket.com'])
         @endcomponent
+        @component ('components.sponsor-item', ['id' => 'pinhome', 'name' => 'Pinhome'])
+        @endcomponent
     </div>
 </div>
 <h3 class="text-center">MEDIA PARTNERS</h3>

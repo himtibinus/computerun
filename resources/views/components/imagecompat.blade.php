@@ -7,9 +7,9 @@
 <picture id="{{$id_container ?? ''}}" class="{{$class_container ?? ''}}">
     @if($has_alternative_formats)
         <source srcset="{{$src_base}}.webp" type="image/webp">
+        <source srcset="{{$src_base}}.jp2" type="image/jp2">
         @if($ext == 'jpe' || $ext == 'jpeg' || $ext == 'jpg')
             <?php $mime_type = 'image/jpeg' ?>
-            <source srcset="{{$src_base}}.jp2" type="image/jp2">
         @endif
     @endif
     <source srcset="{{$src}}" type="{{$mime_type}}">
