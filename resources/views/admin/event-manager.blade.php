@@ -234,6 +234,12 @@
                     @if(strlen($registration->check_out_timestamp) > 0)
                         <b>Check out time (UTC): </b> {{ $registration->check_out_timestamp }}<br>
                     @endif
+                    @if($event->id == 2)
+                        <b>SPRINT package: </b> {{ DB::table('user_properties')->where('field_id', 'sprint.type')->where('user_id', $registration->ticket_id)->first()->value || 'None'; }}
+                    @endif
+                    @if($event->id == 9)
+                        <b>Preferred Workshop Date: </b> {{ DB::table('user_properties')->where('field_id', 'workshop.date')->where('user_id', $registration->ticket_id)->first()->value || 'None'; }}
+                    @endif
                     @if(strlen($registration->remarks) > 0)
                         <b>Remarks: </b> {{ $registration->remarks }}
                     @endif

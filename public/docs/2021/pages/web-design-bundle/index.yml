@@ -85,6 +85,12 @@ children:
             form_redirect_to: "/info/web-design-bundle"
             additional_fields:
               - type: "location.country"
+              - type: "workshop.date"
+                choices:
+                  - value: "20211206"
+                    label: "December 6, 2021"
+                  - value: "20211207"
+                    label: "December 7, 2021"
               - type: "promo.web_design_bundle"
                 optional: true
             price_packages:
