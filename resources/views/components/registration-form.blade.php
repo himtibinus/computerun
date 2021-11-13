@@ -31,6 +31,7 @@
                       <label for="action-change-{{ $field['type'] }}" class="form-label">{{ $field['name'] }} @if($required) <b class="red-text">*</b> @endif </label>
                       @if (isset($field['choices']))
                         <select class="form-select" aria-label="Default select example" name="action-change-{{ str_replace('.', '_', $field['type']) }}" id="action-change-{{ $field['type'] }}" @if($required) required @endif>
+                          <option value="">Select one...</option>
                           @foreach($field['choices'] as $choice)
                             <option value="{{ $choice['value'] }}" @if(isset($field['value']->value) && $field['value']->value == $choice['value']) selected @endif>{{ $choice['label'] ?? $choice['value'] }}</option>
                           @endforeach
