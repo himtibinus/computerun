@@ -32,7 +32,7 @@ children:
           - title: "Fees"
             children:
               - type: "markdown"
-                text: "+ **Web Design Competition only:** <s>Rp300.000</s> <b>Rp270.000</b>\n+ **With [Workshop Bundle](/info/web-design-bundle):** <s>Rp450.000</s> <b>380.000</b> (for 3 participants, originally Rp480.000)"
+                text: "+ **Web Design Competition only:** Rp300.000\n+ **With [Workshop Bundle](/info/web-design-bundle):** Rp450.000 (for 3 participants, originally Rp480.000)"
           - title: "Prizes"
             children:
               - type: "card-container"
@@ -162,4 +162,4 @@ children:
                 optional: true
             price_packages:
               - participants: 3
-                price: "<s>300.000</s> <b>270.000<b>"
+                price: "300.000"

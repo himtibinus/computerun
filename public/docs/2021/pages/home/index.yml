@@ -72,7 +72,7 @@ children:
                         - type: "markdown"
                           text: "SPRINT, short for **Striving Accomplishment to Run Within Technology** is where people participate in a virtual run event that aims to provide causes for people to start implementing and maintaining a healthier lifestyle through running. Track your own running record from anywhere you want & get a chance to win prizes!"
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/sprint\" class=\"button button-gradient-5\">From Rp 50.000</a><br><small>Prices excluding delivery/shipping costs. Bulk discounts available.</small></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/sprint\" class=\"button button-gradient-5\">From Rp55.000</a><br><small>Prices excluding delivery/shipping costs. Bulk discounts available.</small></div>"
           - title: "Business-IT Competitions"
             children:
               - type: "card-container"
@@ -91,7 +91,7 @@ children:
                             - Get a chance to hone their mindset and creativity in the business & information-technology field.\n
                             - Sharpening their mindset to produce effective business solutions."
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/business-it-case\" class=\"button button-gradient\">Rp 270.000</a><br><small>Special price available for Workshop Bundle.</small></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/business-it-case\" class=\"button button-gradient\">Rp300.000</a><br><small>Special price available for Workshop Bundle.</small></div>"
                   - type: "card"
                     banner:
                       text: "Web Design Competition"
@@ -106,7 +106,7 @@ children:
                             - Sharpening their mindset in preparing to tackle difficulties in the business & IT world in the future.\n
                             - Improve their web-design skills."
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/web-design\" class=\"button button-gradient-2\">Rp 270.000</a><br><small>Special price available for Workshop Bundle.</small></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/web-design\" class=\"button button-gradient-2\">Rp300.000</a><br><small>Special price available for Workshop Bundle.</small></div>"
           - title: "Workshop"
             children:
               - type: "card-container"
@@ -122,7 +122,7 @@ children:
                         - type: "markdown"
                           text: "Get a chance to learn UI/UX Design skills faciliated by an industry-experienced instructor that will provide tutorials, tips & tricks revolving UI/UX design with the theme of increasing user's satisfaction based on user habits! Don't miss a chance in learning UI/UX Design skills! There will also be prizes during the end of the workshop!"
                         - type: "markdown"
-                          text: "<div class=\"text-center\"><a href=\"/info/workshop\" class=\"button button-gradient-5\">Rp 50.000</a><br><small>Special price available for new Business-IT Case and Web Design Competition teams.</small></div>"
+                          text: "<div class=\"text-center\"><a href=\"/info/workshop\" class=\"button button-gradient-5\">Rp60.000</a><br><small>Special price available for new Business-IT Case and Web Design Competition teams.</small></div>"
           - title: "Seminar"
             children:
               - type: "card-container"

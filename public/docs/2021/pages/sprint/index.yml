@@ -268,8 +268,8 @@ children:
             price_packages:
               - participants: 1
                 reserve: true
-                price: "<s>55.000/170.000</s> <b>50.000/120.000</b>"
+                price: "55.000/170.000"
               - participants: 2
                 name: "Full Set"
                 reserve: true
-                price: "<s>300.000</s> <b>240.000</b>"
+                price: "300.000"
