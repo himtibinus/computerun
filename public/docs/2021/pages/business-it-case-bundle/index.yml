@@ -89,4 +89,4 @@ children:
                 optional: true
             price_packages:
               - participants: 3
-                price: "450.000"
+                price: "<s>450.000</s> <b>380.000<b>"

@@ -46,7 +46,7 @@ class UserSettingsController extends Controller
             $user_properties = DB::table('user_properties')->where('user_id', $user_data->id)->where('field_id', $permission->field_id)->first();
             if (!$user_properties){
                 array_push($incomplete, $permission->name . ' (' . $permission->validation_description . ')');
-                return;
+                continue;
             }
             if (!Auth::guest() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3)) $response['eventPermissions'][] = [
                 'name' => $permission->name,
