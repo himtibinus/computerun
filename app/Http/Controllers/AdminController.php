@@ -126,6 +126,12 @@ class AdminController extends Controller
             if (Str::startsWith($key, "status-") && $value >= 0){
                 $key = substr($key, 7);
                 DB::table('registration')->where('id', $key)->update(['status' => $value]);
+            } else if (Str::startsWith($key, "sprint-") && strlen($value) > 0){
+                $key = substr($key, 7);
+                DB::table('user_properties')->where('field_id', 'sprint.type')->whereRaw('user_id IN (SELECT ticket_id FROM registration WHERE id = ' . $key . ')')->update(['value' => $value]);
+            } else if (Str::startsWith($key, "workshop-") && strlen($value) > 0){
+                $key = substr($key, 9);
+                DB::table('user_properties')->where('field_id', 'workshop.date')->whereRaw('user_id IN (SELECT ticket_id FROM registration WHERE id = ' . $key . ')')->update(['value' => $value]);
             } else if (Str::startsWith($key, "action-")) switch ($key){
                 case "action-update-kicker":
                     if ($value != '') DB::table('events')->where('id', $event_id)->update(['kicker' => $value]);

@@ -239,14 +239,14 @@
                             $sprint = DB::table('user_properties')->where('field_id', 'sprint.type')->where('user_id', $registration->ticket_id)->first();
                             $sprint = $sprint ? $sprint->value : 'None';
                         ?>
-                        <b>SPRINT package: </b> {{ $sprint }}
+                        <b>SPRINT package: </b> {{ $sprint }}<br>
                     @endif
                     @if($event->id == 9)
                         <?php
                             $workshop = DB::table('user_properties')->where('field_id', 'workshop.date')->where('user_id', $registration->ticket_id)->first();
                             $workshop = $workshop ? $workshop->value : 'None';
                         ?>
-                        <b>Preferred Workshop Date: </b> {{ $workshop }}
+                        <b>Preferred Workshop Date: </b> {{ $workshop }}<br>
                     @endif
                     @if(strlen($registration->remarks) > 0)
                         <b>Remarks: </b> {{ $registration->remarks }}
@@ -260,7 +260,7 @@
                     </div>
                     <div class="btn-group mr-2" role="group">
                         <select name="status-{{$registration->id}}" id="status-{{$registration->id}}">
-                            <option value="-1">Override Status to...</option>
+                            <option value="">Override Status to...</option>
                             <option value="0">0: Not yet accepted</option>
                             <option value="1">1: Rejected</option>
                             <option value="2">2: Approved</option>
@@ -269,6 +269,24 @@
                             <option value="5">5: Attended</option>
                         </select>
                     </div>
+                    @if($event->id == 2)
+                    <div class="btn-group mr-2" role="group">
+                        <select name="sprint-{{$registration->id}}" id="sprint-{{$registration->id}}">
+                            <option value="">Override SPRINT type...</option>
+                            <option value="full">Full</option>
+                            <option value="lite">Lite (Medal-only)</option>
+                        </select>
+                    </div>
+                    @endif
+                    @if($event->id == 9)
+                    <div class="btn-group mr-2" role="group">
+                        <select name="workshop-{{$registration->id}}" id="workshop-{{$registration->id}}">
+                            <option value="">Override Workshop Date...</option>
+                            <option value="20211206">12/6: Batch 1</option>
+                            <option value="20211207">12/7: Batch 2</option>
+                        </select>
+                    </div>
+                    @endif
                     @if($registration->file_id != null && $registration->file_id != '')
                         <?php $file = DB::table('files')->where('id', $registration->file_id)->first() ?>
                         @if (is_object($file) && $file->name != null)
