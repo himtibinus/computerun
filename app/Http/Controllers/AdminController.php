@@ -123,7 +123,7 @@ class AdminController extends Controller
             return redirect('login');
         }
         foreach($request->all() as $key => $value) {
-            if (Str::startsWith($key, "status-") && $value >= 0){
+            if (Str::startsWith($key, "status-") && strlen($value) > 0 && $value >= 0){
                 $key = substr($key, 7);
                 DB::table('registration')->where('id', $key)->update(['status' => $value]);
             } else if (Str::startsWith($key, "sprint-") && strlen($value) > 0){
