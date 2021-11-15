@@ -32,7 +32,7 @@ children:
           - title: "Ticket Price"
             children:
               - type: "markdown"
-                text: "~~Rp60.000~~ **Rp50.000** per participant."
+                text: "Rp60.000 per participant."
           - title: "Rules"
             children:
               - type: "markdown"
@@ -120,4 +120,4 @@ children:
                     label: "December 7, 2021"
               - type: "promo.workshop"
                 optional: true
-            price: "<s>60.000</s> <b>50.000</b>"
+            price: "60.000"
