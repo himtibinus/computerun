@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,58 +38,12 @@ Route::get('/media-partner-proposal', function () {
 Route::get('/event-template', function () {
     return view('static.event-template');
 });
-
-/* Business-IT Competitions */
-Route::get('/bcase', function () {
-    return view('static.bcase');
-});
-Route::get('/moapps', function () {
-    return view('static.moapps');
-});
-
-/* Mini E-Sports Competitions */
-Route::get('/ml', function () {
-    return view('static.ml');
-});
-Route::get('/pubg', function () {
-    return view('static.pubg');
-});
-Route::get('/valorant', function () {
-    return view('static.valorant');
-});
-
-/* Webinars */
-// Route::get('/webinar-bchain', function () {
-//     return view('static.webinar-bchain');
-// });
-Route::get('/webinar', function () {
-    return view('static.webinar-covid');
-});
-//Route::get('/webinar-digital', function () {
-//    return view('static.webinar-digital');
-//});
-//Route::get('/webinar-mobile', function () {
-//    return view('static.webinar-mobile');
-//});
-
 Route::get('/contact', function () {
     return (new App\Http\Controllers\PagesController())->show('contact');
 });
-
-// Route::get('/faq', function () {
-//     return view('static.faq');
-// });
-
 Route::get('/twibbon', function () {
-    return redirect('/docs/Twibbon-Computerun2020.png');
+    return redirect('/info/twibbon-guidelines');
 });
-
-// Route::get('/regist-webinar', function () {
-//     return view('regist-webinar');
-// });
-// Route::get('/regist-competition', function () {
-//     return view('regist-competition');
-// });
 Route::resource('info', 'PagesController');
 Route::view('userview', "registration");
 Route::post('postcontroller', 'PostController@formSubmit');
