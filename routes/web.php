@@ -53,7 +53,8 @@ Route::post('postcontroller', 'PostController@formSubmit');
 // Route::resource('/login', 'TicketStatusController');
 Route::get('/logout', 'TicketStatusController@logout');
 
-Auth::routes(['verify' => true]);
+Auth::routes(['verify' => false]);
+// Auth::routes(['verify' => true]);
 
 Route::post('/changeaccountdetails', 'UserSettingsController@updateContacts');
 
