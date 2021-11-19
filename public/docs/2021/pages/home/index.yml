@@ -130,7 +130,7 @@ children:
                 children:
                   - type: "card"
                     banner:
-                      text: "“Creativity in Building and Managing Business during Pandemic”"
+                      text: "“Unfolding the Post Pandemic Strategy in Managing a Startup”"
                       class: "button-gradient"
                     body:
                       type: "widgetgroup"

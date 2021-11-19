@@ -2,7 +2,7 @@
   version: 1.0
 type: "page"
 kicker: "Seminar"
-title: "“Creativity in Building and Managing Business during Pandemic”"
+title: "“Unfolding the Post Pandemic Strategy in Managing a Startup”"
 disable_cache: true
 related:
   - sprint
@@ -19,7 +19,7 @@ children:
     children:
       - type: "section-heading"
         kicker: "Seminar"
-        title: "“Creativity in Building and Managing Business during Pandemic”"
+        title: "“Unfolding the Post Pandemic Strategy in Managing a Startup”"
       - type: "about-container"
         children:
           - title: "About"

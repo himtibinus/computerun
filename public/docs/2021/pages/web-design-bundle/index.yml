@@ -85,8 +85,6 @@ children:
             form_redirect_to: "/info/web-design-bundle"
             additional_fields:
               - type: "location.country"
-              - type: "promo.web_design_bundle"
-                optional: true
             price_packages:
               - participants: 3
                 price: "450.000"

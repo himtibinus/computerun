@@ -58,6 +58,10 @@
               @csrf
               <input type="hidden" name="event_id" value="{{ $event_id }}">
               <input type="hidden" name="redirect_to" value="{{ $form_redirect_to }}">
+              <div class="form-group mb-3">
+                <label for="referral_code">Referral Code (Optional)</label>
+                <input type="text" class="form-control" name="referral_code" id="referral_code">
+              </div>
               @if(isset($price_packages))
                 <p class="h4 fw-bold text-center">How many participants?</p>
                 @foreach($price_packages as $pax)

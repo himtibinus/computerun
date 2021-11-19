@@ -85,8 +85,6 @@ children:
             form_redirect_to: "/info/business-it-case-bundle"
             additional_fields:
               - type: "location.country"
-              - type: "promo.business_it_case_bundle"
-                optional: true
             price_packages:
               - participants: 3
                 price: "450.000"

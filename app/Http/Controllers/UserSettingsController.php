@@ -257,6 +257,10 @@ class UserSettingsController extends Controller
         // Get the slot number
         $slots = ($request->has("slots") && $request->input("slots") > 1) ? $request->input("slots") : 1;
 
+        // Set the referral code
+        $referral_code = null;
+        if ($request->has("referral_code") && strlen($request->input("referral_code")) > 0) $referral_code = $request->input("referral_code");
+
         // Set the Payment Code
         $payment_code = null;
 
@@ -337,13 +341,22 @@ class UserSettingsController extends Controller
             return redirect($redirect_to);
         }
 
+        // Validate referral code
+        if ($referral_code !== null){
+            $referral_check = DB::table('referral_codes')->where('opened', true)->where('id', $referral_code)->first();
+            if (!$referral_check){
+                $request->session()->put('error', "Invalid referral code.");
+                return redirect($redirect_to);
+            }
+        }
+
         if ($team_required == true){
             // Create a new team
             $team_id = DB::table("teams")->insertGetId(["name" => $request->input("team_name"), "event_id" => $event_id]);
 
             // Assign the database template
             $query = [];
-            $draft = ["event_id" => $event_id, "status" => (($event->auto_accept == true) ? 2 : 0), "payment_code" => $payment_code, "team_id" => $team_id, "ticket_id" => null, "remarks" => null];
+            $draft = ["event_id" => $event_id, "status" => (($event->auto_accept == true) ? 2 : 0), "referral_code" => $referral_code, "payment_code" => $payment_code, "team_id" => $team_id, "ticket_id" => null, "remarks" => null];
 
             // Assign the User ID of the team leader
             $tempdetails = Auth::user();

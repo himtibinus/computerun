@@ -162,8 +162,6 @@ children:
             form_redirect_to: "/info/business-it-case"
             additional_fields:
               - type: "location.country"
-              - type: "promo.business_it_case"
-                optional: true
             price_packages:
               - participants: 3
                 price: "300.000"
