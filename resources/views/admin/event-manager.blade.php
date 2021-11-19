@@ -225,6 +225,9 @@
                     @if(strlen($registration->team_id) > 0)
                         <b>Team: </b> {{ DB::table('teams')->where('id', $registration->team_id)->first()->name }}<br>
                     @endif
+                    @if(strlen($registration->referral_code) > 0)
+                        <b>Referral Code: </b> {{ $registration->referral_code }} ({{ DB::table('referral_codes')->where('id', $registration->referral_code)->first()->name }})<br>
+                    @endif
                     @if(strlen($registration->payment_code) > 0)
                         <b>Payment Code:</b> {{ $registration->payment_code }}<br>
                     @endif

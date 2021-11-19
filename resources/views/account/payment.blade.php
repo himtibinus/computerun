@@ -7,9 +7,9 @@
         for ($i = 0; $i < count($requests); $i++){
             switch ($requests[$i]->event_id) {
                 case '3': // Business-IT Case
-                    $requireStudentIdCard = true;
-                    break;
-                case '4': // Web Design Development
+                case '4': // Web Design
+                case '7': // Business-IT Case Bundle
+                case '8': // Web Design Bundle
                     $requireStudentIdCard = true;
                     break;
                 default:
@@ -54,7 +54,10 @@
                     <div class="card-body">
                         <h4 class="font-700">{{$request->event_name}}</h4>
                         <h5>for <b>{{$request->user_name}}</b></h5>
-                        <b>Role:</b> {{$request->remarks}}<br>
+                        <b>Role:</b> {{$request->remarks}}<br>    
+                        @if(strlen($request->referral_code) > 0)
+                            <b>Referral Code: </b> {{ $request->referral_code }} ({{ DB::table('referral_codes')->where('id', $request->referral_code)->first()->name }})<br>
+                        @endif
                         <b>Uploaded: </b>
                         @if($request->file_id != null && $request->file_id != '')
                             <a href="/user/downloadFile/0/{{$paymentcode}}/{{$request->file_id}}" target="_blank">Download File</a>
