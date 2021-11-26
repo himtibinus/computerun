@@ -20,7 +20,7 @@ class AddReferralCode extends Migration
             $table->timestamps();
         });
         if (Schema::hasTable('registration')) Schema::table('registration', function (Blueprint $table){
-            $table->string('referral_code',8)->nullable();
+            $table->string('referral_code', 8)->nullable();
             $table->foreign('referral_code')->references('id')->on('referral_codes');
         });
     }

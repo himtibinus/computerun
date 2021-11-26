@@ -57,11 +57,17 @@
             <div class="card content-divider-short">
                 <div class="text-center">
                     @foreach ($requests as $item)
-                        @if ($item->event_id == 1 && $item->ticket_id == Auth::user()->id)
-                            <h1 class="m-2">Business-IT Case</h1>
+                        @if ($item->event_id == 3 && $item->ticket_id == Auth::user()->id)
+                            <h1 class="m-2">Business-IT Case - Elimination Round</h1>
                             <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">download PDF</a>
-                        @elseif ($item->event_id == 2 && $item->ticket_id == Auth::user()->id)
-                            <h1 class="m-2">Mobile Apps Development</h1>
+                        @elseif ($item->event_id == 4 && $item->ticket_id == Auth::user()->id)
+                            <h1 class="m-2">Web Design - Elimination Round</h1>
+                            <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">download PDF</a>
+                        @elseif ($item->event_id == 5 && $item->ticket_id == Auth::user()->id)
+                            <h1 class="m-2">Business-IT Case - Final Round</h1>
+                            <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">download PDF</a>
+                        @elseif ($item->event_id == 6 && $item->ticket_id == Auth::user()->id)
+                            <h1 class="m-2">Web Design - Final Round</h1>
                             <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">download PDF</a>
                         @endif
                     @endforeach

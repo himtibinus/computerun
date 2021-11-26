@@ -616,8 +616,13 @@ class UserSettingsController extends Controller
             return redirect('home');
         }
         try {
-            if($check->event_id == 1 && $check->attendance_opened == 1) return response()->download(storage_path("app/competitions/BCase.pdf"));
-            else if($check->event_id == 2 && $check->attendance_opened == 1) return response()->download(storage_path("app/competitions/Moapps.pdf"));
+            if ($check->attendance_opened !== 1) return redirect('home');
+            switch ($check->event_id){
+                case 3: return response()->download(storage_path("app/competitions/bitcase-e.pdf"));
+                case 4: return response()->download(storage_path("app/competitions/webdes-e.pdf"));
+                case 5: return response()->download(storage_path("app/competitions/bitcase-f.pdf"));
+                case 6: return response()->download(storage_path("app/competitions/webdes-f.pdf"));
+            }
         } catch (\Exception $e){
             facadeSession::put('error', 'Alert: Internal Server Error');
             return redirect('home');
