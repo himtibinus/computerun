@@ -320,10 +320,7 @@
               @elseif ($event->attendance_opened && $registration->status >= 2 && ($registration->event_id >= 3 && $registration->event_id <= 6))
                 <div class="btn-toolbar" role="toolbar">
                   <div class="btn-group mr-2" role="group">
-                    <a class="btn no-minimum-width margin-0" href="/cp/{{$registration->team_id}}">
-                      @component('components.bootstrap-icons', ['icon' => 'journal-text', 'size' => 30])
-                      @endcomponent
-                    </a>
+                    <a class="btn button no-minimum-width button-gradient button-small margin-0" href="/cp/{{$registration->team_id}}">View Case / Upload</a>
                   </div>
                 </div>
               @endif
