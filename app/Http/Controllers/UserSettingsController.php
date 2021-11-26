@@ -622,6 +622,7 @@ class UserSettingsController extends Controller
                 case 4: return response()->download(storage_path("app/competitions/webdes-e.pdf"));
                 case 5: return response()->download(storage_path("app/competitions/bitcase-f.pdf"));
                 case 6: return response()->download(storage_path("app/competitions/webdes-f.pdf"));
+                default: return redirect('home');
             }
         } catch (\Exception $e){
             facadeSession::put('error', 'Alert: Internal Server Error');

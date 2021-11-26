@@ -110,13 +110,13 @@
                                     </a>
                                 @endif
                             @endforeach
-                            @if ($list->status < 2 && isset($list->files) && $list->files != 0 && $list->event_id < 6)
+                            @if ($list->status < 2 && isset($list->files) && $list->files != 0)
                             <a class="btn no-minimum-width margin-0" href="/pay/{{$list->payment_code}}">
                                 @component('components.bootstrap-icons', ['icon' => 'cloud-arrow-up', 'size' => 30])
                                 @endcomponent
                             </a>
                             @endif
-                            @if ($list->attendance_opened && $list->status >= 2)
+                            @if ($list->attendance_opened && $list->status >= 2 && !isset($list->files))
                                 <a href="/attendance/{{ $list->event_id }}/{{ $list->id }}" class="btn button no-minimum-width button-gradient button-small margin-0">Join Event</a>
                             @endif
                         </td>
