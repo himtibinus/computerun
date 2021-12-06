@@ -302,7 +302,7 @@
                         @if(is_object($file) && $file->answer_path != null)
                             <div class="btn-group mr-2" role="group">
                                 <a href="/admin/downloadFile/2/{{$registration->file_id}}" class="btn btn-secondary" onClick="requestParticipantDetails('{{ $registration->email }}')">
-                                    <i class="bi bi-arrow-down-circle"></i> Download Supporting File
+                                    <i class="bi bi-arrow-down-circle"></i> Download Case Answer
                                 </a>
                             </div>
                         @endif
