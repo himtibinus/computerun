@@ -132,6 +132,20 @@ class UserSettingsController extends Controller
             "answer_path" => $path
         ]);
 
+        $team = DB::table('teams')->where('id', $requests->team_id)->first();
+        $event = DB::table('events')->where('id', $requests->event_id)->first();
+        $admins = DB::table('users')->select(['name', 'email'])->where('university_id', 2)->get();
+        foreach ($admins as $admin){
+            DB::table('email_queue')->insert([
+                'subject' => "$team->name has just submitted case answer for $event->event_name. Would you mind checking it out?",
+                'sender_name' => 'Shift (COMPUTERUN 2.0)',
+                'email' => $admin->email,
+                'created_at' => now(),
+                'message_type' => 'MARKDOWN',
+                'message' => "Hey admins,<br><br>**$team->name** has just submitted the case answer for the **$event->event_name**. Just look on https://computerun.id/admin/event/$event->event_id and download the file from https://computerun.id/admin/downloadFile/2/$fileId.<br><br>Oh, and make sure you're logged in as an admin before viewing it. Thanks and have a nice day!"
+            ]);
+        }
+
         $request->session()->put('status', 'Your files have been uploaded');
 
         return redirect('/home');
